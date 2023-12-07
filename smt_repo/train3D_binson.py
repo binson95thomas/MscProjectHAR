@@ -7,19 +7,19 @@ from torch.utils.data import DataLoader, TensorDataset
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import confusion_matrix, precision_score, recall_score, f1_score, accuracy_score
 import matplotlib.pyplot as plt
-from dataset_prep_3d import OpticalFlow3DDataset
+from dataset_prep_2d import OpticalFlow2DDataset
 import datetime
 
 class FallDetectionCNN(nn.Module):
     def __init__(self):
         super(FallDetectionCNN, self).__init__()
-        self.conv1 = nn.Conv3d(2, 128, (3, 3, 3), padding = 1)
+        self.conv1 = nn.Conv3d(1, 128, (3, 3, 3), padding = 1)
         self.conv2 = nn.Conv3d(128, 128, (3, 3, 3), padding = 1)
         self.conv3 = nn.Conv3d(128, 64, (3, 3, 3), padding = 1)
         
         self.pool = nn.MaxPool3d(2)
         
-        self.fc1 = nn.Linear(64 * 2 * 4 * 6, 64)
+        self.fc1 = nn.Linear(64 * 1 * 4 * 6, 64)
         self.fc2 = nn.Linear(64, 128)
         self.fc3 = nn.Linear(128, 254)
         self.fc4 = nn.Linear(254, 2) 
@@ -191,7 +191,7 @@ def evaluate_model(model, dataloader, criterion, device):
 if __name__ == "__main__": 
     features_path = 'C:\\Users\\bt22aak\\OneDrive - University of Hertfordshire\\ProjectWorkables\\GPU_DS\\balanced_Canny'
     
-    dataset = OpticalFlow3DDataset(features_path)
+    dataset = OpticalFlow2DDataset(features_path)
     train_idx, test_idx = train_test_split(range(len(dataset)), test_size=0.2, random_state=42, stratify=dataset.labels)
     train_idx, val_idx = train_test_split(train_idx, test_size=0.25, random_state=42, stratify=np.array(dataset.labels)[train_idx])
 
