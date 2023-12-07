@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 
 # Folder where the numpy arrays are saved
-folder_path = '../dataset/nparray_new'
+folder_path = 'C:\\Binson\\Cloud\\OneDrive - University of Hertfordshire\\ProjectWorkables\\GPU_DS\\balanced_Canny\\Subject1\\Activity1\\Trial1\\Subject1Activity1Trial1Camera1_2018-07-04T12_04_20.238369.npy'
 
 def load_arrays(folder_path):
     for root, dirs, files in os.walk(folder_path):

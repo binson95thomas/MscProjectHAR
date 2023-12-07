@@ -8,7 +8,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import confusion_matrix, precision_score, recall_score, f1_score, accuracy_score
 import matplotlib.pyplot as plt
 from dataset_prep_2d import OpticalFlow2DDataset
-import datetime
+from timeit import default_timer as timer
+from datetime import datetime
 
 class FallDetectionCNN(nn.Module):
     def __init__(self):
@@ -18,19 +19,20 @@ class FallDetectionCNN(nn.Module):
         self.conv3 = nn.Conv3d(128, 64, (3, 3, 3), padding = 1)
         
         self.pool = nn.MaxPool3d(2)
-        
-        self.fc1 = nn.Linear(64 * 1 * 4 * 6, 64)
+
+        # self.fc1 = nn.Linear(64 * 2 * 4 * 6, 64)
+        self.fc1 = nn.Linear(64 * 216, 64)
         self.fc2 = nn.Linear(64, 128)
         self.fc3 = nn.Linear(128, 254)
         self.fc4 = nn.Linear(254, 2) 
 
     def forward(self, x):
+        # print(f"shape: {x.shape}")
         x = self.pool(F.relu(self.conv1(x)))
         x = self.pool(F.relu(self.conv2(x)))
         x = self.pool(F.relu(self.conv3(x)))
         
         x = x.view(x.size(0), -1)
-        
         x = F.relu(self.fc1(x))
         x = F.relu(self.fc2(x))
         x = F.relu(self.fc3(x))
@@ -97,7 +99,11 @@ def plot_metrics(accuracies, precisions, recalls, specificities, f1_scores, val_
 
 def train_model(dataloader_train, dataloader_val, num_epochs=50, learning_rate=0.0001):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    print(f"Creating Model")
+
     model = FallDetectionCNN().to(device)
+    print(f"Completed model creation")
+
     criterion = nn.CrossEntropyLoss()
     optimizer = optim.Adam(model.parameters(), lr = learning_rate)
     
@@ -112,8 +118,10 @@ def train_model(dataloader_train, dataloader_val, num_epochs=50, learning_rate=0
     val_losses = []
     
     for epoch in range(num_epochs):
-        tm=datetime.datetime.now()
-        print(tm)
+        # tm=datetime.datetime.now()
+        # print(tm)
+        #New changes
+        start =timer()
         model.train()
         for batch_features, batch_labels in dataloader_train:
             batch_features, batch_labels = batch_features.to(device), batch_labels.to(device)
@@ -152,6 +160,10 @@ def train_model(dataloader_train, dataloader_val, num_epochs=50, learning_rate=0
         
         print(f"Epoch [{epoch+1}/{num_epochs}], Loss: {loss.item():.4f}, Accuracy: {accuracy:.4f}, Precision: {precision:.4f}, Recall: {recall:.4f}, Specificity: {specificity:.4f}, F1-Score: {f1:.4f}")
         
+        print("Time Taken: ", timer() -start)
+        now = datetime.now()
+        current_time = now.strftime("%H:%M:%S")
+        print("Process Completed at : ", current_time)
         # if avg_val_loss < best_loss:
         #     best_loss = avg_val_loss
         #     epochs_no_improve = 0
@@ -189,8 +201,8 @@ def evaluate_model(model, dataloader, criterion, device):
     return avg_loss, accuracy, precision, recall, specificity, f1
 
 if __name__ == "__main__": 
-    features_path = 'C:\\Users\\bt22aak\\OneDrive - University of Hertfordshire\\ProjectWorkables\\GPU_DS\\balanced_Canny'
-    
+    features_path = '../GPU_DS/balanced_Canny'
+    print(f"Path identified is {features_path}")
     dataset = OpticalFlow2DDataset(features_path)
     train_idx, test_idx = train_test_split(range(len(dataset)), test_size=0.2, random_state=42, stratify=dataset.labels)
     train_idx, val_idx = train_test_split(train_idx, test_size=0.25, random_state=42, stratify=np.array(dataset.labels)[train_idx])
@@ -216,5 +228,5 @@ if __name__ == "__main__":
     
     print(f"Test Loss: {test_loss:.4f}, Test Accuracy: {test_accuracy:.4f}, Test Precision: {test_precision:.4f}, Test Recall: {test_recall:.4f}, Test Specificity: {test_specificity:.4f}, Test F1-Score: {test_f1:.4f}")
     
-    torch.save(model.state_dict(), 'fall_detection_model_3d.pth')
+    torch.save(model.state_dict(), 'fall_detection_model_3d_canny.pth')
 
