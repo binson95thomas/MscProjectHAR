@@ -64,7 +64,8 @@ class OpticalFlowComputer:
         fgmask_curr = cv2.morphologyEx(fgmask_curr, cv2.MORPH_CLOSE, kernel)
         current_frame_masked = cv2.bitwise_and(current_frame, current_frame, mask=fgmask_curr)
         current_frame_masked= cv2.Canny(current_frame_masked,700*0.33,700)
-        return current_frame_masked
+        resized_frame = cv2.resize(current_frame_masked, (102, 76))
+        return resized_frame
                    
 class NumpyWriter:
     def __init__(self, output_folder):
@@ -174,8 +175,8 @@ class OpticalFlowProcessor:
                         print("Time Taken: ", timer() -start)
             
 if __name__ ==  "__main__":
-    dataset_folder = 'F:\\MScProj\\UP-Fall'
-    output_folder  = 'E:\\Cloud Sync\\OneDrive - University of Hertfordshire\\ProjectWorkables\\VAIO_processedDS'
+    dataset_folder = 'D:\\MScProj\\UP-Fall'
+    output_folder  = 'C:\\Binson\\Codes\\Outputs\\Canny_only'
     
     processor = OpticalFlowProcessor(dataset_folder, output_folder)
     processor.run()
