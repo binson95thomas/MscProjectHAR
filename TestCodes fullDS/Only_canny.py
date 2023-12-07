@@ -3,7 +3,9 @@ import os
 import numpy as np
 import csv
 import re
-from timeit import default_timer as timer   
+from timeit import default_timer as timer
+from datetime import datetime
+
 
 class DatasetDirectoryHandler:
     def __init__(self, base_folder):
@@ -173,10 +175,14 @@ class OpticalFlowProcessor:
                         start =timer()
                         self.process_video(os.path.join(subject_folder, activity_folder, trial_folder, camera_folder))
                         print("Time Taken: ", timer() -start)
+                        now = datetime.now()
+                        current_time = now.strftime("%H:%M:%S")
+                        print("Process Completed at : ", current_time)
+
             
 if __name__ ==  "__main__":
-    dataset_folder = 'D:\\MScProj\\UP-Fall'
-    output_folder  = 'C:\\Binson\\Codes\\Outputs\\Canny_only'
+    dataset_folder = 'C:\\Binson\\Codes\\UP-Fall'
+    output_folder  = 'C:\\Binson\\Codes\\Outputs\\Canny_only_resized'
     
     processor = OpticalFlowProcessor(dataset_folder, output_folder)
     processor.run()
