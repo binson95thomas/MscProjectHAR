@@ -2,10 +2,10 @@ import os
 import numpy as np
 import pandas as pd
 
-csv_file_path = 'Features_1&0.5_Vision.csv'
+csv_file_path = 'smt_repo/processed_ds/Features_1&0.5_Vision.csv'
 labels_df = pd.read_csv(csv_file_path, skiprows=1)
 
-base_folder = 'preprocessed_dataset/nparray_uv_ofonly'
+base_folder = 'smt_repo/processed_ds/Canny_only_resized'
 
 filename_label_dict = {}
 
@@ -54,6 +54,7 @@ for root, dirs, files in os.walk(base_folder):
 
 
 for filename, assigned_label in filename_label_dict.items():
+    print(f"verifying {filename}")
     parts = filename.split('_')
     timestamp = f"{parts[1]}T{parts[2]}:{parts[3].split('.', 1)[0]}"
     

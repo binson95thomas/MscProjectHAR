@@ -8,6 +8,7 @@ def downsample_dataset(original_folder, output_folder):
     for root, _, files in os.walk(original_folder):
         for file in files:
             if file.endswith('.npy'):
+                print(f"Processing {file} ")
                 file_path = os.path.join(root, file)
                 data = np.load(file_path, allow_pickle=True).item()
                 label = data['label']
@@ -22,6 +23,7 @@ def downsample_dataset(original_folder, output_folder):
     downsampled_non_falls = [non_fall_samples[i] for i in downsampled_non_falls_indices]
     
     for file_path, _ in fall_samples + list(downsampled_non_falls):
+        print(f"Creating file {file_path} ")
         relative_path = os.path.relpath(file_path, original_folder)
         new_path = os.path.join(output_folder, relative_path)
         
@@ -30,7 +32,7 @@ def downsample_dataset(original_folder, output_folder):
         shutil.copyfile(file_path, new_path)
         
 if __name__ == "__main__":
-    original_folder = 'processed_ds/Canny_only_resized'
-    output_folder = 'processed_ds/balanced_Canny'
+    original_folder = 'smt_repo/processed_ds/Canny_only_resized'
+    output_folder = 'smt_repo/processed_ds/balanced_Canny'
     
     downsample_dataset(original_folder, output_folder)
