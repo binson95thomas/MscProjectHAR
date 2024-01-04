@@ -51,8 +51,12 @@ def compute_metrics(true_labels, predictions):
 
 def plot_metrics(accuracies, precisions, recalls, specificities, f1_scores, val_losses):
     epochs_range = range(1, len(accuracies) + 1)
-    plt.figure(figsize=(15, 10))
-    
+    fig=plt.figure(figsize=(20, 13))
+
+    suptitle=f'{str_model_type}: {num_epochs} Epochs with learning rate {learning_rate}'
+   
+    fig.suptitle(suptitle)
+
     plt.subplot(2, 3, 1)
     plt.plot(epochs_range, accuracies, 'o-', label='Accuracy')
     plt.title('Accuracy')
@@ -95,9 +99,11 @@ def plot_metrics(accuracies, precisions, recalls, specificities, f1_scores, val_
     plt.ylabel('Loss')
     
     plt.tight_layout()
+    savepath=f'Results/plt_{str_model_type}.png'
+    plt.savefig(savepath)
     plt.show()
 
-def train_model(dataloader_train, dataloader_val, num_epochs=50, learning_rate=0.0001):
+def train_model(dataloader_train, dataloader_val, num_epochs=50, learning_rate=0.001):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f"Creating Model")
 
@@ -159,11 +165,11 @@ def train_model(dataloader_train, dataloader_val, num_epochs=50, learning_rate=0
         val_losses.append(avg_val_loss)
         
         print(f"Epoch [{epoch+1}/{num_epochs}], Loss: {loss.item():.4f}, Accuracy: {accuracy:.4f}, Precision: {precision:.4f}, Recall: {recall:.4f}, Specificity: {specificity:.4f}, F1-Score: {f1:.4f}")
-        
         print("Time Taken: ", timer() -start)
         now = datetime.now()
         current_time = now.strftime("%H:%M:%S")
         print("Process Completed at : ", current_time)
+        logging_output(f"Epoch [{epoch+1}/{num_epochs}], Loss: {loss.item():.4f}, Accuracy: {accuracy:.4f}, Precision: {precision:.4f}, Recall: {recall:.4f}, Specificity: {specificity:.4f}, F1-Score: {f1:.4f}",log_path)
         # if avg_val_loss < best_loss:
         #     best_loss = avg_val_loss
         #     epochs_no_improve = 0
@@ -200,33 +206,52 @@ def evaluate_model(model, dataloader, criterion, device):
     
     return avg_loss, accuracy, precision, recall, specificity, f1
 
+# Function to print to console and write to a file
+def logging_output(message, file_path='/def_log'):
+    try:
+    # Write to file
+        now = datetime.now()
+        current_time = now.strftime("%H:%M:%S")
+        with open(file_path, 'a') as file:
+            file.write(f'{current_time} : {message} \n')
+    except Exception as e:
+        print(f"Error logging: {e}")    
+
+
 if __name__ == "__main__": 
-    features_path = '../GPU_DS/balanced_Canny'
+    features_path = '../GPU_DS/Bal_BGS_Canny_50_150_160x120'
+    log_path='./Results/log.txt'
     print(f"Path identified is {features_path}")
+    logging_output(f"Path identified is {features_path}",log_path)
     dataset = OpticalFlow2DDataset(features_path)
     train_idx, test_idx = train_test_split(range(len(dataset)), test_size=0.2, random_state=42, stratify=dataset.labels)
     train_idx, val_idx = train_test_split(train_idx, test_size=0.25, random_state=42, stratify=np.array(dataset.labels)[train_idx])
+    batch_size=16
+    num_epochs=50
+    learning_rate=0.00001
 
     train_dataset = torch.utils.data.Subset(dataset, train_idx)
     val_dataset = torch.utils.data.Subset(dataset, val_idx)
     test_dataset = torch.utils.data.Subset(dataset, test_idx)
 
-    dataloader_train = DataLoader(train_dataset, batch_size=32, shuffle=True)
-    dataloader_val = DataLoader(val_dataset, batch_size=32, shuffle=False)
-    dataloader_test = DataLoader(test_dataset, batch_size=32, shuffle=False)
-    if torch.cuda.is_available :
+    dataloader_train = DataLoader(train_dataset, batch_size, shuffle=True)
+    dataloader_val = DataLoader(val_dataset, batch_size, shuffle=False)
+    dataloader_test = DataLoader(test_dataset, batch_size, shuffle=False)
+    if torch.cuda.is_available() :
         print(f"Running on GPU")
     else:
         print(f"CPU Only")
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    
+    str_model_type=f'Bal+BGS+Canny(50-150)+size(160x140)_b{batch_size}e{num_epochs}L{learning_rate}'
+    print(f"Model is {str_model_type}")
+    logging_output(f"Model is {str_model_type}",log_path)
     model = FallDetectionCNN().to(device)
-    model = train_model(dataloader_train, dataloader_val)
+    model = train_model(dataloader_train, dataloader_val,num_epochs,learning_rate)
     
     criterion = nn.CrossEntropyLoss().to(device)
     test_loss, test_accuracy, test_precision, test_recall, test_specificity, test_f1 = evaluate_model(model, dataloader_test, criterion, device)
     
     print(f"Test Loss: {test_loss:.4f}, Test Accuracy: {test_accuracy:.4f}, Test Precision: {test_precision:.4f}, Test Recall: {test_recall:.4f}, Test Specificity: {test_specificity:.4f}, Test F1-Score: {test_f1:.4f}")
-    
-    torch.save(model.state_dict(), 'fall_detection_model_3d_canny.pth')
+    logging_output(f"Test Loss: {test_loss:.4f}, Test Accuracy: {test_accuracy:.4f}, Test Precision: {test_precision:.4f}, Test Recall: {test_recall:.4f}, Test Specificity: {test_specificity:.4f}, Test F1-Score: {test_f1:.4f}",log_path)
+    torch.save(model.state_dict(), 'fall_detection_model_3d_canny_BGS120.pth')
 

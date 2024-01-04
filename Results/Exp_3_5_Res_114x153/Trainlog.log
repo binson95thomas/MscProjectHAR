@@ -1,0 +1,325 @@
+15:00:42 : Path identified is C:\Users\bt22aak\GPU_DS\Exp_3\Exp_3_5_Res_114x153\Balanced and C:\Users\bt22aak\GPU_DS\Exp_3\Exp_3_5_Res_114x153\Unbalanced 
+15:00:42 : Starting the processing of Exp_3_5_Res_114x153_b32e50L0.0001 
+15:01:31 : Running on GPU 
+15:01:31 : Model is Exp_3_5_Res_114x153_b32e50L0.0001 
+15:01:36 : ****************************** 
+15:01:36 : Error occured mat1 and mat2 shapes cannot be multiplied (32x34048 and 28672x64) 
+15:01:36 : Traceback (most recent call last):
+  File "C:\Users\bt22aak\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_3_5_Res_114x153.py", line 301, in <module>
+    model = train_model(dataloader_train, dataloader_val,num_epochs,learning_rate)
+  File "C:\Users\bt22aak\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_3_5_Res_114x153.py", line 154, in train_model
+    outputs = model(batch_features)
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\torch\nn\modules\module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\torch\nn\modules\module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\bt22aak\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_3_5_Res_114x153.py", line 40, in forward
+    x = F.relu(self.fc1(x))
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\torch\nn\modules\module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\torch\nn\modules\module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\torch\nn\modules\linear.py", line 114, in forward
+    return F.linear(input, self.weight, self.bias)
+RuntimeError: mat1 and mat2 shapes cannot be multiplied (32x34048 and 28672x64)
+ 
+15:01:36 : ****************************** 
+18:27:21 : Path identified is C:\Users\bt22aak\GPU_DS\Exp_3\Exp_3_5_Res_114x153\Balanced and C:\Users\bt22aak\GPU_DS\Exp_3\Exp_3_5_Res_114x153\Unbalanced 
+18:27:21 : Starting the processing of Exp_3_5_Res_114x153_b32e50L0.0001 
+18:28:12 : Running on GPU 
+18:28:12 : Model is Exp_3_5_Res_114x153_b32e50L0.0001 
+18:35:57 : Epoch [1/50], Loss: 0.5178, Accuracy: 0.9092, Precision: 0.8566, Recall: 0.9833, Specificity: 0.8347, F1-Score: 0.9156 
+18:43:36 : Epoch [2/50], Loss: 0.3387, Accuracy: 0.9384, Precision: 0.9152, Recall: 0.9667, Specificity: 0.9100, F1-Score: 0.9402 
+18:51:15 : Epoch [3/50], Loss: 0.2427, Accuracy: 0.9478, Precision: 0.9442, Recall: 0.9521, Specificity: 0.9435, F1-Score: 0.9481 
+18:58:54 : Epoch [4/50], Loss: 0.2753, Accuracy: 0.9530, Precision: 0.9376, Recall: 0.9708, Specificity: 0.9351, F1-Score: 0.9539 
+19:06:36 : Epoch [5/50], Loss: 0.3891, Accuracy: 0.9447, Precision: 0.9439, Recall: 0.9458, Specificity: 0.9435, F1-Score: 0.9448 
+19:14:15 : Epoch [6/50], Loss: 0.3958, Accuracy: 0.9572, Precision: 0.9507, Recall: 0.9646, Specificity: 0.9498, F1-Score: 0.9576 
+19:21:54 : Epoch [7/50], Loss: 0.5535, Accuracy: 0.9562, Precision: 0.9469, Recall: 0.9667, Specificity: 0.9456, F1-Score: 0.9567 
+19:29:32 : Epoch [8/50], Loss: 0.6082, Accuracy: 0.9562, Precision: 0.9469, Recall: 0.9667, Specificity: 0.9456, F1-Score: 0.9567 
+19:37:11 : Epoch [9/50], Loss: 0.6212, Accuracy: 0.9572, Precision: 0.9489, Recall: 0.9667, Specificity: 0.9477, F1-Score: 0.9577 
+19:44:50 : Epoch [10/50], Loss: 0.6653, Accuracy: 0.9572, Precision: 0.9489, Recall: 0.9667, Specificity: 0.9477, F1-Score: 0.9577 
+19:52:29 : Epoch [11/50], Loss: 0.7194, Accuracy: 0.9572, Precision: 0.9489, Recall: 0.9667, Specificity: 0.9477, F1-Score: 0.9577 
+20:00:08 : Epoch [12/50], Loss: 0.7593, Accuracy: 0.9562, Precision: 0.9469, Recall: 0.9667, Specificity: 0.9456, F1-Score: 0.9567 
+20:07:47 : Epoch [13/50], Loss: 0.7828, Accuracy: 0.9562, Precision: 0.9469, Recall: 0.9667, Specificity: 0.9456, F1-Score: 0.9567 
+20:15:26 : Epoch [14/50], Loss: 0.7721, Accuracy: 0.9572, Precision: 0.9489, Recall: 0.9667, Specificity: 0.9477, F1-Score: 0.9577 
+20:23:05 : Epoch [15/50], Loss: 0.8417, Accuracy: 0.9562, Precision: 0.9469, Recall: 0.9667, Specificity: 0.9456, F1-Score: 0.9567 
+20:30:43 : Epoch [16/50], Loss: 0.8497, Accuracy: 0.9562, Precision: 0.9469, Recall: 0.9667, Specificity: 0.9456, F1-Score: 0.9567 
+20:38:22 : Epoch [17/50], Loss: 1.1958, Accuracy: 0.9144, Precision: 0.8727, Recall: 0.9708, Specificity: 0.8577, F1-Score: 0.9191 
+20:46:00 : Epoch [18/50], Loss: 0.5265, Accuracy: 0.9322, Precision: 0.8908, Recall: 0.9854, Specificity: 0.8787, F1-Score: 0.9357 
+20:53:40 : Epoch [19/50], Loss: 0.3476, Accuracy: 0.9447, Precision: 0.9331, Recall: 0.9583, Specificity: 0.9310, F1-Score: 0.9455 
+21:01:21 : Epoch [20/50], Loss: 0.5396, Accuracy: 0.9541, Precision: 0.9325, Recall: 0.9792, Specificity: 0.9289, F1-Score: 0.9553 
+21:08:59 : Epoch [21/50], Loss: 0.5178, Accuracy: 0.9541, Precision: 0.9395, Recall: 0.9708, Specificity: 0.9372, F1-Score: 0.9549 
+21:16:38 : Epoch [22/50], Loss: 0.5502, Accuracy: 0.9551, Precision: 0.9396, Recall: 0.9729, Specificity: 0.9372, F1-Score: 0.9560 
+21:24:17 : Epoch [23/50], Loss: 0.5905, Accuracy: 0.9562, Precision: 0.9398, Recall: 0.9750, Specificity: 0.9372, F1-Score: 0.9571 
+21:31:55 : Epoch [24/50], Loss: 0.6026, Accuracy: 0.9541, Precision: 0.9431, Recall: 0.9667, Specificity: 0.9414, F1-Score: 0.9547 
+21:39:34 : Epoch [25/50], Loss: 0.6410, Accuracy: 0.9551, Precision: 0.9379, Recall: 0.9750, Specificity: 0.9351, F1-Score: 0.9561 
+21:47:12 : Epoch [26/50], Loss: 0.6476, Accuracy: 0.9562, Precision: 0.9415, Recall: 0.9729, Specificity: 0.9393, F1-Score: 0.9570 
+21:54:52 : Epoch [27/50], Loss: 0.6715, Accuracy: 0.9551, Precision: 0.9396, Recall: 0.9729, Specificity: 0.9372, F1-Score: 0.9560 
+22:02:30 : Epoch [28/50], Loss: 0.6901, Accuracy: 0.9551, Precision: 0.9396, Recall: 0.9729, Specificity: 0.9372, F1-Score: 0.9560 
+22:10:09 : Epoch [29/50], Loss: 0.6877, Accuracy: 0.9541, Precision: 0.9431, Recall: 0.9667, Specificity: 0.9414, F1-Score: 0.9547 
+22:17:47 : Epoch [30/50], Loss: 0.7165, Accuracy: 0.9562, Precision: 0.9433, Recall: 0.9708, Specificity: 0.9414, F1-Score: 0.9569 
+22:25:27 : Epoch [31/50], Loss: 0.7366, Accuracy: 0.9562, Precision: 0.9415, Recall: 0.9729, Specificity: 0.9393, F1-Score: 0.9570 
+22:33:08 : Epoch [32/50], Loss: 0.7309, Accuracy: 0.9530, Precision: 0.9430, Recall: 0.9646, Specificity: 0.9414, F1-Score: 0.9537 
+22:40:48 : Epoch [33/50], Loss: 0.7479, Accuracy: 0.9551, Precision: 0.9432, Recall: 0.9688, Specificity: 0.9414, F1-Score: 0.9558 
+22:48:38 : Epoch [34/50], Loss: 0.7646, Accuracy: 0.9551, Precision: 0.9432, Recall: 0.9688, Specificity: 0.9414, F1-Score: 0.9558 
+22:56:31 : Epoch [35/50], Loss: 0.7617, Accuracy: 0.9520, Precision: 0.9429, Recall: 0.9625, Specificity: 0.9414, F1-Score: 0.9526 
+23:04:24 : Epoch [36/50], Loss: 0.7829, Accuracy: 0.9541, Precision: 0.9431, Recall: 0.9667, Specificity: 0.9414, F1-Score: 0.9547 
+23:12:17 : Epoch [37/50], Loss: 0.7821, Accuracy: 0.9520, Precision: 0.9429, Recall: 0.9625, Specificity: 0.9414, F1-Score: 0.9526 
+23:20:09 : Epoch [38/50], Loss: 0.7985, Accuracy: 0.9530, Precision: 0.9430, Recall: 0.9646, Specificity: 0.9414, F1-Score: 0.9537 
+23:28:01 : Epoch [39/50], Loss: 0.8191, Accuracy: 0.9562, Precision: 0.9433, Recall: 0.9708, Specificity: 0.9414, F1-Score: 0.9569 
+23:35:54 : Epoch [40/50], Loss: 0.8289, Accuracy: 0.9562, Precision: 0.9433, Recall: 0.9708, Specificity: 0.9414, F1-Score: 0.9569 
+23:43:46 : Epoch [41/50], Loss: 0.8203, Accuracy: 0.9520, Precision: 0.9429, Recall: 0.9625, Specificity: 0.9414, F1-Score: 0.9526 
+23:51:33 : Epoch [42/50], Loss: 0.8472, Accuracy: 0.9562, Precision: 0.9433, Recall: 0.9708, Specificity: 0.9414, F1-Score: 0.9569 
+23:59:12 : Epoch [43/50], Loss: 0.8352, Accuracy: 0.9520, Precision: 0.9429, Recall: 0.9625, Specificity: 0.9414, F1-Score: 0.9526 
+00:06:52 : Epoch [44/50], Loss: 0.8429, Accuracy: 0.9520, Precision: 0.9429, Recall: 0.9625, Specificity: 0.9414, F1-Score: 0.9526 
+00:14:31 : Epoch [45/50], Loss: 0.8481, Accuracy: 0.9520, Precision: 0.9429, Recall: 0.9625, Specificity: 0.9414, F1-Score: 0.9526 
+00:22:10 : Epoch [46/50], Loss: 0.8651, Accuracy: 0.9530, Precision: 0.9430, Recall: 0.9646, Specificity: 0.9414, F1-Score: 0.9537 
+00:29:48 : Epoch [47/50], Loss: 0.8645, Accuracy: 0.9509, Precision: 0.9427, Recall: 0.9604, Specificity: 0.9414, F1-Score: 0.9515 
+00:37:27 : Epoch [48/50], Loss: 0.8911, Accuracy: 0.9530, Precision: 0.9430, Recall: 0.9646, Specificity: 0.9414, F1-Score: 0.9537 
+00:45:06 : Epoch [49/50], Loss: 0.8799, Accuracy: 0.9509, Precision: 0.9427, Recall: 0.9604, Specificity: 0.9414, F1-Score: 0.9515 
+00:52:45 : Epoch [50/50], Loss: 0.8877, Accuracy: 0.9509, Precision: 0.9427, Recall: 0.9604, Specificity: 0.9414, F1-Score: 0.9515 
+02:47:34 : Path identified is C:\Users\bt22aak\GPU_DS\Exp_3\Exp_3_5_Res_114x153\Balanced and C:\Users\bt22aak\GPU_DS\Exp_3\Exp_3_5_Res_114x153\Unbalanced 
+02:47:34 : Starting the processing of Exp_3_5_Res_114x153_b32e50L0.0001 
+02:47:34 : ****************************** 
+02:47:34 : Error occured With n_samples=0, test_size=0.25 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters. 
+02:47:34 : Traceback (most recent call last):
+  File "C:\Users\bt22aak\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_3_5_Res_114x153.py", line 280, in <module>
+    train_idx, val_idx = train_test_split(range(len(train_val_dataset)), test_size=0.25, random_state=42, stratify=train_val_dataset.labels)
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\sklearn\utils\_param_validation.py", line 211, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\sklearn\model_selection\_split.py", line 2617, in train_test_split
+    n_train, n_test = _validate_shuffle_split(
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\sklearn\model_selection\_split.py", line 2273, in _validate_shuffle_split
+    raise ValueError(
+ValueError: With n_samples=0, test_size=0.25 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+ 
+02:47:34 : ****************************** 
+02:48:43 : Path identified is C:\Users\bt22aak\GPU_DS\Exp_3\Exp_3_5_Res_114x153\Balanced and C:\Users\bt22aak\GPU_DS\Exp_3\Exp_3_5_Res_114x153\Unbalanced 
+02:48:43 : Starting the processing of Exp_3_5_Res_114x153_b32e50L0.0001 
+02:49:32 : Running on GPU 
+02:49:32 : Model is Exp_3_5_Res_114x153_b32e50L0.0001 
+02:57:18 : Epoch [1/50], Loss: 0.4545, Accuracy: 0.9353, Precision: 0.9180, Recall: 0.9563, Specificity: 0.9142, F1-Score: 0.9367 
+03:04:57 : Epoch [2/50], Loss: 0.3230, Accuracy: 0.9457, Precision: 0.9246, Recall: 0.9708, Specificity: 0.9205, F1-Score: 0.9472 
+03:12:37 : Epoch [3/50], Loss: 0.4224, Accuracy: 0.9520, Precision: 0.9393, Recall: 0.9667, Specificity: 0.9372, F1-Score: 0.9528 
+03:20:15 : Epoch [4/50], Loss: 0.4020, Accuracy: 0.9457, Precision: 0.9367, Recall: 0.9563, Specificity: 0.9351, F1-Score: 0.9464 
+03:27:54 : Epoch [5/50], Loss: 0.5575, Accuracy: 0.9457, Precision: 0.9246, Recall: 0.9708, Specificity: 0.9205, F1-Score: 0.9472 
+03:35:32 : Epoch [6/50], Loss: 0.9374, Accuracy: 0.9468, Precision: 0.9181, Recall: 0.9812, Specificity: 0.9121, F1-Score: 0.9486 
+03:43:10 : Epoch [7/50], Loss: 0.4693, Accuracy: 0.9520, Precision: 0.9429, Recall: 0.9625, Specificity: 0.9414, F1-Score: 0.9526 
+03:50:48 : Epoch [8/50], Loss: 0.4959, Accuracy: 0.9530, Precision: 0.9430, Recall: 0.9646, Specificity: 0.9414, F1-Score: 0.9537 
+03:58:26 : Epoch [9/50], Loss: 0.6966, Accuracy: 0.9582, Precision: 0.9382, Recall: 0.9812, Specificity: 0.9351, F1-Score: 0.9593 
+04:06:04 : Epoch [10/50], Loss: 0.7323, Accuracy: 0.9499, Precision: 0.9303, Recall: 0.9729, Specificity: 0.9268, F1-Score: 0.9511 
+04:13:43 : Epoch [11/50], Loss: 0.7755, Accuracy: 0.9541, Precision: 0.9378, Recall: 0.9729, Specificity: 0.9351, F1-Score: 0.9550 
+04:21:20 : Epoch [12/50], Loss: 0.7907, Accuracy: 0.9562, Precision: 0.9433, Recall: 0.9708, Specificity: 0.9414, F1-Score: 0.9569 
+04:28:58 : Epoch [13/50], Loss: 0.8210, Accuracy: 0.9551, Precision: 0.9432, Recall: 0.9688, Specificity: 0.9414, F1-Score: 0.9558 
+04:36:38 : Epoch [14/50], Loss: 0.8447, Accuracy: 0.9551, Precision: 0.9432, Recall: 0.9688, Specificity: 0.9414, F1-Score: 0.9558 
+04:44:21 : Epoch [15/50], Loss: 0.8711, Accuracy: 0.9572, Precision: 0.9434, Recall: 0.9729, Specificity: 0.9414, F1-Score: 0.9579 
+04:52:01 : Epoch [16/50], Loss: 0.9043, Accuracy: 0.9551, Precision: 0.9396, Recall: 0.9729, Specificity: 0.9372, F1-Score: 0.9560 
+04:59:39 : Epoch [17/50], Loss: 0.9074, Accuracy: 0.9562, Precision: 0.9433, Recall: 0.9708, Specificity: 0.9414, F1-Score: 0.9569 
+05:07:18 : Epoch [18/50], Loss: 0.9272, Accuracy: 0.9562, Precision: 0.9433, Recall: 0.9708, Specificity: 0.9414, F1-Score: 0.9569 
+05:14:56 : Epoch [19/50], Loss: 0.9550, Accuracy: 0.9572, Precision: 0.9416, Recall: 0.9750, Specificity: 0.9393, F1-Score: 0.9580 
+05:22:35 : Epoch [20/50], Loss: 0.9648, Accuracy: 0.9572, Precision: 0.9416, Recall: 0.9750, Specificity: 0.9393, F1-Score: 0.9580 
+05:30:13 : Epoch [21/50], Loss: 0.9509, Accuracy: 0.9551, Precision: 0.9432, Recall: 0.9688, Specificity: 0.9414, F1-Score: 0.9558 
+05:37:52 : Epoch [22/50], Loss: 0.9920, Accuracy: 0.9572, Precision: 0.9416, Recall: 0.9750, Specificity: 0.9393, F1-Score: 0.9580 
+05:45:30 : Epoch [23/50], Loss: 0.9783, Accuracy: 0.9551, Precision: 0.9432, Recall: 0.9688, Specificity: 0.9414, F1-Score: 0.9558 
+05:53:08 : Epoch [24/50], Loss: 1.0112, Accuracy: 0.9572, Precision: 0.9434, Recall: 0.9729, Specificity: 0.9414, F1-Score: 0.9579 
+06:00:47 : Epoch [25/50], Loss: 1.0149, Accuracy: 0.9572, Precision: 0.9434, Recall: 0.9729, Specificity: 0.9414, F1-Score: 0.9579 
+06:08:26 : Epoch [26/50], Loss: 1.0525, Accuracy: 0.9572, Precision: 0.9416, Recall: 0.9750, Specificity: 0.9393, F1-Score: 0.9580 
+06:16:04 : Epoch [27/50], Loss: 1.0620, Accuracy: 0.9572, Precision: 0.9416, Recall: 0.9750, Specificity: 0.9393, F1-Score: 0.9580 
+06:23:42 : Epoch [28/50], Loss: 1.0390, Accuracy: 0.9541, Precision: 0.9431, Recall: 0.9667, Specificity: 0.9414, F1-Score: 0.9547 
+06:31:21 : Epoch [29/50], Loss: 1.0560, Accuracy: 0.9572, Precision: 0.9434, Recall: 0.9729, Specificity: 0.9414, F1-Score: 0.9579 
+22:43:15 : Path identified is C:\Users\bt22aak\GPU_DS\Exp_3\Exp_3_5_Res_114x153\Balanced and C:\Users\bt22aak\GPU_DS\Exp_3\Exp_3_5_Res_114x153\Unbalanced 
+22:43:15 : Starting the processing of Exp_3_5_Res_114x153_b32e50L0.0001 
+22:43:15 : ****************************** 
+22:43:15 : Error occured With n_samples=0, test_size=0.25 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters. 
+22:43:15 : Traceback (most recent call last):
+  File "C:\Users\bt22aak\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_3_5_Res_114x153.py", line 280, in <module>
+    train_idx, val_idx = train_test_split(range(len(train_val_dataset)), test_size=0.25, random_state=42, stratify=train_val_dataset.labels)
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\sklearn\utils\_param_validation.py", line 211, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\sklearn\model_selection\_split.py", line 2617, in train_test_split
+    n_train, n_test = _validate_shuffle_split(
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\sklearn\model_selection\_split.py", line 2273, in _validate_shuffle_split
+    raise ValueError(
+ValueError: With n_samples=0, test_size=0.25 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+ 
+22:43:15 : ****************************** 
+22:43:58 : Path identified is C:\Users\bt22aak\GPU_DS\Exp_3\Exp_3_5_Res_114x153\Balanced and C:\Users\bt22aak\GPU_DS\Exp_3\Exp_3_5_Res_114x153\Unbalanced 
+22:43:58 : Starting the processing of Exp_3_5_Res_114x153_b32e50L0.0001 
+22:44:43 : Running on GPU 
+22:44:43 : Model is Exp_3_5_Res_114x153_b32e50L0.0001 
+22:44:53 : ****************************** 
+22:44:53 : Error occured CUDA out of memory. Tried to allocate 4.53 GiB. GPU 0 has a total capacty of 12.00 GiB of which 731.00 MiB is free. Of the allocated memory 6.19 GiB is allocated by PyTorch, and 2.95 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF 
+22:44:53 : Traceback (most recent call last):
+  File "C:\Users\bt22aak\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_3_5_Res_114x153.py", line 301, in <module>
+    model = train_model(dataloader_train, dataloader_val,num_epochs,learning_rate)
+  File "C:\Users\bt22aak\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_3_5_Res_114x153.py", line 156, in train_model
+    loss.backward()
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\torch\_tensor.py", line 492, in backward
+    torch.autograd.backward(
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\torch\autograd\__init__.py", line 251, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 4.53 GiB. GPU 0 has a total capacty of 12.00 GiB of which 731.00 MiB is free. Of the allocated memory 6.19 GiB is allocated by PyTorch, and 2.95 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+ 
+22:44:53 : ****************************** 
+22:52:02 : Path identified is C:\Users\bt22aak\GPU_DS\Exp_3\Exp_3_5_Res_114x153\Balanced and C:\Users\bt22aak\GPU_DS\Exp_3\Exp_3_5_Res_114x153\Unbalanced 
+22:52:02 : Starting the processing of Exp_3_5_Res_114x153_b32e50L0.0001 
+22:52:46 : Running on GPU 
+22:52:46 : Model is Exp_3_5_Res_114x153_b32e50L0.0001 
+22:52:54 : ****************************** 
+22:52:54 : Error occured CUDA out of memory. Tried to allocate 4.53 GiB. GPU 0 has a total capacty of 12.00 GiB of which 731.00 MiB is free. Of the allocated memory 6.19 GiB is allocated by PyTorch, and 2.95 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF 
+22:52:54 : Traceback (most recent call last):
+  File "C:\Users\bt22aak\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_3_5_Res_114x153.py", line 302, in <module>
+    model = train_model(dataloader_train, dataloader_val,num_epochs,learning_rate)
+  File "C:\Users\bt22aak\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_3_5_Res_114x153.py", line 156, in train_model
+    loss.backward()
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\torch\_tensor.py", line 492, in backward
+    torch.autograd.backward(
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\torch\autograd\__init__.py", line 251, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 4.53 GiB. GPU 0 has a total capacty of 12.00 GiB of which 731.00 MiB is free. Of the allocated memory 6.19 GiB is allocated by PyTorch, and 2.95 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+ 
+22:52:54 : ****************************** 
+22:53:39 : Path identified is C:\Users\bt22aak\GPU_DS\Exp_3\Exp_3_5_Res_114x153\Balanced and C:\Users\bt22aak\GPU_DS\Exp_3\Exp_3_5_Res_114x153\Unbalanced 
+22:53:39 : Starting the processing of Exp_3_5_Res_114x153_b16e50L0.0001 
+22:54:19 : Running on GPU 
+22:54:19 : Model is Exp_3_5_Res_114x153_b16e50L0.0001 
+22:54:29 : ****************************** 
+22:54:29 : Error occured CUDA out of memory. Tried to allocate 4.53 GiB. GPU 0 has a total capacty of 12.00 GiB of which 731.00 MiB is free. Of the allocated memory 6.19 GiB is allocated by PyTorch, and 2.95 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF 
+22:54:29 : Traceback (most recent call last):
+  File "C:\Users\bt22aak\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_3_5_Res_114x153.py", line 302, in <module>
+    model = train_model(dataloader_train, dataloader_val,num_epochs,learning_rate)
+  File "C:\Users\bt22aak\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_3_5_Res_114x153.py", line 156, in train_model
+    loss.backward()
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\torch\_tensor.py", line 492, in backward
+    torch.autograd.backward(
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\torch\autograd\__init__.py", line 251, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 4.53 GiB. GPU 0 has a total capacty of 12.00 GiB of which 731.00 MiB is free. Of the allocated memory 6.19 GiB is allocated by PyTorch, and 2.95 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+ 
+22:54:29 : ****************************** 
+22:58:36 : Path identified is C:\Users\bt22aak\GPU_DS\Exp_3\Exp_3_5_Res_114x153\Balanced and C:\Users\bt22aak\GPU_DS\Exp_3\Exp_3_5_Res_114x153\Unbalanced 
+22:58:36 : Starting the processing of Exp_3_5_Res_114x153_b16e50L0.0001 
+22:58:58 : Running on GPU 
+22:58:58 : Model is Exp_3_5_Res_114x153_b16e50L0.0001 
+22:59:05 : ****************************** 
+22:59:05 : Error occured CUDA out of memory. Tried to allocate 4.53 GiB. GPU 0 has a total capacty of 12.00 GiB of which 731.00 MiB is free. Of the allocated memory 6.19 GiB is allocated by PyTorch, and 2.95 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF 
+22:59:05 : Traceback (most recent call last):
+  File "C:\Users\bt22aak\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_3_5_Res_114x153.py", line 304, in <module>
+    model = train_model(dataloader_train, dataloader_val,num_epochs,learning_rate)
+  File "C:\Users\bt22aak\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_3_5_Res_114x153.py", line 156, in train_model
+    loss.backward()
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\torch\_tensor.py", line 492, in backward
+    torch.autograd.backward(
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\torch\autograd\__init__.py", line 251, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 4.53 GiB. GPU 0 has a total capacty of 12.00 GiB of which 731.00 MiB is free. Of the allocated memory 6.19 GiB is allocated by PyTorch, and 2.95 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+ 
+22:59:05 : ****************************** 
+23:03:36 : Path identified is C:\Users\bt22aak\GPU_DS\Exp_3\Exp_3_5_Res_114x153\Balanced and C:\Users\bt22aak\GPU_DS\Exp_3\Exp_3_5_Res_114x153\Unbalanced 
+23:03:36 : Starting the processing of Exp_3_5_Res_114x153_b16e50L0.0001 
+23:04:14 : Running on GPU 
+23:04:14 : Model is Exp_3_5_Res_114x153_b16e50L0.0001 
+23:04:26 : ****************************** 
+23:04:26 : Error occured CUDA out of memory. Tried to allocate 4.53 GiB. GPU 0 has a total capacty of 12.00 GiB of which 638.02 MiB is free. Of the allocated memory 6.19 GiB is allocated by PyTorch, and 2.95 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF 
+23:04:26 : Traceback (most recent call last):
+  File "C:\Users\bt22aak\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_3_5_Res_114x153.py", line 304, in <module>
+    model = train_model(dataloader_train, dataloader_val,num_epochs,learning_rate)
+  File "C:\Users\bt22aak\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_3_5_Res_114x153.py", line 156, in train_model
+    loss.backward()
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\torch\_tensor.py", line 492, in backward
+    torch.autograd.backward(
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\torch\autograd\__init__.py", line 251, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 4.53 GiB. GPU 0 has a total capacty of 12.00 GiB of which 638.02 MiB is free. Of the allocated memory 6.19 GiB is allocated by PyTorch, and 2.95 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+ 
+23:04:26 : ****************************** 
+23:18:06 : Path identified is C:\Users\bt22aak\GPU_DS\Exp_3\Exp_3_5_Res_114x153\Balanced and C:\Users\bt22aak\GPU_DS\Exp_3\Exp_3_5_Res_114x153\Unbalanced 
+23:18:06 : Starting the processing of Exp_3_5_Res_114x153_b32e50L0.0001 
+23:18:06 : ****************************** 
+23:18:06 : Error occured With n_samples=0, test_size=0.25 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters. 
+23:18:06 : Traceback (most recent call last):
+  File "C:\Users\bt22aak\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_3_5_Res_114x153.py", line 280, in <module>
+    train_idx, val_idx = train_test_split(range(len(train_val_dataset)), test_size=0.25, random_state=42, stratify=train_val_dataset.labels)
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\sklearn\utils\_param_validation.py", line 211, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\sklearn\model_selection\_split.py", line 2617, in train_test_split
+    n_train, n_test = _validate_shuffle_split(
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\sklearn\model_selection\_split.py", line 2273, in _validate_shuffle_split
+    raise ValueError(
+ValueError: With n_samples=0, test_size=0.25 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+ 
+23:18:06 : ****************************** 
+23:33:59 : Path identified is C:\Users\bt22aak\GPU_DS\Exp_3\Exp_3_5_Res_114x153\Balanced and C:\Users\bt22aak\GPU_DS\Exp_3\Exp_3_5_Res_114x153\Unbalanced 
+23:33:59 : Starting the processing of Exp_3_5_Res_114x153_b32e50L0.0001 
+23:34:44 : Running on GPU 
+23:34:44 : Model is Exp_3_5_Res_114x153_b32e50L0.0001 
+23:34:57 : ****************************** 
+23:34:57 : Error occured CUDA out of memory. Tried to allocate 4.53 GiB. GPU 0 has a total capacty of 12.00 GiB of which 731.00 MiB is free. Of the allocated memory 6.19 GiB is allocated by PyTorch, and 2.95 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF 
+23:34:57 : Traceback (most recent call last):
+  File "C:\Users\bt22aak\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_3_5_Res_114x153.py", line 301, in <module>
+    model = train_model(dataloader_train, dataloader_val,num_epochs,learning_rate)
+  File "C:\Users\bt22aak\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_3_5_Res_114x153.py", line 156, in train_model
+    loss.backward()
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\torch\_tensor.py", line 492, in backward
+    torch.autograd.backward(
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\torch\autograd\__init__.py", line 251, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 4.53 GiB. GPU 0 has a total capacty of 12.00 GiB of which 731.00 MiB is free. Of the allocated memory 6.19 GiB is allocated by PyTorch, and 2.95 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+ 
+23:34:57 : ****************************** 
+23:36:39 : Path identified is C:\Users\bt22aak\GPU_DS\Exp_3\Exp_3_5_Res_114x153\Balanced and C:\Users\bt22aak\GPU_DS\Exp_3\Exp_3_5_Res_114x153\Unbalanced 
+23:36:39 : Starting the processing of Exp_3_5_Res_114x153_b16e50L0.0001 
+23:37:02 : Running on GPU 
+23:37:02 : Model is Exp_3_5_Res_114x153_b16e50L0.0001 
+23:38:11 : Epoch [1/50], Loss: 0.2083, Accuracy: 0.9186, Precision: 0.9313, Recall: 0.9042, Specificity: 0.9331, F1-Score: 0.9175 
+23:39:11 : Epoch [2/50], Loss: 0.0540, Accuracy: 0.9478, Precision: 0.9461, Recall: 0.9500, Specificity: 0.9456, F1-Score: 0.9480 
+23:40:12 : Epoch [3/50], Loss: 0.0046, Accuracy: 0.9509, Precision: 0.9520, Recall: 0.9500, Specificity: 0.9519, F1-Score: 0.9510 
+23:41:12 : Epoch [4/50], Loss: 0.0156, Accuracy: 0.9468, Precision: 0.9316, Recall: 0.9646, Specificity: 0.9289, F1-Score: 0.9478 
+23:42:13 : Epoch [5/50], Loss: 0.0135, Accuracy: 0.9499, Precision: 0.9286, Recall: 0.9750, Specificity: 0.9247, F1-Score: 0.9512 
+23:43:14 : Epoch [6/50], Loss: 0.0320, Accuracy: 0.9509, Precision: 0.9391, Recall: 0.9646, Specificity: 0.9372, F1-Score: 0.9517 
+23:44:15 : Epoch [7/50], Loss: 0.0201, Accuracy: 0.9509, Precision: 0.9391, Recall: 0.9646, Specificity: 0.9372, F1-Score: 0.9517 
+23:45:16 : Epoch [8/50], Loss: 0.0034, Accuracy: 0.9499, Precision: 0.9390, Recall: 0.9625, Specificity: 0.9372, F1-Score: 0.9506 
+23:46:17 : Epoch [9/50], Loss: 0.0078, Accuracy: 0.9509, Precision: 0.9391, Recall: 0.9646, Specificity: 0.9372, F1-Score: 0.9517 
+23:47:18 : Epoch [10/50], Loss: 0.0068, Accuracy: 0.9509, Precision: 0.9391, Recall: 0.9646, Specificity: 0.9372, F1-Score: 0.9517 
+23:48:19 : Epoch [11/50], Loss: 0.0005, Accuracy: 0.9509, Precision: 0.9409, Recall: 0.9625, Specificity: 0.9393, F1-Score: 0.9516 
+23:49:20 : Epoch [12/50], Loss: 0.0004, Accuracy: 0.9509, Precision: 0.9409, Recall: 0.9625, Specificity: 0.9393, F1-Score: 0.9516 
+23:50:21 : Epoch [13/50], Loss: 0.0006, Accuracy: 0.9509, Precision: 0.9409, Recall: 0.9625, Specificity: 0.9393, F1-Score: 0.9516 
+23:51:22 : Epoch [14/50], Loss: 0.0046, Accuracy: 0.9509, Precision: 0.9391, Recall: 0.9646, Specificity: 0.9372, F1-Score: 0.9517 
+23:52:22 : Epoch [15/50], Loss: 0.0027, Accuracy: 0.9509, Precision: 0.9391, Recall: 0.9646, Specificity: 0.9372, F1-Score: 0.9517 
+23:53:23 : Epoch [16/50], Loss: 0.0003, Accuracy: 0.9499, Precision: 0.9463, Recall: 0.9542, Specificity: 0.9456, F1-Score: 0.9502 
+23:54:24 : Epoch [17/50], Loss: 0.0005, Accuracy: 0.9509, Precision: 0.9391, Recall: 0.9646, Specificity: 0.9372, F1-Score: 0.9517 
+23:55:25 : Epoch [18/50], Loss: 0.0003, Accuracy: 0.9499, Precision: 0.9463, Recall: 0.9542, Specificity: 0.9456, F1-Score: 0.9502 
+23:56:26 : Epoch [19/50], Loss: 0.0003, Accuracy: 0.9499, Precision: 0.9463, Recall: 0.9542, Specificity: 0.9456, F1-Score: 0.9502 
+23:57:27 : Epoch [20/50], Loss: 0.0023, Accuracy: 0.9509, Precision: 0.9391, Recall: 0.9646, Specificity: 0.9372, F1-Score: 0.9517 
+23:58:28 : Epoch [21/50], Loss: 0.0005, Accuracy: 0.9489, Precision: 0.9443, Recall: 0.9542, Specificity: 0.9435, F1-Score: 0.9492 
+23:59:29 : Epoch [22/50], Loss: 0.0026, Accuracy: 0.9520, Precision: 0.9393, Recall: 0.9667, Specificity: 0.9372, F1-Score: 0.9528 
+00:00:29 : Epoch [23/50], Loss: 0.0008, Accuracy: 0.9489, Precision: 0.9443, Recall: 0.9542, Specificity: 0.9435, F1-Score: 0.9492 
+00:21:56 : Epoch [24/50], Loss: 0.0007, Accuracy: 0.9489, Precision: 0.9425, Recall: 0.9563, Specificity: 0.9414, F1-Score: 0.9493 
+00:22:56 : Epoch [25/50], Loss: 0.0010, Accuracy: 0.9499, Precision: 0.9463, Recall: 0.9542, Specificity: 0.9456, F1-Score: 0.9502 
+00:23:56 : Epoch [26/50], Loss: 0.0030, Accuracy: 0.9509, Precision: 0.9374, Recall: 0.9667, Specificity: 0.9351, F1-Score: 0.9518 
+00:24:57 : Epoch [27/50], Loss: 0.0025, Accuracy: 0.9489, Precision: 0.9443, Recall: 0.9542, Specificity: 0.9435, F1-Score: 0.9492 
+00:25:58 : Epoch [28/50], Loss: 0.0008, Accuracy: 0.9509, Precision: 0.9464, Recall: 0.9563, Specificity: 0.9456, F1-Score: 0.9513 
+00:26:58 : Epoch [29/50], Loss: 0.0041, Accuracy: 0.9489, Precision: 0.9319, Recall: 0.9688, Specificity: 0.9289, F1-Score: 0.9499 
+00:27:59 : Epoch [30/50], Loss: 0.0010, Accuracy: 0.9541, Precision: 0.9486, Recall: 0.9604, Specificity: 0.9477, F1-Score: 0.9545 
+00:29:00 : Epoch [31/50], Loss: 0.0046, Accuracy: 0.9530, Precision: 0.9485, Recall: 0.9583, Specificity: 0.9477, F1-Score: 0.9534 
+00:30:01 : Epoch [32/50], Loss: 0.0134, Accuracy: 0.9311, Precision: 0.9295, Recall: 0.9333, Specificity: 0.9289, F1-Score: 0.9314 
+00:31:02 : Epoch [33/50], Loss: 0.0153, Accuracy: 0.9447, Precision: 0.9366, Recall: 0.9542, Specificity: 0.9351, F1-Score: 0.9453 
+00:32:03 : Epoch [34/50], Loss: 0.0037, Accuracy: 0.9499, Precision: 0.9390, Recall: 0.9625, Specificity: 0.9372, F1-Score: 0.9506 
+00:33:04 : Epoch [35/50], Loss: 0.0083, Accuracy: 0.9489, Precision: 0.9389, Recall: 0.9604, Specificity: 0.9372, F1-Score: 0.9495 
+00:34:04 : Epoch [36/50], Loss: 0.0036, Accuracy: 0.9520, Precision: 0.9411, Recall: 0.9646, Specificity: 0.9393, F1-Score: 0.9527 
+00:35:05 : Epoch [37/50], Loss: 0.0037, Accuracy: 0.9520, Precision: 0.9411, Recall: 0.9646, Specificity: 0.9393, F1-Score: 0.9527 
+00:36:06 : Epoch [38/50], Loss: 0.0030, Accuracy: 0.9520, Precision: 0.9411, Recall: 0.9646, Specificity: 0.9393, F1-Score: 0.9527 
+00:37:07 : Epoch [39/50], Loss: 0.0037, Accuracy: 0.9499, Precision: 0.9372, Recall: 0.9646, Specificity: 0.9351, F1-Score: 0.9507 
+00:38:08 : Epoch [40/50], Loss: 0.0037, Accuracy: 0.9499, Precision: 0.9372, Recall: 0.9646, Specificity: 0.9351, F1-Score: 0.9507 
+00:39:09 : Epoch [41/50], Loss: 0.0024, Accuracy: 0.9530, Precision: 0.9430, Recall: 0.9646, Specificity: 0.9414, F1-Score: 0.9537 
+00:40:09 : Epoch [42/50], Loss: 0.0022, Accuracy: 0.9530, Precision: 0.9430, Recall: 0.9646, Specificity: 0.9414, F1-Score: 0.9537 
+00:41:10 : Epoch [43/50], Loss: 0.0028, Accuracy: 0.9530, Precision: 0.9412, Recall: 0.9667, Specificity: 0.9393, F1-Score: 0.9538 
+00:42:11 : Epoch [44/50], Loss: 0.0021, Accuracy: 0.9530, Precision: 0.9430, Recall: 0.9646, Specificity: 0.9414, F1-Score: 0.9537 
+00:43:12 : Epoch [45/50], Loss: 0.0053, Accuracy: 0.9499, Precision: 0.9337, Recall: 0.9688, Specificity: 0.9310, F1-Score: 0.9509 
+00:44:13 : Epoch [46/50], Loss: 0.0033, Accuracy: 0.9509, Precision: 0.9374, Recall: 0.9667, Specificity: 0.9351, F1-Score: 0.9518 
+00:45:14 : Epoch [47/50], Loss: 0.0025, Accuracy: 0.9530, Precision: 0.9412, Recall: 0.9667, Specificity: 0.9393, F1-Score: 0.9538 
+00:46:15 : Epoch [48/50], Loss: 0.0021, Accuracy: 0.9530, Precision: 0.9412, Recall: 0.9667, Specificity: 0.9393, F1-Score: 0.9538 
+00:47:15 : Epoch [49/50], Loss: 0.0021, Accuracy: 0.9530, Precision: 0.9412, Recall: 0.9667, Specificity: 0.9393, F1-Score: 0.9538 
+00:48:16 : Epoch [50/50], Loss: 0.0023, Accuracy: 0.9541, Precision: 0.9413, Recall: 0.9688, Specificity: 0.9393, F1-Score: 0.9548 
+00:56:35 : Test Loss: 0.4569, Test Accuracy: 0.9506, Test Precision: 0.3814, Test Recall: 0.9916, Test Specificity: 0.9493, Test F1-Score: 0.5510 
+00:56:35 : Total Time taken: 4795.469558900004 Seconds 

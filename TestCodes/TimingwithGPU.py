@@ -226,7 +226,7 @@ class OpticalFlowProcessor:
                         print("TimeTaken:", timer()-start)
             
 if __name__ ==  "__main__":
-    dataset_folder = 'dataset'
+    dataset_folder = 'mini_dataset'
     output_folder  = 'nparray_uv'
     
     processor = OpticalFlowProcessor(dataset_folder, output_folder)
