@@ -58,16 +58,61 @@ class OpticalFlowComputer:
   
 
         
-    def compute_edge_detector(self, current_frame):
+    def compute_optical_flow(self, prev_frame, current_frame):
+        prev_frame = cv2.normalize(src=prev_frame, dst=None, alpha=0, beta=255, norm_type=cv2.NORM_MINMAX, dtype=cv2.CV_8U)
         current_frame = cv2.normalize(src=current_frame, dst=None, alpha=0, beta=255, norm_type=cv2.NORM_MINMAX, dtype=cv2.CV_8U)
-        fgmask_curr = self.fgbg.apply(current_frame)
+         # Apply Gaussian blur to reduce noise
+        equalized_curr= cv2.equalizeHist(current_frame)
+        equalized_prev= cv2.equalizeHist(prev_frame)
+        
+        blurred = cv2.GaussianBlur(equalized_curr , (5, 5), 0)
+        blurred_prev = cv2.GaussianBlur(equalized_prev , (5, 5), 0)
+
+        med_val = np.median(blurred) 
+        lower = int(max(0 ,0.5*med_val))
+        upper = int(min(255,1.5*med_val))
+
+
+        edges_new=cv2.Canny(blurred,lower, upper)
+        edges_new_prev=cv2.Canny(blurred_prev,lower, upper)
+        
+        ret, thresh = cv2.threshold(edges_new, 150, 255, cv2.THRESH_BINARY)
+        ret_prev, thresh_prev = cv2.threshold(edges_new_prev, 150, 255, cv2.THRESH_BINARY)
+
+        contours, hierarchy = cv2.findContours(image=thresh, mode=cv2.RETR_EXTERNAL, method=cv2.CHAIN_APPROX_TC89_L1)
+        contours_prev , hierarchy_prev = cv2.findContours(image=thresh_prev, mode=cv2.RETR_EXTERNAL, method=cv2.CHAIN_APPROX_TC89_L1)
+        
+        image = current_frame.copy()
+        image_prev = prev_frame.copy()
+
+        cv2.drawContours(image=image, contours=contours, contourIdx=-1, color=(0, 255, 0), thickness=2, lineType=cv2.LINE_AA)
+        cv2.drawContours(image=image_prev, contours=contours_prev, contourIdx=-1, color=(0, 255, 0), thickness=2, lineType=cv2.LINE_AA)
+
+        fgmask_prev = self.fgbg.apply(image)
+        fgmask_curr = self.fgbg.apply(image_prev)
+        
         kernel = np.ones((5,5), np.uint8)
+        fgmask_prev = cv2.morphologyEx(fgmask_prev, cv2.MORPH_OPEN, kernel)
+        fgmask_prev = cv2.morphologyEx(fgmask_prev, cv2.MORPH_CLOSE, kernel)
         fgmask_curr = cv2.morphologyEx(fgmask_curr, cv2.MORPH_OPEN, kernel)
         fgmask_curr = cv2.morphologyEx(fgmask_curr, cv2.MORPH_CLOSE, kernel)
+        
+        prev_frame_masked = cv2.bitwise_and(prev_frame, prev_frame, mask=fgmask_prev)
         current_frame_masked = cv2.bitwise_and(current_frame, current_frame, mask=fgmask_curr)
-        current_frame_masked= cv2.Canny(current_frame_masked,50,150)
-        resized_frame = cv2.resize(current_frame_masked, (102, 76))
-        return resized_frame
+        
+        prev_frame = cv2.medianBlur(prev_frame_masked, 5)
+        current_frame = cv2.medianBlur(current_frame_masked, 5)
+        
+        prev_blurred = cv2.GaussianBlur(prev_frame, (5, 5), 0)
+        curr_blurred = cv2.GaussianBlur(current_frame, (5, 5), 0)
+        
+        flow = cv2.calcOpticalFlowFarneback(prev_blurred, curr_blurred, None, 0.5, 3, 15, 3, 5, 1.2, 0)
+        u_component = flow[..., 0]
+        v_component = flow[..., 1]
+        resized_u = cv2.resize(u_component, (51, 38))
+        resized_v = cv2.resize(v_component, (51, 38))
+        
+        return resized_u, resized_v
                    
 class NumpyWriter:
     def __init__(self, output_folder):
@@ -139,21 +184,25 @@ class OpticalFlowProcessor:
 
         while i < len(frames) - num_frames_in_window:
             window_end = min(i + num_frames_in_window, len(frames))
-            # optical_flows_u= []
-            # optical_flows_v = []
-            canny_frames=[]
+            optical_flows_u= []
+            optical_flows_v = []
+
             for j in range(i, window_end - 1):
                 try:
-                    final_components  = self.optical_flow_computer.compute_edge_detector( frames[j + 1][1])
-                    canny_frames.append(final_components)
+                    u_component, v_component = self.optical_flow_computer.compute_optical_flow(frames[j][1], frames[j + 1][1])
+                    optical_flows_u.append(u_component)
+                    optical_flows_v.append(v_component)
                 except cv2.error as e:
                     print(f"Error processing frame {frames[j][0]} from video {video_folder}. Error: {e}")
                     continue
             # Commented out to test preprocess
-            components_stacked = np.stack(canny_frames, axis = 0)
-        
+            optical_flows_u_array = np.stack(optical_flows_u, axis = 0)
+            optical_flows_v_array = np.stack(optical_flows_v, axis = 0)
+            
+            combined_optical_flow = np.stack([optical_flows_u_array, optical_flows_v_array], axis=-1)
             window_name = f"{video_folder}_{timestamp}"
-            self.numpy_writer.write_array(components_stacked, window_name)
+            self.numpy_writer.write_array(combined_optical_flow, window_name)
+
             timestamp = OpticalFlowProcessor.increment_timestamp(timestamp)
             #print(f"Incremented timestamp for {video_folder}: {timestamp}")
             next_increment_seconds = OpticalFlowProcessor.total_seconds_from_timestamp(timestamp)
@@ -172,18 +221,36 @@ class OpticalFlowProcessor:
                 for trial_folder in dir_handler.get_trial_folders(subject_folder, activity_folder):
                     for camera_folder in dir_handler.get_camera_folders(subject_folder, activity_folder, trial_folder):
                         print(f"Processing video: {camera_folder}")
-                        start =timer()
+                        logging_output(f"Processing video: {camera_folder}")
+                        start = timer()
                         self.process_video(os.path.join(subject_folder, activity_folder, trial_folder, camera_folder))
-                        print("Time Taken: ", timer() -start)
+                        print("Time Taken: ", timer() - start)
+                        logging_output(f"Time Taken: {timer() - start}")
                         now = datetime.now()
                         current_time = now.strftime("%H:%M:%S")
                         print("Process Completed at : ", current_time)
 
-            
+def logging_output(message, file_path='../Outputs/Exp_10_1_prep_log.txt'):
+    try:
+    # Write to file
+        now = datetime.now()
+        current_time = now.strftime("%H:%M:%S")
+        with open(file_path, 'a') as file:
+            file.write(f'{current_time} : {message} \n')
+    except Exception as e:
+        print(f"Error logging: {e}")    
+
 if __name__ ==  "__main__":
-    dataset_folder = '../UP-Fall'
-    output_folder  = '../Outputs/BGS_Canny_50_150_160x120'
-    '
-    
-    processor = OpticalFlowProcessor(dataset_folder, output_folder)
-    processor.run()
+    try:
+        dataset_folder = "../UP-Fall"
+        output_folder = "../Outputs/Exp10_1_Contour_OF"
+        logging_output(f"# Data Process starts for {output_folder} ##")
+
+        processor = OpticalFlowProcessor(dataset_folder, output_folder)
+        processor.run()
+        print("###############Data Process Complete############")
+        logging_output(f"# Data Process Complete for {output_folder} ##")
+        print("~~~~~~~~Entering Hibernation Mode ~~~~~~~~~~~~~")
+        os.system("rundll32.exe powrprof.dll,SetSuspendState 0,1,0")
+    except Exception as e:
+        print(f"~~~~~~~~Error Occurred~~~~~~~~{e}")

@@ -25,7 +25,7 @@ class FallDetectionCNN(nn.Module):
         self.pool = nn.MaxPool3d(2)
 
         # self.fc1 = nn.Linear(64 * 2 * 4 * 6, 64)
-        self.fc1 = nn.Linear(64 * 532, 64)
+        self.fc1 = nn.Linear(64 * 126, 64)
         self.fc2 = nn.Linear(64, 128)
         self.fc3 = nn.Linear(128, 254)
         self.fc4 = nn.Linear(254, 2) 
@@ -244,6 +244,8 @@ def logging_output(message, file_path='./def_log.txt'):
 
 if __name__ == "__main__":
     try:
+
+        
         script_path = os.path.abspath(__file__)
          # Extract the file name from the path
         script_name = os.path.basename(script_path)
@@ -254,7 +256,7 @@ if __name__ == "__main__":
         test_path = f'C:\\Users\\bt22aak\\GPU_DS\\Exp_3\\{model_folder}\\Unbalanced'
         batch_size=32
         num_epochs=50
-        learning_rate=0.0001
+        learning_rate=0.00001
 
 
         str_model_type=f'{model_folder}_b{batch_size}e{num_epochs}L{learning_rate}'
@@ -282,9 +284,9 @@ if __name__ == "__main__":
         train_dataset = torch.utils.data.Subset(train_val_dataset, train_idx)
         val_dataset = torch.utils.data.Subset(train_val_dataset, val_idx)
 
-        dataloader_train = DataLoader(train_dataset, batch_size, shuffle=True)
-        dataloader_val = DataLoader(val_dataset, batch_size, shuffle=False)
-        dataloader_test = DataLoader(test_dataset, batch_size, shuffle=False)
+        dataloader_train = DataLoader(train_dataset, batch_size=32, shuffle=True)
+        dataloader_val = DataLoader(val_dataset, batch_size=32, shuffle=False)
+        dataloader_test = DataLoader(test_dataset, batch_size=32, shuffle=False)
 
         if torch.cuda.is_available() :
             print(f"Running on GPU")

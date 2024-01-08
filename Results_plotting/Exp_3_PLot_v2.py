@@ -6,7 +6,7 @@ import os
 import matplotlib.pyplot as plt
 
 plt2=matplotlib.pyplot
-fig=plt.figure(figsize=(10, 7))
+fig=plt.figure(figsize=(14, 7))
 script_path = os.path.abspath(__file__)
     # Extract the file name from the path
 script_name = os.path.basename(script_path)
@@ -28,18 +28,40 @@ y6=[0.2577,0.2968,0.3674,0.6312,0.4569]
 # z3=["3136","2690","2764","2981","3081"]
 z4=["33","25","26","28","16"]
 
-
-
-plt.plot(x, y1, label='Accuracy',linestyle='-', marker='o')
-plt.plot(x, y2, label='Precision',linestyle='-',marker='o')
-plt.plot(x, y3, label='Recall', linestyle='-', marker='o')
-plt.plot(x, y4, label='Specificity',linestyle='-', marker='o')
-plt.plot(x, y5, label='F1-Score',linestyle='-',marker='o')
+plt.subplot(1, 2, 1)
+plt.plot(x, y1, label='Accuracy')
+plt.plot(x, y2, label='Precision')
+plt.plot(x, y3, label='Recall')
+plt.plot(x, y4, label='Specificity')
+plt.plot(x, y5, label='F1-Score')
 plt.xlabel('Image Resolution')
 plt.ylabel('Observed Values')
 plt.title('Experiment 3 - Comparison of metrics')
 plt.legend()
 # plt.ylim([0, 1])
+
+plt.subplot(1, 2, 2)
+# plt.plot(x, z1, label='TP')
+# plt.plot(x, z2, label='TN')
+# plt.plot(x, z3, label='FP')
+plt.plot(x, z4, label='FN')
+plt.gca().invert_yaxis()  # Invert the y-axis to make it ascending
+plt.xlabel('Image Resolution')
+plt.ylabel('Count')
+plt.title('Confusion Matrix')
+# plt.ylim([0, 1])
+
+
+# # Plotting multiple curves with legends
+# plt.plot(x, y1, label='Accuracy')
+# plt.plot(x, y2, label='Precision')
+# plt.plot(x, y3, label='Recall')
+# plt.plot(x, y4, label='Specificity')
+# plt.plot(x, y5, label='F1-Score')
+# # plt.plot(x, y6, label='Loss')
+
+# Adding labels and title
+
 
 # Adding legend 
 plt.legend()

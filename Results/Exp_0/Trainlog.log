@@ -1,0 +1,92 @@
+21:59:43 : Path identified is C:\Users\bt22aak\GPU_DS\Exp_2\Exp_0\Balanced  
+21:59:43 : Starting the processing of Exp_0_b32e50L0.0001 
+21:59:43 : ****************************** 
+21:59:43 : Error occured With n_samples=0, test_size=0.2 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters. 
+21:59:43 : Traceback (most recent call last):
+  File "C:\Users\bt22aak\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_0.py", line 278, in <module>
+    train_idx, test_idx = train_test_split(range(len(dataset)), test_size=0.2, random_state=42, stratify=dataset.labels)
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\sklearn\utils\_param_validation.py", line 211, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\sklearn\model_selection\_split.py", line 2617, in train_test_split
+    n_train, n_test = _validate_shuffle_split(
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\sklearn\model_selection\_split.py", line 2273, in _validate_shuffle_split
+    raise ValueError(
+ValueError: With n_samples=0, test_size=0.2 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+ 
+21:59:43 : ****************************** 
+22:00:59 : Path identified is C:\Users\bt22aak\GPU_DS\Exp_0  
+22:00:59 : Starting the processing of Exp_0_b32e50L0.0001 
+22:01:08 : Running on CPU Only 
+22:01:08 : Model is Exp_0_b32e50L0.0001 
+23:05:51 : Path identified is C:\Users\bt22aak\GPU_DS\Exp_0Exp_0  
+23:05:51 : Starting the processing of Exp_0_b32e50L0.0001 
+23:05:51 : ****************************** 
+23:05:51 : Error occured With n_samples=0, test_size=0.2 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters. 
+23:05:51 : Traceback (most recent call last):
+  File "C:\Users\bt22aak\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_0.py", line 278, in <module>
+    train_idx, test_idx = train_test_split(range(len(dataset)), test_size=0.2, random_state=42, stratify=dataset.labels)
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\sklearn\utils\_param_validation.py", line 211, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\sklearn\model_selection\_split.py", line 2617, in train_test_split
+    n_train, n_test = _validate_shuffle_split(
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\sklearn\model_selection\_split.py", line 2273, in _validate_shuffle_split
+    raise ValueError(
+ValueError: With n_samples=0, test_size=0.2 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+ 
+23:05:51 : ****************************** 
+23:06:32 : Path identified is C:\Users\bt22aak\GPU_DS\Exp_0\Exp_0  
+23:06:32 : Starting the processing of Exp_0_b32e50L0.0001 
+23:06:58 : Running on GPU 
+23:06:58 : Model is Exp_0_b32e50L0.0001 
+23:07:26 : Epoch [1/50], Loss: 0.0391, Accuracy: 0.9850, Precision: 0.8170, Recall: 0.6545, Specificity: 0.9954, F1-Score: 0.7267 
+23:07:52 : Epoch [2/50], Loss: 0.0327, Accuracy: 0.9860, Precision: 0.8371, Recall: 0.6728, Specificity: 0.9959, F1-Score: 0.7460 
+23:08:18 : Epoch [3/50], Loss: 0.0487, Accuracy: 0.9864, Precision: 0.7454, Recall: 0.8429, Specificity: 0.9909, F1-Score: 0.7912 
+23:08:44 : Epoch [4/50], Loss: 0.0299, Accuracy: 0.9891, Precision: 0.8138, Recall: 0.8351, Specificity: 0.9940, F1-Score: 0.8243 
+23:09:10 : Epoch [5/50], Loss: 0.0433, Accuracy: 0.9894, Precision: 0.8268, Recall: 0.8246, Specificity: 0.9946, F1-Score: 0.8257 
+23:09:35 : Epoch [6/50], Loss: 0.0191, Accuracy: 0.9888, Precision: 0.8087, Recall: 0.8298, Specificity: 0.9938, F1-Score: 0.8191 
+23:10:01 : Epoch [7/50], Loss: 0.0295, Accuracy: 0.9887, Precision: 0.8114, Recall: 0.8220, Specificity: 0.9940, F1-Score: 0.8166 
+23:10:26 : Epoch [8/50], Loss: 0.0215, Accuracy: 0.9893, Precision: 0.8246, Recall: 0.8246, Specificity: 0.9945, F1-Score: 0.8246 
+23:10:52 : Epoch [9/50], Loss: 0.0163, Accuracy: 0.9880, Precision: 0.7802, Recall: 0.8455, Specificity: 0.9925, F1-Score: 0.8116 
+23:11:18 : Epoch [10/50], Loss: 0.0262, Accuracy: 0.9890, Precision: 0.8408, Recall: 0.7880, Specificity: 0.9953, F1-Score: 0.8135 
+23:11:44 : Epoch [11/50], Loss: 0.0516, Accuracy: 0.9895, Precision: 0.8177, Recall: 0.8455, Specificity: 0.9941, F1-Score: 0.8314 
+23:12:10 : Epoch [12/50], Loss: 0.0204, Accuracy: 0.9899, Precision: 0.8474, Recall: 0.8141, Specificity: 0.9954, F1-Score: 0.8304 
+23:12:36 : Epoch [13/50], Loss: 0.0193, Accuracy: 0.9896, Precision: 0.8387, Recall: 0.8168, Specificity: 0.9951, F1-Score: 0.8276 
+23:13:02 : Epoch [14/50], Loss: 0.0227, Accuracy: 0.9898, Precision: 0.8414, Recall: 0.8194, Specificity: 0.9951, F1-Score: 0.8302 
+23:13:29 : Epoch [15/50], Loss: 0.0210, Accuracy: 0.9884, Precision: 0.7828, Recall: 0.8586, Specificity: 0.9925, F1-Score: 0.8190 
+23:13:55 : Epoch [16/50], Loss: 0.0130, Accuracy: 0.9892, Precision: 0.8191, Recall: 0.8298, Specificity: 0.9942, F1-Score: 0.8244 
+23:14:21 : Epoch [17/50], Loss: 0.0161, Accuracy: 0.9891, Precision: 0.8417, Recall: 0.7932, Specificity: 0.9953, F1-Score: 0.8167 
+23:14:47 : Epoch [18/50], Loss: 0.0131, Accuracy: 0.9899, Precision: 0.8351, Recall: 0.8351, Specificity: 0.9948, F1-Score: 0.8351 
+23:15:13 : Epoch [19/50], Loss: 0.0166, Accuracy: 0.9891, Precision: 0.8534, Recall: 0.7775, Specificity: 0.9958, F1-Score: 0.8137 
+23:15:39 : Epoch [20/50], Loss: 0.0079, Accuracy: 0.9888, Precision: 0.7895, Recall: 0.8639, Specificity: 0.9928, F1-Score: 0.8250 
+23:16:05 : Epoch [21/50], Loss: 0.0089, Accuracy: 0.9891, Precision: 0.7957, Recall: 0.8665, Specificity: 0.9930, F1-Score: 0.8296 
+23:16:32 : Epoch [22/50], Loss: 0.0071, Accuracy: 0.9891, Precision: 0.8375, Recall: 0.7958, Specificity: 0.9951, F1-Score: 0.8161 
+23:19:19 : Epoch [23/50], Loss: 0.0041, Accuracy: 0.9887, Precision: 0.8098, Recall: 0.8246, Specificity: 0.9939, F1-Score: 0.8171 
+23:19:44 : Epoch [24/50], Loss: 0.0024, Accuracy: 0.9893, Precision: 0.8246, Recall: 0.8246, Specificity: 0.9945, F1-Score: 0.8246 
+23:20:13 : Epoch [25/50], Loss: 0.0007, Accuracy: 0.9893, Precision: 0.8351, Recall: 0.8089, Specificity: 0.9950, F1-Score: 0.8218 
+23:20:48 : Epoch [26/50], Loss: 0.0027, Accuracy: 0.9887, Precision: 0.8488, Recall: 0.7644, Specificity: 0.9957, F1-Score: 0.8044 
+23:21:30 : Epoch [27/50], Loss: 0.0006, Accuracy: 0.9890, Precision: 0.8050, Recall: 0.8429, Specificity: 0.9936, F1-Score: 0.8235 
+23:23:00 : Epoch [28/50], Loss: 0.0006, Accuracy: 0.9892, Precision: 0.8259, Recall: 0.8194, Specificity: 0.9946, F1-Score: 0.8226 
+23:24:25 : Epoch [29/50], Loss: 0.0011, Accuracy: 0.9895, Precision: 0.8272, Recall: 0.8272, Specificity: 0.9946, F1-Score: 0.8272 
+23:25:50 : Epoch [30/50], Loss: 0.0008, Accuracy: 0.9888, Precision: 0.8135, Recall: 0.8220, Specificity: 0.9941, F1-Score: 0.8177 
+23:27:26 : Epoch [31/50], Loss: 0.0002, Accuracy: 0.9887, Precision: 0.8051, Recall: 0.8325, Specificity: 0.9937, F1-Score: 0.8185 
+23:28:55 : Epoch [32/50], Loss: 0.0002, Accuracy: 0.9898, Precision: 0.8360, Recall: 0.8272, Specificity: 0.9949, F1-Score: 0.8316 
+23:30:15 : Epoch [33/50], Loss: 0.0010, Accuracy: 0.9889, Precision: 0.8092, Recall: 0.8325, Specificity: 0.9938, F1-Score: 0.8206 
+23:31:33 : Epoch [34/50], Loss: 0.0003, Accuracy: 0.9887, Precision: 0.8179, Recall: 0.8115, Specificity: 0.9943, F1-Score: 0.8147 
+23:32:58 : Epoch [35/50], Loss: 0.0003, Accuracy: 0.9887, Precision: 0.7946, Recall: 0.8508, Specificity: 0.9931, F1-Score: 0.8217 
+23:34:20 : Epoch [36/50], Loss: 0.0002, Accuracy: 0.9882, Precision: 0.7868, Recall: 0.8403, Specificity: 0.9928, F1-Score: 0.8127 
+23:35:42 : Epoch [37/50], Loss: 0.0001, Accuracy: 0.9891, Precision: 0.8220, Recall: 0.8220, Specificity: 0.9944, F1-Score: 0.8220 
+23:37:05 : Epoch [38/50], Loss: 0.0001, Accuracy: 0.9891, Precision: 0.8237, Recall: 0.8194, Specificity: 0.9945, F1-Score: 0.8215 
+23:38:26 : Epoch [39/50], Loss: 0.0000, Accuracy: 0.9891, Precision: 0.8267, Recall: 0.8115, Specificity: 0.9946, F1-Score: 0.8190 
+23:39:48 : Epoch [40/50], Loss: 0.0000, Accuracy: 0.9886, Precision: 0.7951, Recall: 0.8429, Specificity: 0.9932, F1-Score: 0.8183 
+23:41:08 : Epoch [41/50], Loss: 0.0000, Accuracy: 0.9891, Precision: 0.8289, Recall: 0.8115, Specificity: 0.9947, F1-Score: 0.8201 
+23:42:28 : Epoch [42/50], Loss: 0.0006, Accuracy: 0.9891, Precision: 0.8306, Recall: 0.8089, Specificity: 0.9948, F1-Score: 0.8196 
+23:43:49 : Epoch [43/50], Loss: 0.0002, Accuracy: 0.9894, Precision: 0.8234, Recall: 0.8298, Specificity: 0.9944, F1-Score: 0.8266 
+23:45:10 : Epoch [44/50], Loss: 0.0000, Accuracy: 0.9890, Precision: 0.8096, Recall: 0.8351, Specificity: 0.9938, F1-Score: 0.8222 
+23:46:30 : Epoch [45/50], Loss: 0.0000, Accuracy: 0.9885, Precision: 0.7833, Recall: 0.8613, Specificity: 0.9925, F1-Score: 0.8204 
+23:47:49 : Epoch [46/50], Loss: 0.0002, Accuracy: 0.9887, Precision: 0.8283, Recall: 0.7958, Specificity: 0.9948, F1-Score: 0.8117 
+23:55:53 : Epoch [47/50], Loss: 0.0000, Accuracy: 0.9894, Precision: 0.8029, Recall: 0.8639, Specificity: 0.9933, F1-Score: 0.8323 
+23:57:05 : Epoch [48/50], Loss: 0.0001, Accuracy: 0.9878, Precision: 0.7959, Recall: 0.8063, Specificity: 0.9935, F1-Score: 0.8010 
+23:58:14 : Epoch [49/50], Loss: 0.0001, Accuracy: 0.9881, Precision: 0.7794, Recall: 0.8508, Specificity: 0.9924, F1-Score: 0.8135 
+23:59:22 : Epoch [50/50], Loss: 0.0001, Accuracy: 0.9879, Precision: 0.7718, Recall: 0.8586, Specificity: 0.9920, F1-Score: 0.8129 
+23:59:45 : Test Loss: 0.0661, Test Accuracy: 0.9902, Test Precision: 0.8304, Test Recall: 0.8542, Test Specificity: 0.9945, Test F1-Score: 0.8421 
+23:59:45 : Total Time taken: 3192.5155425999983 Seconds 

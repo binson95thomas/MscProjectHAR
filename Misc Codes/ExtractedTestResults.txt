@@ -1,0 +1,80 @@
+
+Folder: ./results\Exp_1_1_OG_BGS_Canny
+23:49:16 : Test Loss: 0.5772, Test Accuracy: 0.9450, Test Precision: 0.3564, Test Recall: 0.9885, Test Specificity: 0.9437, Test F1-Score: 0.5239 
+23:49:16 : Total Time taken: 529.0234525999986 Seconds 
+
+Folder: ./results\Exp_1_2_OG_Canny_BGS
+18:24:40 : Test Loss: 0.9357, Test Accuracy: 0.9154, Test Precision: 0.2629, Test Recall: 0.9781, Test Specificity: 0.9135, Test F1-Score: 0.4144 
+18:24:40 : Total Time taken: 552.469432199985 Seconds 
+
+Folder: ./results\Exp_1_3_OG_BGS_Lap
+18:34:34 : Test Loss: 0.4837, Test Accuracy: 0.9543, Test Precision: 0.3999, Test Recall: 0.9854, Test Specificity: 0.9533, Test F1-Score: 0.5689 
+18:34:34 : Total Time taken: 589.103597600013 Seconds 
+
+Folder: ./results\Exp_1_4_OG_Lap_BGS
+18:44:54 : Test Loss: 0.6158, Test Accuracy: 0.9459, Test Precision: 0.3600, Test Recall: 0.9880, Test Specificity: 0.9446, Test F1-Score: 0.5277 
+18:44:54 : Total Time taken: 615.0952380999806 Seconds 
+
+Folder: ./results\Exp_1_5_OG_BGS_sOBEL
+23:59:14 : Test Loss: 0.8487, Test Accuracy: 0.9432, Test Precision: 0.3485, Test Recall: 0.9843, Test Specificity: 0.9419, Test F1-Score: 0.5147 
+23:59:14 : Total Time taken: 592.9886117000133 Seconds 
+
+Folder: ./results\Exp_1_6_OG_Sobel_BGS
+18:56:44 : Test Loss: 0.6327, Test Accuracy: 0.9419, Test Precision: 0.3427, Test Recall: 0.9812, Test Specificity: 0.9406, Test F1-Score: 0.5080 
+18:56:44 : Total Time taken: 698.5763872999814 Seconds 
+
+Folder: ./results\Exp_2_1_Canny_25_75
+20:17:59 : Test Loss: 0.5230, Test Accuracy: 0.9427, Test Precision: 0.3470, Test Recall: 0.9890, Test Specificity: 0.9413, Test F1-Score: 0.5138 
+20:17:59 : Total Time taken: 551.9470802000142 Seconds 
+
+Folder: ./results\Exp_2_2_Canny_50_150
+20:27:22 : Test Loss: 0.5556, Test Accuracy: 0.9509, Test Precision: 0.3829, Test Recall: 0.9890, Test Specificity: 0.9497, Test F1-Score: 0.5521 
+20:27:22 : Total Time taken: 552.1004422999977 Seconds 
+
+Folder: ./results\Exp_2_3_Canny_75_225
+20:36:39 : Test Loss: 0.5689, Test Accuracy: 0.9477, Test Precision: 0.3676, Test Recall: 0.9849, Test Specificity: 0.9465, Test F1-Score: 0.5354 
+20:36:39 : Total Time taken: 552.3190904000076 Seconds 
+
+Folder: ./results\Exp_2_4_Canny_50_100
+20:45:57 : Test Loss: 0.5514, Test Accuracy: 0.9542, Test Precision: 0.3994, Test Recall: 0.9864, Test Specificity: 0.9532, Test F1-Score: 0.5686 
+20:45:57 : Total Time taken: 553.1895697999862 Seconds 
+
+Folder: ./results\Exp_2_5_Canny_75_150
+20:55:18 : Test Loss: 0.5352, Test Accuracy: 0.9444, Test Precision: 0.3539, Test Recall: 0.9901, Test Specificity: 0.9429, Test F1-Score: 0.5214 
+20:55:18 : Total Time taken: 556.9187791000004 Seconds 
+
+Folder: ./results\Exp_2_6_Canny_100_200
+21:04:44 : Test Loss: 0.6075, Test Accuracy: 0.9381, Test Precision: 0.3297, Test Recall: 0.9890, Test Specificity: 0.9365, Test F1-Score: 0.4945 
+21:04:44 : Total Time taken: 554.1811827000056 Seconds 
+
+Folder: ./results\Exp_2_7_Canny_125_250
+21:14:05 : Test Loss: 0.5862, Test Accuracy: 0.9459, Test Precision: 0.3599, Test Recall: 0.9864, Test Specificity: 0.9446, Test F1-Score: 0.5273 
+21:14:05 : Total Time taken: 556.0534515999898 Seconds 
+
+Folder: ./results\Exp_3_1_Res_38x51
+14:48:03 : Test Loss: 0.2577, Test Accuracy: 0.9494, Test Precision: 0.3752, Test Recall: 0.9828, Test Specificity: 0.9483, Test F1-Score: 0.5430 
+14:48:03 : Total Time taken: 549.3208186000047 Seconds 
+
+Folder: ./results\Exp_3_2_Res_57x76
+03:01:33 : Test Loss: 0.2968, Test Accuracy: 0.9567, Test Precision: 0.4128, Test Recall: 0.9870, Test Specificity: 0.9557, Test F1-Score: 0.5821 
+03:01:33 : Total Time taken: 1131.074567100004 Seconds 
+
+Folder: ./results\Exp_3_2_Res_57x76_UBL
+19:12:58 : Test Loss: 0.0231, Test Accuracy: 0.9972, Test Precision: 0.9584, Test Recall: 0.9504, Test Specificity: 0.9987, Test F1-Score: 0.9544 
+19:12:58 : Total Time taken: 15890.0541104 Seconds 
+
+Folder: ./results\Exp_3_3_Res_76x102
+03:32:44 : Test Loss: 0.3674, Test Accuracy: 0.9555, Test Precision: 0.4061, Test Recall: 0.9864, Test Specificity: 0.9545, Test F1-Score: 0.5753 
+03:32:44 : Total Time taken: 1865.9510628999997 Seconds 
+
+Folder: ./results\Exp_3_4_Res_95x128
+18:27:08 : Test Loss: 0.6312, Test Accuracy: 0.9520, Test Precision: 0.3878, Test Recall: 0.9854, Test Specificity: 0.9509, Test F1-Score: 0.5565 
+18:27:08 : Total Time taken: 12082.0957347 Seconds 
+
+Folder: ./results\Exp_3_5_Res_114x153
+00:56:35 : Test Loss: 0.4569, Test Accuracy: 0.9506, Test Precision: 0.3814, Test Recall: 0.9916, Test Specificity: 0.9493, Test F1-Score: 0.5510 
+00:56:35 : Total Time taken: 4795.469558900004 Seconds 
+
+Contour detection
+02:31:08 : Test Loss: 0.3821, Test Accuracy: 0.9638, Test Precision: 0.4579, Test Recall: 0.9896, Test Specificity: 0.9630, Test F1-Score: 0.6261 
+02:31:08 : Total Time taken: -3680.1152067999938 

@@ -14,14 +14,14 @@ name_only=os.path.splitext(script_name)
 model_name=name_only[0]
 
 
-x = ['51x38','76x57','102x76','128x95','153x114']
+x = ["2.1 (Type 1)", "2.2 (Type 1)", "2.3 (Type 1)", "2.4 (Type 2)", "2.5 (Type 2)", "2.6 (Type 2)", "2.7 (Type 2)"]
 
-y1 =[0.9494,0.9567,0.9555,0.95209,0.9506]
-y2=[0.3752,0.4128,0.4061,0.3878,0.3814]
-y3=[0.9828,0.9870,0.9564,0.9854,0.9916]
-y4=[0.9483,0.9557,0.9545,0.9509,0.9493]
-y5=[0.5430,0.5821,0.5753,0.5565,0.5510]
-y6=[0.2577,0.2968,0.3674,0.6312,0.4569]
+y1=[0.9427,0.9509,0.9477,0.9542,0.9444,0.9381,0.9459] 
+y2=[0.347,0.3829,0.3676,0.3994,0.35399,0.3297,0.3599] 
+y3=[0.989,0.989,0.9849,0.9864,0.9901,0.989,0.9864] 
+y4=[0.9413,0.9497,0.9465,0.9532,0.9429,0.9365,0.9446] 
+y5=[0.5138,0.5521,0.5354,0.568,0.5214,0.4945,0.5273] 
+# y6==[0.523,0.5556,0.5689,0.5514,0.5352,0.6075,0.5862]
 
 # z1=["1883","1891","1890","1888","1900"]
 # z2=["57580","58026","57952","57735","57635"]
@@ -29,15 +29,14 @@ y6=[0.2577,0.2968,0.3674,0.6312,0.4569]
 z4=["33","25","26","28","16"]
 
 
-
 plt.plot(x, y1, label='Accuracy',linestyle='-', marker='o')
 plt.plot(x, y2, label='Precision',linestyle='-',marker='o')
 plt.plot(x, y3, label='Recall', linestyle='-', marker='o')
 plt.plot(x, y4, label='Specificity',linestyle='-', marker='o')
 plt.plot(x, y5, label='F1-Score',linestyle='-',marker='o')
-plt.xlabel('Image Resolution')
+plt.xlabel('Model Types')
 plt.ylabel('Observed Values')
-plt.title('Experiment 3 - Comparison of metrics')
+plt.title('Experiment 2 - Comparison of test metrics')
 plt.legend()
 # plt.ylim([0, 1])
 

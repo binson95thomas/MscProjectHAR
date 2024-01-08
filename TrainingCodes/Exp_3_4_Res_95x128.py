@@ -25,7 +25,7 @@ class FallDetectionCNN(nn.Module):
         self.pool = nn.MaxPool3d(2)
 
         # self.fc1 = nn.Linear(64 * 2 * 4 * 6, 64)
-        self.fc1 = nn.Linear(64 * 532, 64)
+        self.fc1 = nn.Linear(64 * 352, 64)
         self.fc2 = nn.Linear(64, 128)
         self.fc3 = nn.Linear(128, 254)
         self.fc4 = nn.Linear(254, 2) 
@@ -282,9 +282,9 @@ if __name__ == "__main__":
         train_dataset = torch.utils.data.Subset(train_val_dataset, train_idx)
         val_dataset = torch.utils.data.Subset(train_val_dataset, val_idx)
 
-        dataloader_train = DataLoader(train_dataset, batch_size, shuffle=True)
-        dataloader_val = DataLoader(val_dataset, batch_size, shuffle=False)
-        dataloader_test = DataLoader(test_dataset, batch_size, shuffle=False)
+        dataloader_train = DataLoader(train_dataset, batch_size=32, shuffle=True)
+        dataloader_val = DataLoader(val_dataset, batch_size=32, shuffle=False)
+        dataloader_test = DataLoader(test_dataset, batch_size=32, shuffle=False)
 
         if torch.cuda.is_available() :
             print(f"Running on GPU")

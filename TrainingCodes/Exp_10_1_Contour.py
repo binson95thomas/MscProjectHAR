@@ -1,31 +1,29 @@
 import numpy as np
 import torch
 import torch.nn as nn
-import os
 import torch.optim as optim
 import torch.nn.functional as F
 from torch.utils.data import DataLoader, TensorDataset
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import confusion_matrix, precision_score, recall_score, f1_score, accuracy_score
 import matplotlib.pyplot as plt
-from dataset_prep_2d import OpticalFlow2DDataset
+from dataset_prep_3d import OpticalFlow3DDataset
 from timeit import default_timer as timer
 from datetime import datetime
 import cv2
 import seaborn as sns
-import traceback
 
 class FallDetectionCNN(nn.Module):
     def __init__(self):
         super(FallDetectionCNN, self).__init__()
-        self.conv1 = nn.Conv3d(1, 128, (3, 3, 3), padding = 1)
+        self.conv1 = nn.Conv3d(2, 128, (3, 3, 3), padding = 1)
         self.conv2 = nn.Conv3d(128, 128, (3, 3, 3), padding = 1)
         self.conv3 = nn.Conv3d(128, 64, (3, 3, 3), padding = 1)
         
         self.pool = nn.MaxPool3d(2)
 
-        # self.fc1 = nn.Linear(64 * 2 * 4 * 6, 64)
-        self.fc1 = nn.Linear(64 * 532, 64)
+        self.fc1 = nn.Linear(64 * 2 * 4 * 6, 64)
+        # self.fc1 = nn.Linear(64 * 48, 64)
         self.fc2 = nn.Linear(64, 128)
         self.fc3 = nn.Linear(128, 254)
         self.fc4 = nn.Linear(254, 2) 
@@ -106,9 +104,9 @@ def plot_metrics(accuracies, precisions, recalls, specificities, f1_scores, val_
     plt.legend()
     plt.tight_layout()
 
-    savepath=f'Results/{model_folder}/plt_{str_model_type}.png'
+    savepath=f'Results/plt_{str_model_type}.png'
     plt.savefig(savepath)
-    # plt.show()
+    plt.show()
 
 def plot_confusion_matrix(true_labels, predictions, classes):
     cm = confusion_matrix(true_labels, predictions)
@@ -117,8 +115,8 @@ def plot_confusion_matrix(true_labels, predictions, classes):
     plt.xlabel('Predicted Labels')
     plt.ylabel('True Labels')
     plt.title('Confusion Matrix')
-    plt.savefig(f'./Results/{model_folder}/CM_{str_model_type}.png')
-    # plt.show()
+    plt.savefig(f'./Results/CM_{str_model_type}.png')
+    plt.show()
     
 def train_model(dataloader_train, dataloader_val, num_epochs=50, learning_rate=0.001, weight_decay=1e-5):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -242,59 +240,38 @@ def logging_output(message, file_path='./def_log.txt'):
         print(f"Error logging: {e}")    
 
 
-if __name__ == "__main__":
+if __name__ == "__main__": 
     try:
-        script_path = os.path.abspath(__file__)
-         # Extract the file name from the path
-        script_name = os.path.basename(script_path)
-        name_only=os.path.splitext(script_name)
-        model_folder=name_only[0]
-
-        features_path = f'C:\\Users\\bt22aak\\GPU_DS\\Exp_3\\{model_folder}\\Balanced'
-        test_path = f'C:\\Users\\bt22aak\\GPU_DS\\Exp_3\\{model_folder}\\Unbalanced'
+            
+        features_path = 'C:\\Users\\bt22aak\\GPU_DS\\Exp10_1_Contour_OF\\Balanced'
+        test_path = 'C:\\Users\\bt22aak\\GPU_DS\\Exp10_1_Contour_OF\\unBalanced'
         batch_size=32
         num_epochs=50
         learning_rate=0.0001
-
-
-        str_model_type=f'{model_folder}_b{batch_size}e{num_epochs}L{learning_rate}'
-
-        if not os.path.exists(f'./Results/{model_folder}'):
-            try:
-                # Create the directory and its parents if they don't exist
-                os.makedirs(f'./Results/{model_folder}')
-            except OSError as e:
-                print(f"Error creating directory ./Results/{model_folder}: {e}")
-
-        log_path=f'./Results/{model_folder}/Trainlog.log'
+        str_model_type=f'Exp_10_1(38X51)_b{batch_size}e{num_epochs}L{learning_rate}'
+        log_path=f'./Results/{str_model_type}.txt'
         print(f"Path identified is {features_path} and {test_path}")
-        logging_output(f"Path identified is {features_path} and {test_path}",log_path)
-        print(f"Starting the processing of {str_model_type}")
-        logging_output(f"Starting the processing of {str_model_type}",log_path)
-
         code_start=timer()
+        logging_output(f"Path identified is {features_path} and {test_path}",log_path)
 
-        train_val_dataset = OpticalFlow2DDataset(features_path)
-        test_dataset = OpticalFlow2DDataset(test_path)
+        train_val_dataset = OpticalFlow3DDataset(features_path)
+        test_dataset = OpticalFlow3DDataset(test_path)
         
         train_idx, val_idx = train_test_split(range(len(train_val_dataset)), test_size=0.25, random_state=42, stratify=train_val_dataset.labels)
 
         train_dataset = torch.utils.data.Subset(train_val_dataset, train_idx)
         val_dataset = torch.utils.data.Subset(train_val_dataset, val_idx)
 
-        dataloader_train = DataLoader(train_dataset, batch_size, shuffle=True)
-        dataloader_val = DataLoader(val_dataset, batch_size, shuffle=False)
-        dataloader_test = DataLoader(test_dataset, batch_size, shuffle=False)
+        dataloader_train = DataLoader(train_dataset, batch_size=32, shuffle=True)
+        dataloader_val = DataLoader(val_dataset, batch_size=32, shuffle=False)
+        dataloader_test = DataLoader(test_dataset, batch_size=32, shuffle=False)
 
         if torch.cuda.is_available() :
             print(f"Running on GPU")
-            logging_output("Running on GPU",log_path)
         else:
             print(f"CPU Only")
-            logging_output("Running on CPU Only",log_path)
 
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-        
         print(f"Model is {str_model_type}")
         logging_output(f"Model is {str_model_type}",log_path)
         model = FallDetectionCNN().to(device)
@@ -313,16 +290,14 @@ if __name__ == "__main__":
 
         plot_confusion_matrix(true_labels, predictions, classes = ["No Fall", "Fall"])
 
-        torch.save(model.state_dict(), f'./Results/{model_folder}/{str_model_type}.pth')
-        
+        torch.save(model.state_dict(), f'./Results/{str_model_type}.pth')
+
+        logging_output("*******Process Complete***************")
     except Exception as E :
         err_msg=f"Error occured {E}"
         print(err_msg)
-        error_stack = traceback.format_exc()
-        print(f"Error stack:\n{error_stack}")
-        logging_output("******************************",log_path)
         logging_output(err_msg,log_path)
-        logging_output(error_stack,log_path)
-        logging_output("******************************",log_path)
 
+
+    
     

@@ -1,4 +1,3 @@
-import numpy as np
 import torch
 import torch.nn as nn
 import os
@@ -9,6 +8,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import confusion_matrix, precision_score, recall_score, f1_score, accuracy_score
 import matplotlib.pyplot as plt
 from dataset_prep_2d import OpticalFlow2DDataset
+import numpy as np
 from timeit import default_timer as timer
 from datetime import datetime
 import cv2
@@ -18,25 +18,24 @@ import traceback
 class FallDetectionCNN(nn.Module):
     def __init__(self):
         super(FallDetectionCNN, self).__init__()
-        self.conv1 = nn.Conv3d(1, 128, (3, 3, 3), padding = 1)
-        self.conv2 = nn.Conv3d(128, 128, (3, 3, 3), padding = 1)
-        self.conv3 = nn.Conv3d(128, 64, (3, 3, 3), padding = 1)
+        self.conv1 = nn.Conv2d(1, 128, kernel_size = 3)
+        self.conv2 = nn.Conv2d(128, 128, kernel_size = 3)
+        self.conv3 = nn.Conv2d(128, 64, kernel_size = 3)
         
-        self.pool = nn.MaxPool3d(2)
-
-        # self.fc1 = nn.Linear(64 * 2 * 4 * 6, 64)
-        self.fc1 = nn.Linear(64 * 532, 64)
+        self.pool = nn.MaxPool2d(2)
+        
+        self.fc1 = nn.Linear(64 * 3 * 4, 64)
         self.fc2 = nn.Linear(64, 128)
         self.fc3 = nn.Linear(128, 254)
         self.fc4 = nn.Linear(254, 2) 
 
     def forward(self, x):
-        # print(f"shape: {x.shape}")
         x = self.pool(F.relu(self.conv1(x)))
         x = self.pool(F.relu(self.conv2(x)))
         x = self.pool(F.relu(self.conv3(x)))
         
         x = x.view(x.size(0), -1)
+        
         x = F.relu(self.fc1(x))
         x = F.relu(self.fc2(x))
         x = F.relu(self.fc3(x))
@@ -95,7 +94,7 @@ def plot_metrics(accuracies, precisions, recalls, specificities, f1_scores, val_
     plt.xlabel('Epochs')
     plt.ylabel('F1-Score')
     # plt.ylim([0, 1])
-    
+
     plt.subplot(2, 3, 6)
     plt.plot(epochs_range, val_losses, 'o-', label='Validation Loss', color='red')
     plt.plot(epochs_range, train_losses, 'o-', label='Training Loss', color='blue')
@@ -109,7 +108,7 @@ def plot_metrics(accuracies, precisions, recalls, specificities, f1_scores, val_
     savepath=f'Results/{model_folder}/plt_{str_model_type}.png'
     plt.savefig(savepath)
     # plt.show()
-
+    
 def plot_confusion_matrix(true_labels, predictions, classes):
     cm = confusion_matrix(true_labels, predictions)
     plt.figure(figsize=(10, 7))
@@ -189,7 +188,7 @@ def train_model(dataloader_train, dataloader_val, num_epochs=50, learning_rate=0
         
         print(f"Epoch [{epoch+1}/{num_epochs}], Loss: {loss.item():.4f}, Accuracy: {accuracy:.4f}, Precision: {precision:.4f}, Recall: {recall:.4f}, Specificity: {specificity:.4f}, F1-Score: {f1:.4f}")
         logging_output(f"Epoch [{epoch+1}/{num_epochs}], Loss: {loss.item():.4f}, Accuracy: {accuracy:.4f}, Precision: {precision:.4f}, Recall: {recall:.4f}, Specificity: {specificity:.4f}, F1-Score: {f1:.4f}",log_path)
-       
+        
         print("Time Taken: ", timer() -start)
         now = datetime.now()
         current_time = now.strftime("%H:%M:%S")
@@ -244,14 +243,14 @@ def logging_output(message, file_path='./def_log.txt'):
 
 if __name__ == "__main__":
     try:
+
         script_path = os.path.abspath(__file__)
          # Extract the file name from the path
         script_name = os.path.basename(script_path)
         name_only=os.path.splitext(script_name)
         model_folder=name_only[0]
 
-        features_path = f'C:\\Users\\bt22aak\\GPU_DS\\Exp_3\\{model_folder}\\Balanced'
-        test_path = f'C:\\Users\\bt22aak\\GPU_DS\\Exp_3\\{model_folder}\\Unbalanced'
+        features_path = f'C:\\Users\\bt22aak\\GPU_DS\\Exp_0\\{model_folder}'
         batch_size=32
         num_epochs=50
         learning_rate=0.0001
@@ -267,24 +266,25 @@ if __name__ == "__main__":
                 print(f"Error creating directory ./Results/{model_folder}: {e}")
 
         log_path=f'./Results/{model_folder}/Trainlog.log'
-        print(f"Path identified is {features_path} and {test_path}")
-        logging_output(f"Path identified is {features_path} and {test_path}",log_path)
+        print(f"Path identified is {features_path}")
+        logging_output(f"Path identified is {features_path} ",log_path)
         print(f"Starting the processing of {str_model_type}")
         logging_output(f"Starting the processing of {str_model_type}",log_path)
 
         code_start=timer()
 
-        train_val_dataset = OpticalFlow2DDataset(features_path)
-        test_dataset = OpticalFlow2DDataset(test_path)
-        
-        train_idx, val_idx = train_test_split(range(len(train_val_dataset)), test_size=0.25, random_state=42, stratify=train_val_dataset.labels)
 
-        train_dataset = torch.utils.data.Subset(train_val_dataset, train_idx)
-        val_dataset = torch.utils.data.Subset(train_val_dataset, val_idx)
+        dataset = OpticalFlow2DDataset(features_path)
+        train_idx, test_idx = train_test_split(range(len(dataset)), test_size=0.2, random_state=42, stratify=dataset.labels)
+        train_idx, val_idx = train_test_split(train_idx, test_size=0.25, random_state=42, stratify=np.array(dataset.labels)[train_idx])
 
-        dataloader_train = DataLoader(train_dataset, batch_size, shuffle=True)
-        dataloader_val = DataLoader(val_dataset, batch_size, shuffle=False)
-        dataloader_test = DataLoader(test_dataset, batch_size, shuffle=False)
+        train_dataset = torch.utils.data.Subset(dataset, train_idx)
+        val_dataset = torch.utils.data.Subset(dataset, val_idx)
+        test_dataset = torch.utils.data.Subset(dataset, test_idx)
+
+        dataloader_train = DataLoader(train_dataset, batch_size=32, shuffle=True)
+        dataloader_val = DataLoader(val_dataset, batch_size=32, shuffle=False)
+        dataloader_test = DataLoader(test_dataset, batch_size=32, shuffle=False)
 
         if torch.cuda.is_available() :
             print(f"Running on GPU")
@@ -294,19 +294,19 @@ if __name__ == "__main__":
             logging_output("Running on CPU Only",log_path)
 
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-        
+    
         print(f"Model is {str_model_type}")
         logging_output(f"Model is {str_model_type}",log_path)
         model = FallDetectionCNN().to(device)
         model = train_model(dataloader_train, dataloader_val,num_epochs,learning_rate)
-        
+    
         criterion = nn.CrossEntropyLoss().to(device)
         test_loss, test_accuracy, test_precision, test_recall, test_specificity, test_f1, true_labels, predictions = evaluate_model(model, dataloader_test, criterion, device)
-        
+    
         print(f"Test Loss: {test_loss:.4f}, Test Accuracy: {test_accuracy:.4f}, Test Precision: {test_precision:.4f}, Test Recall: {test_recall:.4f}, Test Specificity: {test_specificity:.4f}, Test F1-Score: {test_f1:.4f}")
         logging_output(f"Test Loss: {test_loss:.4f}, Test Accuracy: {test_accuracy:.4f}, Test Precision: {test_precision:.4f}, Test Recall: {test_recall:.4f}, Test Specificity: {test_specificity:.4f}, Test F1-Score: {test_f1:.4f}",log_path)
         
-
+    
         print(f"Total Time taken: {timer() -code_start } seconds")
 
         logging_output(f"Total Time taken: { timer() -code_start } Seconds", log_path)
@@ -325,4 +325,3 @@ if __name__ == "__main__":
         logging_output(error_stack,log_path)
         logging_output("******************************",log_path)
 
-    
