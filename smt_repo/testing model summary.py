@@ -14,8 +14,8 @@ from datetime import datetime
 import cv2
 import seaborn as sns
 import traceback
+from torchsummary import summary
 
-#Model creation
 class FallDetectionCNN(nn.Module):
     def __init__(self):
         super(FallDetectionCNN, self).__init__()
@@ -25,6 +25,7 @@ class FallDetectionCNN(nn.Module):
         
         self.pool = nn.MaxPool3d(2)
 
+        # self.fc1 = nn.Linear(64 * 2 * 4 * 6, 64)
         self.fc1 = nn.Linear(64 * 48, 64)
         self.fc2 = nn.Linear(64, 128)
         self.fc3 = nn.Linear(128, 254)
@@ -44,7 +45,6 @@ class FallDetectionCNN(nn.Module):
         
         return x
     
-#Computing metrics
 def compute_metrics(true_labels, predictions):
     tn, fp, fn, tp = confusion_matrix(true_labels, predictions).ravel()
     accuracy = accuracy_score(true_labels, predictions)
@@ -54,11 +54,12 @@ def compute_metrics(true_labels, predictions):
     f1 = f1_score(true_labels, predictions)
     return accuracy, precision, recall, specificity, f1
 
-#For plotting metrics
 def plot_metrics(accuracies, precisions, recalls, specificities, f1_scores, val_losses, train_losses):
     epochs_range = range(1, len(accuracies) + 1)
     fig=plt.figure(figsize=(20, 13))
 
+    # suptitle=f'{str_model_type}: {num_epochs} Epochs with learning rate {learning_rate}'
+    # fig.suptitle(suptitle)
     plt.figtext(x=0, y=0,s=f"{str_model_type}: {num_epochs} Epochs with learning rate {learning_rate}" )
     
     plt.subplot(2, 3, 1)
@@ -66,30 +67,35 @@ def plot_metrics(accuracies, precisions, recalls, specificities, f1_scores, val_
     plt.title('Accuracy')
     plt.xlabel('Epochs')
     plt.ylabel('Accuracy')
+    # plt.ylim([0, 1])
 
     plt.subplot(2, 3, 2)
     plt.plot(epochs_range, precisions, 'o-', label='Precision')
     plt.title('Precision')
     plt.xlabel('Epochs')
     plt.ylabel('Precision')
+    # plt.ylim([0, 1])
 
     plt.subplot(2, 3, 3)
     plt.plot(epochs_range, recalls, 'o-', label='Recall')
     plt.title('Recall')
     plt.xlabel('Epochs')
     plt.ylabel('Recall')
+    # plt.ylim([0, 1])
 
     plt.subplot(2, 3, 4)
     plt.plot(epochs_range, specificities, 'o-', label='Specificity')
     plt.title('Specificity')
     plt.xlabel('Epochs')
     plt.ylabel('Specificity')
+    # plt.ylim([0, 1])
 
     plt.subplot(2, 3, 5)
     plt.plot(epochs_range, f1_scores, 'o-', label='F1-Score')
     plt.title('F1-Score')
     plt.xlabel('Epochs')
     plt.ylabel('F1-Score')
+    # plt.ylim([0, 1])
     
     plt.subplot(2, 3, 6)
     plt.plot(epochs_range, val_losses, 'o-', label='Validation Loss', color='red')
@@ -103,8 +109,8 @@ def plot_metrics(accuracies, precisions, recalls, specificities, f1_scores, val_
 
     savepath=f'Results/{model_folder}/plt_{str_model_type}.png'
     plt.savefig(savepath)
+    # plt.show()
 
-#Computing confusion matrix
 def plot_confusion_matrix(true_labels, predictions, classes):
     cm = confusion_matrix(true_labels, predictions)
     plt.figure(figsize=(10, 7))
@@ -115,7 +121,6 @@ def plot_confusion_matrix(true_labels, predictions, classes):
     plt.savefig(f'./Results/{model_folder}/CM_{str_model_type}.png')
     # plt.show()
     
-#Model training using PyTorch
 def train_model(dataloader_train, dataloader_val, num_epochs=50, learning_rate=0.001, weight_decay=1e-5):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f"Creating Model")
@@ -136,7 +141,7 @@ def train_model(dataloader_train, dataloader_val, num_epochs=50, learning_rate=0
     f1_scores = []
     val_losses = []
     train_losses = []
-    
+    summary(model)
     for epoch in range(num_epochs):
         # tm=datetime.datetime.now()
         # print(tm)
@@ -240,87 +245,94 @@ def logging_output(message, file_path='./def_log.txt'):
 
 if __name__ == "__main__":
     try:
+
+        log_path=f'./modelsummlog.log'
+        device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        print(f"Creating Model")
+
+        model = FallDetectionCNN().to(device)
+        print(f"Completed model creation")
+
+        criterion = nn.CrossEntropyLoss()
+        # optimizer = optim.Adam(model.parameters(), lr = learning_rate)
+        
+        best_loss = float('inf')
+        summary(model,(1,1,51,38))
+
+
+        # epochs_no_improve = 0
         script_path = os.path.abspath(__file__)
          # Extract the file name from the path
         script_name = os.path.basename(script_path)
         name_only=os.path.splitext(script_name)
         model_folder=name_only[0]
 
-        #Defining the path for balanced and umnbalanced data
-        features_path = f'C:\\Users\\bt22aak\\GPU_DS\\Exp_1\\{model_folder}\\Balanced'
-        test_path = f'C:\\Users\\bt22aak\\GPU_DS\\Exp_1\\{model_folder}\\Unbalanced'
-
-        #Defining paramters
+        # features_path = f'C:\\Users\\bt22aak\\GPU_DS\\Exp_1\\{model_folder}\\Balanced'
+        # test_path = f'C:\\Users\\bt22aak\\GPU_DS\\Exp_1\\{model_folder}\\Unbalanced'
         batch_size=32
         num_epochs=50
         learning_rate=0.0001
+
+
         str_model_type=f'{model_folder}_b{batch_size}e{num_epochs}L{learning_rate}'
 
-        if not os.path.exists(f'./Results/{model_folder}'):
-            try:
-                # Create the directory and its parents if they don't exist
-                os.makedirs(f'./Results/{model_folder}')
-            except OSError as e:
-                print(f"Error creating directory ./Results/{model_folder}: {e}")
-        #Defining the logs
-        log_path=f'./Results/{model_folder}/Trainlog.log'
-        print(f"Path identified is {features_path} and {test_path}")
-        logging_output(f"Path identified is {features_path} and {test_path}",log_path)
-        print(f"Starting the processing of {str_model_type}")
-        logging_output(f"Starting the processing of {str_model_type}",log_path)
+        # if not os.path.exists(f'./Results/{model_folder}'):
+        #     try:
+        #         # Create the directory and its parents if they don't exist
+        #         os.makedirs(f'./Results/{model_folder}')
+        #     except OSError as e:
+        #         print(f"Error creating directory ./Results/{model_folder}: {e}")
 
-        code_start=timer()
+        # print(f"Path identified is {features_path} and {test_path}")
+        # logging_output(f"Path identified is {features_path} and {test_path}",log_path)
+        # print(f"Starting the processing of {str_model_type}")
+        # logging_output(f"Starting the processing of {str_model_type}",log_path)
 
-        #Extraacting the data
-        train_val_dataset = OpticalFlow2DDataset(features_path)
-        test_dataset = OpticalFlow2DDataset(test_path)
+        # code_start=timer()
+
+        # train_val_dataset = OpticalFlow2DDataset(features_path)
+        # test_dataset = OpticalFlow2DDataset(test_path)
         
-        #Test Train Split
-        train_idx, val_idx = train_test_split(range(len(train_val_dataset)), test_size=0.25, random_state=42, stratify=train_val_dataset.labels)
+        # train_idx, val_idx = train_test_split(range(len(train_val_dataset)), test_size=0.25, random_state=42, stratify=train_val_dataset.labels)
 
-        train_dataset = torch.utils.data.Subset(train_val_dataset, train_idx)
-        val_dataset = torch.utils.data.Subset(train_val_dataset, val_idx)
+        # train_dataset = torch.utils.data.Subset(train_val_dataset, train_idx)
+        # val_dataset = torch.utils.data.Subset(train_val_dataset, val_idx)
 
-        dataloader_train = DataLoader(train_dataset, batch_size=32, shuffle=True)
-        dataloader_val = DataLoader(val_dataset, batch_size=32, shuffle=False)
-        dataloader_test = DataLoader(test_dataset, batch_size=32, shuffle=False)
+        # dataloader_train = DataLoader(train_dataset, batch_size=32, shuffle=True)
+        # dataloader_val = DataLoader(val_dataset, batch_size=32, shuffle=False)
+        # dataloader_test = DataLoader(test_dataset, batch_size=32, shuffle=False)
 
-        #Checking CUDA in the system
-        if torch.cuda.is_available() :
-            print(f"Running on GPU")
-            logging_output("Running on GPU",log_path)
-        else:
-            print(f"CPU Only")
-            logging_output("Running on CPU Only",log_path)
+        # if torch.cuda.is_available() :
+        #     print(f"Running on GPU")
+        #     logging_output("Running on GPU",log_path)
+        # else:
+        #     print(f"CPU Only")
+        #     logging_output("Running on CPU Only",log_path)
 
-        device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        # device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         
-        print(f"Model is {str_model_type}")
-        logging_output(f"Model is {str_model_type}",log_path)
+        # print(f"Model is {str_model_type}")
+        # logging_output(f"Model is {str_model_type}",log_path)
+        # model = FallDetectionCNN().to(device)
+        # print(f"starting model summary {str_model_type}")
 
-        #Loading the model to CUDA
-        model = FallDetectionCNN().to(device)
+        # model = train_model(dataloader_train, dataloader_val,num_epochs,learning_rate)
+        
+        # criterion = nn.CrossEntropyLoss().to(device)
+        # test_loss, test_accuracy, test_precision, test_recall, test_specificity, test_f1, true_labels, predictions = evaluate_model(model, dataloader_test, criterion, device)
+        
+        # print(f"Test Loss: {test_loss:.4f}, Test Accuracy: {test_accuracy:.4f}, Test Precision: {test_precision:.4f}, Test Recall: {test_recall:.4f}, Test Specificity: {test_specificity:.4f}, Test F1-Score: {test_f1:.4f}")
+        # logging_output(f"Test Loss: {test_loss:.4f}, Test Accuracy: {test_accuracy:.4f}, Test Precision: {test_precision:.4f}, Test Recall: {test_recall:.4f}, Test Specificity: {test_specificity:.4f}, Test F1-Score: {test_f1:.4f}",log_path)
+        
 
-        #Training the model
-        model = train_model(dataloader_train, dataloader_val,num_epochs,learning_rate)
-        criterion = nn.CrossEntropyLoss().to(device)
+        # print(f"Total Time taken: {timer() -code_start } seconds")
 
-        #Evaluating the model
-        test_loss, test_accuracy, test_precision, test_recall, test_specificity, test_f1, true_labels, predictions = evaluate_model(model, dataloader_test, criterion, device)
+        # logging_output(f"Total Time taken: { timer() -code_start } Seconds", log_path)
 
-        #Printing Evaluation Metrics        
-        print(f"Test Loss: {test_loss:.4f}, Test Accuracy: {test_accuracy:.4f}, Test Precision: {test_precision:.4f}, Test Recall: {test_recall:.4f}, Test Specificity: {test_specificity:.4f}, Test F1-Score: {test_f1:.4f}")
-        logging_output(f"Test Loss: {test_loss:.4f}, Test Accuracy: {test_accuracy:.4f}, Test Precision: {test_precision:.4f}, Test Recall: {test_recall:.4f}, Test Specificity: {test_specificity:.4f}, Test F1-Score: {test_f1:.4f}",log_path)
-        print(f"Total Time taken: {timer() -code_start } seconds")
-        logging_output(f"Total Time taken: { timer() -code_start } Seconds", log_path)
+        # plot_confusion_matrix(true_labels, predictions, classes = ["No Fall", "Fall"])
 
-        #Plotting the Confusion Matrix
-        plot_confusion_matrix(true_labels, predictions, classes = ["No Fall", "Fall"])
-
-        #Saving the model
-        torch.save(model.state_dict(), f'./Results/{model_folder}/{str_model_type}.pth')
-    
-    #Handling Exception
+        # torch.save(model.state_dict(), f'./Results/{model_folder}/{str_model_type}.pth')
+        
     except Exception as E :
         err_msg=f"Error occured {E}"
         print(err_msg)

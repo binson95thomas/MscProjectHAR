@@ -1,11 +1,10 @@
 import os
 import numpy as np
 import pandas as pd
-if __name__ == "__main__":   
-     
+if __name__ == "__main__":    
+    #Loading File with the labels
     csv_file_path = './Features_1&0.5_Vision.csv'
     labels_df = pd.read_csv(csv_file_path, skiprows=1)
-
     base_folder = '../Outputs/Exp_1_1_OG_BGS_Canny/Unbalanced'
     print(f"============================================================ ")
     print(f"file is {base_folder}")
@@ -18,22 +17,17 @@ if __name__ == "__main__":
                 if len(parts) < 4:  # if there are not enough parts, skip this file
                     print(f"Invalid filename {file}, skipping.")
                     continue
-                
                 timestamp = '_'.join(parts[1:])  # Join the timestamp parts
                 timestamp = timestamp.rsplit('.', 1)[0]  # Remove the file extension
                 timestamp = timestamp.replace('_', ':', 2)
                 print(f"Processing {file} with timestamp {timestamp}")
 
                 matched_rows = labels_df[labels_df['Timestamp'].str.contains(timestamp, na=False)]
-                
+                #Matching the Label with timestamp
                 if not matched_rows.empty:
                     # Use the first matched row
                     label_row = matched_rows.iloc[0]
                     label = label_row['Tag']
-
-                    # print(f"Matched Timestamp in CSV: {label_row['Timestamp']}")
-                    # print(f"Label being assigned: {label}")
-
                     # Load the numpy file
                     file_path = os.path.join(root, file)
                     array = np.load(file_path, allow_pickle=True)

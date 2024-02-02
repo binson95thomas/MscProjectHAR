@@ -25,6 +25,8 @@ class DatasetDirectoryHandler:
 
     def _get_subfolders(self, folder):
         folders = [d for d in os.listdir(folder) if os.path.isdir(os.path.join(folder, d))]
+        m = sorted(folders, key=lambda x: int(re.search(r'\d+', x).group()))
+        #print(m)
         return sorted(folders, key=lambda x: int(re.search(r'\d+', x).group()))
     
 class FrameLoader:
@@ -40,7 +42,6 @@ class FrameLoader:
                 
         return [(fn[:-4], cv2.imread(os.path.join(image_folder, fn), cv2.IMREAD_GRAYSCALE)) for fn in file_names]
     
-    
 class OpticalFlowComputer:
     def __init__(self):
         self.fgbg = cv2.createBackgroundSubtractorMOG2(detectShadows=True)
@@ -53,132 +54,145 @@ class OpticalFlowComputer:
     #              for list_h in list_2d] 
       
     #    return vconcat_resize(img_list_v, interpolation=cv2.INTER_CUBIC) 
+  
+    
+# Callback function for the trackbar
+    
 
-    def frame_preprocessing(self, inp_frame):
-
-        kernel = np.ones((5,5), np.uint8)
-        equalized = cv2.equalizeHist(inp_frame)
-
-        fgmask_curr = self.fgbg.apply(equalized)
-        fgmask_curr = cv2.morphologyEx(fgmask_curr, cv2.MORPH_OPEN, kernel)
-        fgmask_curr = cv2.morphologyEx(fgmask_curr, cv2.MORPH_CLOSE, kernel)
-        frame_masked = cv2.bitwise_and(equalized, equalized, mask=fgmask_curr)
-
-        concatenated_frames2 = cv2.hconcat([inp_frame, frame_masked])
-        
-        cv2.imshow('mask check', concatenated_frames2)
-        cv2.waitKey(1)
-
-        blurred = cv2.GaussianBlur(frame_masked, (5, 5), 0)
-        # Apply Canny edge detection to find contours
-        edges = cv2.Canny(blurred, 50, 150)
-        
-        # Dilate the edges to connect nearby contours
-
-        dilated_edges = edges
-        dilated_edges = cv2.dilate(edges, None, iterations=3)
-        # dilated_edges = cv2.morphologyEx(dilated_edges, cv2.MORPH_OPEN, kernel)
-        # dilated_edges = cv2.morphologyEx(dilated_edges, cv2.MORPH_CLOSE, kernel)
-        # Find contours in the dilated edges
-        contours, _ = cv2.findContours(dilated_edges.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-
-        # Draw the contours on a black image
-        contour_image = np.zeros_like(inp_frame)
-        # Filter contours based on area
-        min_contour_area = 0
-        max_contour_area = 100000000
-
-        for contour in contours:
-            area = cv2.contourArea(contour)
-            if min_contour_area < area < max_contour_area:
-                # Process the contour
-                cv2.drawContours(contour_image, contours, -1, (255), thickness=cv2.FILLED)
-
-        subject_mask = np.zeros_like(inp_frame)
-        cv2.drawContours(subject_mask, contours, -1, (255), thickness=cv2.FILLED)
-
-        # Apply the mask to the original image to extract the subject
-        subject_image = cv2.bitwise_and(inp_frame, inp_frame, mask=subject_mask)
-
-        concatenated_frames = cv2.hconcat([inp_frame, subject_image])
-        
-        cv2.imshow('Original vs Preprocessed Frame', concatenated_frames)
-        cv2.waitKey(1)
-
-        return subject_image
-
-
-
-        
+            
     def compute_optical_flow(self, prev_frame, current_frame):
+        # Commented old code for new canny image processing
+         # Initialize Canny parameters
+       
+
         prev_frame = cv2.normalize(src=prev_frame, dst=None, alpha=0, beta=255, norm_type=cv2.NORM_MINMAX, dtype=cv2.CV_8U)
         current_frame = cv2.normalize(src=current_frame, dst=None, alpha=0, beta=255, norm_type=cv2.NORM_MINMAX, dtype=cv2.CV_8U)
-       
+        equalized_curr= cv2.equalizeHist(current_frame)
+        # blurred_img_curr = cv2.blur(equalized_curr,ksize=(5,5))
+        equalized_prev= cv2.equalizeHist(prev_frame)
+        # blurred_img_prev = cv2.blur(equalized_prev,ksize=(5,5))
+
+        fgmask_prev = self.fgbg.apply(equalized_curr)
+        fgmask_curr = self.fgbg.apply(equalized_prev)
+        
         kernel = np.ones((5,5), np.uint8)
-        equalized = cv2.equalizeHist(current_frame)
-
-        fgmask_curr = self.fgbg.apply(equalized)
-        fgmask_curr = cv2.morphologyEx(fgmask_curr, cv2.MORPH_CLOSE, kernel)
+        fgmask_prev = cv2.morphologyEx(fgmask_prev, cv2.MORPH_OPEN, kernel)
+        fgmask_prev = cv2.morphologyEx(fgmask_prev, cv2.MORPH_CLOSE, kernel)
         fgmask_curr = cv2.morphologyEx(fgmask_curr, cv2.MORPH_OPEN, kernel)
-        frame_masked = cv2.bitwise_and(equalized, equalized, mask=fgmask_curr)
-
-
-        blurred = cv2.GaussianBlur(equalized , (5, 5), 0)
-        # Apply Canny edge detection to find contours
-        edges = cv2.Canny(blurred, 50, 150)
+        fgmask_curr = cv2.morphologyEx(fgmask_curr, cv2.MORPH_CLOSE, kernel)
         
-        concatenated_frames5 = cv2.hconcat([equalized, edges])
-        cv2.imshow('edges', concatenated_frames5)
+        
+        prev_frame_masked = cv2.bitwise_and(prev_frame, prev_frame, mask=fgmask_prev)
+        current_frame_masked = cv2.bitwise_and(current_frame, current_frame, mask=fgmask_curr)
+        #------------------------------------------------------------------------------------------
+        # v1 for comparison
+        #canny
+        # canny_frame_masked =cv2.Canny(current_frame_masked,50,200)
+        # prev_canny_frame_masked =cv2.Canny(prev_frame_masked,50,200)
+
+        ##laplacian
+        # lap_frame_masked=  np.uint8(cv2.Laplacian(current_frame_masked,cv2.CV_64F))
+        ## sobel
+        #sobelxy_frame_masked = cv2.Sobel(src=current_frame_masked, ddepth=cv2.CV_64F, dx=1, dy=1, ksize=5) # Combined X and Y Sobel Edge Detection
+        #--------------------------------------------------------------------------------------------------
+
+         #-----New code before subtraction-------------------------------------------------------------------------------------
+        #canny
+
+        # equalized= cv2.equalizeHist(current_frame_masked)
+
+        blurred_img = cv2.blur(equalized_curr,ksize=(5,5))
+        med_val = np.median(blurred_img) 
+        print(f"mEDIAN is {med_val}")
+        concatenated_frames3 = cv2.hconcat([current_frame, blurred_img])
+        cv2.imshow('NEW', concatenated_frames3)
+        lower = int(max(0 ,0.5*med_val))
+        upper = int(min(255,1.5*med_val))
+        print(f"threshold is {lower} and {upper}")
+        
+
+        # edge_frame_curr =cv2.Canny(current_frame,low_threshold, high_threshold)
+        # edge_frame_prev=cv2.Canny(prev_frame,low_threshold, high_threshold)
+        edge_frame_curr =cv2.Canny(current_frame_masked,lower, upper)
+        edge_frame_prev=cv2.Canny(prev_frame_masked,lower, upper)
+
+        # print(f"threshold is {low_threshold} and {high_threshold}")
+        #-------------------------------------------------
+        # Laplacian
+        # edge_frame_curr =np.uint8(cv2.Laplacian(current_frame,cv2.CV_64F))
+        # edge_frame_prev=np.uint8(cv2.Laplacian(prev_frame,cv2.CV_64F))
+        # Sobel
+        # edge_frame_curr =cv2.Sobel(src=current_frame, ddepth=cv2.CV_64F, dx=1, dy=1, ksize=5) 
+        # edge_frame_prev=cv2.Sobel(src=prev_frame, ddepth=cv2.CV_64F, dx=1, dy=1, ksize=5) 
+
+        #---------------------------------------------------------
+        edge_fgmask_prev = self.fgbg.apply(edge_frame_prev)
+        edge_fgmask_curr = self.fgbg.apply(edge_frame_curr)
+        
+        # kernel = np.ones((5,5), np.uint8)
+        # edge_fgmask_prev = cv2.morphologyEx(edge_fgmask_prev, cv2.MORPH_OPEN, kernel)
+        # edge_fgmask_prev = cv2.morphologyEx(edge_fgmask_prev, cv2.MORPH_CLOSE, kernel)
+        # edge_fgmask_curr = cv2.morphologyEx(edge_fgmask_curr, cv2.MORPH_OPEN, kernel)
+        # edge_fgmask_curr = cv2.morphologyEx(edge_fgmask_curr, cv2.MORPH_CLOSE, kernel)
+        
+        edge_prev_frame_masked = cv2.bitwise_and(prev_frame, prev_frame, mask=edge_fgmask_prev)
+        edge_current_frame_masked = cv2.bitwise_and(current_frame, current_frame, mask=edge_fgmask_curr)
+
+        #laplacian------------------------------------------------------------------------------------------
+        # lap_frame_masked=  np.uint8(cv2.Laplacian(current_frame,cv2.CV_64F))
+        # # sobel
+        # sobelxy_frame_masked = cv2.Sobel(src=current_frame, ddepth=cv2.CV_64F, dx=1, dy=0, ksize=5) # Combined X and Y Sobel Edge Detection
+        #--------------------------------------------------------------------------------------------------
+
+        #original
+        concatenated_frames = cv2.hconcat([current_frame, edge_frame_curr])
+        cv2.imshow('Original vs Preprocessed Frame', concatenated_frames)
         cv2.waitKey(1)
-        # Dilate the edges to connect nearby contours
-
-        dilated_edges = edges
-        dilated_edges = cv2.dilate(edges, None, iterations=3)
-        # dilated_edges = cv2.morphologyEx(dilated_edges, cv2.MORPH_OPEN, kernel)
-        # dilated_edges = cv2.morphologyEx(dilated_edges, cv2.MORPH_CLOSE, kernel)
-        # Find contours in the dilated edges
-        contours, _ = cv2.findContours(dilated_edges.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-
-        # Draw the contours on a black image
-        contour_image = np.zeros_like(equalized)
-        # Filter contours based on area
-        min_contour_area = 0
-        max_contour_area = 100000000
-    
-        valid_contours = [cnt for cnt in contours if cv2.contourArea(cnt) > 10000]
-
-
-        # for contour in contours:
-            
-        #     cv2.drawContours(contour_image, contours, -1, (255), thickness=cv2.FILLED)
-
-        subject_mask = np.zeros_like(equalized)
-        cv2.drawContours(subject_mask, valid_contours , -1, (255), thickness=cv2.FILLED)
-
-        # Apply the mask to the original image to extract the subject
-        subject_image = cv2.bitwise_and(equalized, equalized, mask=subject_mask)
-
-        concatenated_frames = cv2.hconcat([equalized, subject_image])
         
-        cv2.imshow('contours', concatenated_frames)
-        cv2.waitKey(1)
+        #canny vs Lap
+        # concatenated_filters = cv2.hconcat([edge_frame_curr,edge_current_frame_masked])
+        # cv2.imshow('Edge Vs edge_masked', concatenated_filters)
+        # cv2.waitKey(1)
 
-        prev_blurred = self.frame_preprocessing(current_frame)
-        curr_blurred = self.frame_preprocessing(prev_frame)
+        #Original Vs Sobel
+        # concatenated_frames2 = cv2.hconcat([current_frame, sobelxy_frame_masked])
+        # cv2.imshow('Original vs Sobel Frame', concatenated_frames2)
+        # cv2.waitKey(1)
 
+        # cv2.imshow('Sobel',sobelxy_frame_masked)
+
+        # function calling 
+        #image_tile = self.concat_tile_resize([[current_frame,current_frame_masked], 
+        #                             [canny_frame_masked,lap_frame_masked,sobelxy_frame_masked]]) 
+
+        # show the image 
+        #cv2.imshow('Comparison', image_tile) 
+        #===================================================================
+        # Original Code
+        # prev_frame = cv2.medianBlur(prev_frame_masked, 5)
+        # current_frame = cv2.medianBlur(current_frame_masked, 5)
+        #********************************************************
+        # prev_frame = cv2.medianBlur(prev_frame_masked, 5)
+        # current_frame = cv2.medianBlur(current_frame_masked, 5)
+
+        prev_frame = cv2.medianBlur(edge_prev_frame_masked, 5)
+        current_frame = cv2.medianBlur(edge_current_frame_masked, 5)
+        #====================================================================
+        prev_blurred = cv2.GaussianBlur(prev_frame, (5, 5), 0)
+        curr_blurred = cv2.GaussianBlur(current_frame, (5, 5), 0)
         
-        flow = cv2.calcOpticalFlowFarneback(prev_blurred, curr_blurred, None, 0.5, 3, 15, 3, 5, 1.2, 0)
+        flow = cv2.calcOpticalFlowFarneback(edge_frame_curr, edge_frame_prev, None, 0.5, 3, 15, 3, 5, 1.2, 0)
         u_component = flow[..., 0]
         v_component = flow[..., 1]
         # Uncomment below to view optical flow as it runs
-        # magnitude, angle = cv2.cartToPolar(u_component, v_component, angleInDegrees=True)
-        # hsv = np.zeros((prev_frame.shape[0], prev_frame.shape[1], 3), dtype=np.uint8)
-        # hsv[..., 1] = 255
-        # hsv[..., 0] = angle * 180 / np.pi / 2
-        # hsv[..., 2] = cv2.normalize(magnitude, None, 0, 255, cv2.NORM_MINMAX)
-        # rgb = cv2.cvtColor(hsv, cv2.COLOR_HSV2BGR)
-        # cv2.imshow('Optical Flow', rgb)
-        # cv2.waitKey(1)
+        magnitude, angle = cv2.cartToPolar(u_component, v_component, angleInDegrees=True)
+        hsv = np.zeros((prev_frame.shape[0], prev_frame.shape[1], 3), dtype=np.uint8)
+        hsv[..., 1] = 255
+        hsv[..., 0] = angle * 180 / np.pi / 2
+        hsv[..., 2] = cv2.normalize(magnitude, None, 0, 255, cv2.NORM_MINMAX)
+        rgb = cv2.cvtColor(hsv, cv2.COLOR_HSV2BGR)
+        cv2.imshow('Optical Flow', rgb)
+        cv2.waitKey(1)
         resized_u = cv2.resize(u_component, (51, 38))
         resized_v = cv2.resize(v_component, (51, 38))
         
@@ -252,6 +266,8 @@ class OpticalFlowProcessor:
         last_frame_seconds = OpticalFlowProcessor.total_seconds_from_timestamp(last_frame_time)
         timestamp = frames[i][0]
 
+        
+
         while i < len(frames) - num_frames_in_window:
             window_end = min(i + num_frames_in_window, len(frames))
             optical_flows_u= []
@@ -292,10 +308,23 @@ class OpticalFlowProcessor:
                     for camera_folder in dir_handler.get_camera_folders(subject_folder, activity_folder, trial_folder):
                         print(f"Processing video: {camera_folder}")
                         self.process_video(os.path.join(subject_folder, activity_folder, trial_folder, camera_folder))
+def on_trackbar(value):
+        # Update the Canny parameters
+        global low_threshold, high_threshold
+        low_threshold = cv2.getTrackbarPos('Low Threshold', 'Optical Flow with Edge Detection')
+        high_threshold = cv2.getTrackbarPos('High Threshold', 'Optical Flow with Edge Detection')
             
 if __name__ ==  "__main__":
     dataset_folder = './mini_dataset'
     output_folder  = 'nparray_uv'
-    
+    low_threshold = 50
+    high_threshold = 150
+
+    # Create a window for displaying the result
+    cv2.namedWindow('Optical Flow with Edge Detection')
+
+    # Create trackbars for adjusting Canny parameters
+    cv2.createTrackbar('Low Threshold', 'Optical Flow with Edge Detection', low_threshold, 255, on_trackbar)
+    cv2.createTrackbar('High Threshold', 'Optical Flow with Edge Detection', high_threshold, 255, on_trackbar)
     processor = OpticalFlowProcessor(dataset_folder, output_folder)
     processor.run()

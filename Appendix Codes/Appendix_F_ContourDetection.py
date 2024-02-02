@@ -79,8 +79,8 @@ class OpticalFlowComputer:
         ret, thresh = cv2.threshold(edges_new, 150, 255, cv2.THRESH_BINARY)
         ret_prev, thresh_prev = cv2.threshold(edges_new_prev, 150, 255, cv2.THRESH_BINARY)
 
-        contours, hierarchy = cv2.findContours(image=thresh, mode=cv2.RETR_EXTERNAL, method=cv2.CHAIN_APPROX_TC89_L1)
-        contours_prev , hierarchy_prev = cv2.findContours(image=thresh_prev, mode=cv2.RETR_EXTERNAL, method=cv2.CHAIN_APPROX_TC89_L1)
+        contours, hierarchy = cv2.findContours(image=thresh, mode=cv2.RETR_EXTERNAL, method=cv2.CHAIN_APPROX_SIMPLE)
+        contours_prev , hierarchy_prev = cv2.findContours(image=thresh_prev, mode=cv2.RETR_EXTERNAL, method=cv2.CHAIN_APPROX_SIMPLE)
         
         image = current_frame.copy()
         image_prev = prev_frame.copy()

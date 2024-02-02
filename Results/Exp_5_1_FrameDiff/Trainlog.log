@@ -1,0 +1,52 @@
+14:38:25 : Path identified is C:\Users\bt22aak\GPU_DS\Exp_5\Exp_5_1_FrameDiff\Balanced and C:\Users\bt22aak\GPU_DS\Exp_5\Exp_5_1_FrameDiff\Unbalanced 
+14:38:25 : Starting the processing of Exp_5_1_FrameDiff_b32e50L0.0001 
+14:38:45 : Running on CPU Only 
+14:38:45 : Model is Exp_5_1_FrameDiff_b32e50L0.0001 
+14:38:47 : ****************************** 
+14:38:47 : Error occured mat1 and mat2 shapes cannot be multiplied (32x3072 and 34048x64) 
+14:38:47 : Traceback (most recent call last):
+  File "C:\Users\bt22aak\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_5_1_FrameDiff.py", line 301, in <module>
+    model = train_model(dataloader_train, dataloader_val,num_epochs,learning_rate)
+  File "C:\Users\bt22aak\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_5_1_FrameDiff.py", line 154, in train_model
+    outputs = model(batch_features)
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\torch\nn\modules\module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\torch\nn\modules\module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\bt22aak\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_5_1_FrameDiff.py", line 40, in forward
+    x = F.relu(self.fc1(x))
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\torch\nn\modules\module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\torch\nn\modules\module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\torch\nn\modules\linear.py", line 114, in forward
+    return F.linear(input, self.weight, self.bias)
+RuntimeError: mat1 and mat2 shapes cannot be multiplied (32x3072 and 34048x64)
+ 
+14:38:47 : ****************************** 
+14:41:32 : Path identified is C:\Users\bt22aak\GPU_DS\Exp_5\Exp_5_1_FrameDiff\Balanced and C:\Users\bt22aak\GPU_DS\Exp_5\Exp_5_1_FrameDiff\Unbalanced 
+14:41:32 : Starting the processing of Exp_5_1_FrameDiff_b32e50L0.0001 
+14:41:49 : Running on CPU Only 
+14:41:49 : Model is Exp_5_1_FrameDiff_b32e50L0.0001 
+14:42:04 : ****************************** 
+14:42:04 : Error occured can't convert np.ndarray of type numpy.object_. The only supported types are: float64, float32, float16, complex64, complex128, int64, int32, int16, int8, uint8, and bool. 
+14:42:04 : Traceback (most recent call last):
+  File "C:\Users\bt22aak\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_5_1_FrameDiff.py", line 301, in <module>
+    model = train_model(dataloader_train, dataloader_val,num_epochs,learning_rate)
+  File "C:\Users\bt22aak\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_5_1_FrameDiff.py", line 151, in train_model
+    for batch_features, batch_labels in dataloader_train:
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\torch\utils\data\dataloader.py", line 630, in __next__
+    data = self._next_data()
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\torch\utils\data\dataloader.py", line 674, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\torch\utils\data\_utils\fetch.py", line 49, in fetch
+    data = self.dataset.__getitems__(possibly_batched_index)
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\torch\utils\data\dataset.py", line 364, in __getitems__
+    return [self.dataset[self.indices[idx]] for idx in indices]
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\torch\utils\data\dataset.py", line 364, in <listcomp>
+    return [self.dataset[self.indices[idx]] for idx in indices]
+  File "C:\Users\bt22aak\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\dataset_prep_2d.py", line 36, in __getitem__
+    return torch.tensor(image, dtype=torch.float32), torch.tensor(label, dtype=torch.long)
+TypeError: can't convert np.ndarray of type numpy.object_. The only supported types are: float64, float32, float16, complex64, complex128, int64, int32, int16, int8, uint8, and bool.
+ 
+14:42:04 : ****************************** 
