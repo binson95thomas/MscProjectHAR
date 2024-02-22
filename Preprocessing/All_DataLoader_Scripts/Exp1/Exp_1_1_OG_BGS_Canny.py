@@ -1,16 +1,38 @@
 import os
 import numpy as np
 import pandas as pd
+import datetime
+import shutil
+def backup_folder(source_folder, backup_folder):
+        # Generate a timestamp for the backup folder
+        timestamp = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+        # Create a new folder with the timestamp as its name in the backup directory
+        backup_dir = os.path.join(backup_folder, f"backup_{timestamp}")
+        os.makedirs(backup_dir)
+
+        # Walk through the source folder and copy its contents to the backup directory
+        for root, dirs, files in os.walk(source_folder):
+            for file in files:
+                source_file = os.path.join(root, file)
+                destination_file = os.path.join(backup_dir, os.path.relpath(source_file, source_folder))
+                os.makedirs(os.path.dirname(destination_file), exist_ok=True)
+                shutil.copy2(source_file, destination_file)
+
+        print(f"Backup completed. Files backed up to: {backup_dir}")
+
 if __name__ == "__main__":   
      
     csv_file_path = './Features_1&0.5_Vision.csv'
     labels_df = pd.read_csv(csv_file_path, skiprows=1)
 
     base_folder = '../Outputs/Exp_1_1_OG_BGS_Canny/Unbalanced'
+    backup_folder= '../Outputs/Exp_1_1_OG_BGS_Canny/backup'
     print(f"============================================================ ")
     print(f"file is {base_folder}")
     filename_label_dict = {}
-    print(f"============================================================ ")
+
+    backup_folder(base_folder, backup_folder)
+
     for root, dirs, files in os.walk(base_folder):
         for file in files:
             if file.endswith('.npy'):
