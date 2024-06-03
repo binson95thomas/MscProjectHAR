@@ -1,0 +1,230 @@
+21:27:38 : Path identified is C:\Users\bt22aak\GPU_DS\Exp_6\Exp_6_1_Baseline\Balanced and C:\Users\bt22aak\GPU_DS\Exp_6\Exp_6_1_Baseline\Unbalanced 
+21:27:38 : Starting the processing of Exp_6_1_Baseline_b32e50L0.01 
+21:27:57 : Running on GPU 
+21:27:57 : Model is Exp_6_1_Baseline_b32e50L0.01 
+21:28:09 : Epoch [1/50], Loss: 0.0392, Accuracy: 0.8706, Precision: 0.8734, Recall: 0.8661, Specificity: 0.8750, F1-Score: 0.8697 
+21:28:17 : Epoch [2/50], Loss: 0.1648, Accuracy: 0.9008, Precision: 0.8869, Recall: 0.9184, Specificity: 0.8833, F1-Score: 0.9024 
+21:28:25 : Epoch [3/50], Loss: 0.0500, Accuracy: 0.9102, Precision: 0.9336, Recall: 0.8828, Specificity: 0.9375, F1-Score: 0.9075 
+21:28:33 : Epoch [4/50], Loss: 0.0471, Accuracy: 0.9081, Precision: 0.8679, Recall: 0.9623, Specificity: 0.8542, F1-Score: 0.9127 
+21:28:41 : Epoch [5/50], Loss: 0.0208, Accuracy: 0.9102, Precision: 0.9050, Recall: 0.9163, Specificity: 0.9042, F1-Score: 0.9106 
+21:28:50 : Epoch [6/50], Loss: 0.1722, Accuracy: 0.8862, Precision: 0.8727, Recall: 0.9038, Specificity: 0.8688, F1-Score: 0.8880 
+21:28:58 : Epoch [7/50], Loss: 0.0273, Accuracy: 0.9061, Precision: 0.9554, Recall: 0.8515, Specificity: 0.9604, F1-Score: 0.9004 
+21:29:06 : Epoch [8/50], Loss: 0.0117, Accuracy: 0.9353, Precision: 0.9211, Recall: 0.9519, Specificity: 0.9187, F1-Score: 0.9362 
+21:29:14 : Epoch [9/50], Loss: 0.0233, Accuracy: 0.9426, Precision: 0.9091, Recall: 0.9833, Specificity: 0.9021, F1-Score: 0.9447 
+21:29:22 : Epoch [10/50], Loss: 0.0620, Accuracy: 0.8987, Precision: 0.8848, Recall: 0.9163, Specificity: 0.8812, F1-Score: 0.9003 
+21:29:30 : Epoch [11/50], Loss: 0.0025, Accuracy: 0.9342, Precision: 0.9601, Recall: 0.9059, Specificity: 0.9625, F1-Score: 0.9322 
+21:29:38 : Epoch [12/50], Loss: 0.0134, Accuracy: 0.9520, Precision: 0.9463, Recall: 0.9582, Specificity: 0.9458, F1-Score: 0.9522 
+21:29:47 : Epoch [13/50], Loss: 0.0029, Accuracy: 0.9468, Precision: 0.9552, Recall: 0.9372, Specificity: 0.9563, F1-Score: 0.9461 
+21:29:55 : Epoch [14/50], Loss: 0.2469, Accuracy: 0.9008, Precision: 0.9083, Recall: 0.8912, Specificity: 0.9104, F1-Score: 0.8997 
+21:30:03 : Epoch [15/50], Loss: 0.0364, Accuracy: 0.8800, Precision: 0.9116, Recall: 0.8410, Specificity: 0.9187, F1-Score: 0.8749 
+21:30:11 : Epoch [16/50], Loss: 0.0377, Accuracy: 0.9228, Precision: 0.9335, Recall: 0.9100, Specificity: 0.9354, F1-Score: 0.9216 
+21:30:19 : Epoch [17/50], Loss: 0.1716, Accuracy: 0.8132, Precision: 0.9164, Recall: 0.6883, Specificity: 0.9375, F1-Score: 0.7861 
+21:30:28 : Epoch [18/50], Loss: 0.6942, Accuracy: 0.4979, Precision: 0.4984, Recall: 0.9979, Specificity: 0.0000, F1-Score: 0.6648 
+21:30:36 : Epoch [19/50], Loss: 0.6952, Accuracy: 0.4990, Precision: 0.4990, Recall: 1.0000, Specificity: 0.0000, F1-Score: 0.6657 
+21:30:44 : Epoch [20/50], Loss: 0.6935, Accuracy: 0.4979, Precision: 0.4984, Recall: 0.9979, Specificity: 0.0000, F1-Score: 0.6648 
+21:30:52 : Epoch [21/50], Loss: 0.6947, Accuracy: 0.5010, Precision: 0.0000, Recall: 0.0000, Specificity: 1.0000, F1-Score: 0.0000 
+21:31:00 : Epoch [22/50], Loss: 0.6932, Accuracy: 0.4990, Precision: 0.4990, Recall: 1.0000, Specificity: 0.0000, F1-Score: 0.6657 
+21:31:09 : Epoch [23/50], Loss: 0.7013, Accuracy: 0.5010, Precision: 0.0000, Recall: 0.0000, Specificity: 1.0000, F1-Score: 0.0000 
+21:31:17 : Epoch [24/50], Loss: 0.6944, Accuracy: 0.5010, Precision: 0.0000, Recall: 0.0000, Specificity: 1.0000, F1-Score: 0.0000 
+21:31:25 : Epoch [25/50], Loss: 0.6957, Accuracy: 0.4990, Precision: 0.4990, Recall: 1.0000, Specificity: 0.0000, F1-Score: 0.6657 
+21:31:33 : Epoch [26/50], Loss: 0.6947, Accuracy: 0.5010, Precision: 0.0000, Recall: 0.0000, Specificity: 1.0000, F1-Score: 0.0000 
+21:31:41 : Epoch [27/50], Loss: 0.6932, Accuracy: 0.5010, Precision: 0.0000, Recall: 0.0000, Specificity: 1.0000, F1-Score: 0.0000 
+21:31:49 : Epoch [28/50], Loss: 0.6934, Accuracy: 0.4990, Precision: 0.4990, Recall: 1.0000, Specificity: 0.0000, F1-Score: 0.6657 
+21:31:57 : Epoch [29/50], Loss: 0.6932, Accuracy: 0.4990, Precision: 0.4990, Recall: 1.0000, Specificity: 0.0000, F1-Score: 0.6657 
+21:32:05 : Epoch [30/50], Loss: 0.6932, Accuracy: 0.5010, Precision: 0.0000, Recall: 0.0000, Specificity: 1.0000, F1-Score: 0.0000 
+21:32:13 : Epoch [31/50], Loss: 0.6939, Accuracy: 0.5010, Precision: 0.0000, Recall: 0.0000, Specificity: 1.0000, F1-Score: 0.0000 
+21:32:21 : Epoch [32/50], Loss: 0.6932, Accuracy: 0.4990, Precision: 0.4990, Recall: 1.0000, Specificity: 0.0000, F1-Score: 0.6657 
+21:32:29 : Epoch [33/50], Loss: 0.6932, Accuracy: 0.5010, Precision: 0.0000, Recall: 0.0000, Specificity: 1.0000, F1-Score: 0.0000 
+21:32:37 : Epoch [34/50], Loss: 0.6938, Accuracy: 0.5010, Precision: 0.0000, Recall: 0.0000, Specificity: 1.0000, F1-Score: 0.0000 
+21:32:45 : Epoch [35/50], Loss: 0.6942, Accuracy: 0.4990, Precision: 0.4990, Recall: 1.0000, Specificity: 0.0000, F1-Score: 0.6657 
+21:32:54 : Epoch [36/50], Loss: 0.6937, Accuracy: 0.4990, Precision: 0.4990, Recall: 1.0000, Specificity: 0.0000, F1-Score: 0.6657 
+21:33:02 : Epoch [37/50], Loss: 0.6931, Accuracy: 0.4990, Precision: 0.4990, Recall: 1.0000, Specificity: 0.0000, F1-Score: 0.6657 
+21:33:10 : Epoch [38/50], Loss: 0.6952, Accuracy: 0.5010, Precision: 0.0000, Recall: 0.0000, Specificity: 1.0000, F1-Score: 0.0000 
+21:33:19 : Epoch [39/50], Loss: 0.6936, Accuracy: 0.5010, Precision: 0.0000, Recall: 0.0000, Specificity: 1.0000, F1-Score: 0.0000 
+21:33:27 : Epoch [40/50], Loss: 0.6934, Accuracy: 0.4990, Precision: 0.4990, Recall: 1.0000, Specificity: 0.0000, F1-Score: 0.6657 
+21:33:36 : Epoch [41/50], Loss: 0.6932, Accuracy: 0.4990, Precision: 0.4990, Recall: 1.0000, Specificity: 0.0000, F1-Score: 0.6657 
+21:33:44 : Epoch [42/50], Loss: 0.6932, Accuracy: 0.4990, Precision: 0.4990, Recall: 1.0000, Specificity: 0.0000, F1-Score: 0.6657 
+21:33:53 : Epoch [43/50], Loss: 0.6945, Accuracy: 0.5010, Precision: 0.0000, Recall: 0.0000, Specificity: 1.0000, F1-Score: 0.0000 
+21:34:01 : Epoch [44/50], Loss: 0.6935, Accuracy: 0.5010, Precision: 0.0000, Recall: 0.0000, Specificity: 1.0000, F1-Score: 0.0000 
+21:34:09 : Epoch [45/50], Loss: 0.6932, Accuracy: 0.4990, Precision: 0.4990, Recall: 1.0000, Specificity: 0.0000, F1-Score: 0.6657 
+21:34:18 : Epoch [46/50], Loss: 0.6932, Accuracy: 0.4990, Precision: 0.4990, Recall: 1.0000, Specificity: 0.0000, F1-Score: 0.6657 
+21:34:26 : Epoch [47/50], Loss: 0.6932, Accuracy: 0.4990, Precision: 0.4990, Recall: 1.0000, Specificity: 0.0000, F1-Score: 0.6657 
+21:34:35 : Epoch [48/50], Loss: 0.6949, Accuracy: 0.5010, Precision: 0.0000, Recall: 0.0000, Specificity: 1.0000, F1-Score: 0.0000 
+21:34:43 : Epoch [49/50], Loss: 0.6932, Accuracy: 0.4990, Precision: 0.4990, Recall: 1.0000, Specificity: 0.0000, F1-Score: 0.6657 
+21:34:52 : Epoch [50/50], Loss: 0.6933, Accuracy: 0.4990, Precision: 0.4990, Recall: 1.0000, Specificity: 0.0000, F1-Score: 0.6657 
+21:36:15 : Test Loss: 0.7118, Test Accuracy: 0.0307, Test Precision: 0.0306, Test Recall: 1.0000, Test Specificity: 0.0001, Test F1-Score: 0.0594 
+21:36:15 : Total Time taken: 517.4009148000041 Seconds 
+21:36:15 : ============================================================================= 
+21:36:15 : learinng rate of 0.001 
+21:36:15 : Path identified is C:\Users\bt22aak\GPU_DS\Exp_6\Exp_6_1_Baseline\Balanced and C:\Users\bt22aak\GPU_DS\Exp_6\Exp_6_1_Baseline\Unbalanced 
+21:36:15 : Starting the processing of Exp_6_1_Baseline_b32e50L0.001 
+21:36:33 : Running on GPU 
+21:36:33 : Model is Exp_6_1_Baseline_b32e50L0.001 
+21:36:41 : Epoch [1/50], Loss: 0.1486, Accuracy: 0.8372, Precision: 0.7572, Recall: 0.9916, Specificity: 0.6833, F1-Score: 0.8587 
+21:36:50 : Epoch [2/50], Loss: 0.0793, Accuracy: 0.9061, Precision: 0.9554, Recall: 0.8515, Specificity: 0.9604, F1-Score: 0.9004 
+21:36:58 : Epoch [3/50], Loss: 0.0429, Accuracy: 0.9645, Precision: 0.9512, Recall: 0.9791, Specificity: 0.9500, F1-Score: 0.9649 
+21:37:07 : Epoch [4/50], Loss: 0.0289, Accuracy: 0.9676, Precision: 0.9608, Recall: 0.9749, Specificity: 0.9604, F1-Score: 0.9678 
+21:37:15 : Epoch [5/50], Loss: 0.0004, Accuracy: 0.9687, Precision: 0.9534, Recall: 0.9854, Specificity: 0.9521, F1-Score: 0.9691 
+21:37:24 : Epoch [6/50], Loss: 0.0053, Accuracy: 0.9624, Precision: 0.9385, Recall: 0.9895, Specificity: 0.9354, F1-Score: 0.9633 
+21:37:32 : Epoch [7/50], Loss: 0.0012, Accuracy: 0.9729, Precision: 0.9575, Recall: 0.9895, Specificity: 0.9563, F1-Score: 0.9733 
+21:37:41 : Epoch [8/50], Loss: 0.0075, Accuracy: 0.9624, Precision: 0.9742, Recall: 0.9498, Specificity: 0.9750, F1-Score: 0.9619 
+21:37:49 : Epoch [9/50], Loss: 0.0118, Accuracy: 0.9603, Precision: 0.9803, Recall: 0.9393, Specificity: 0.9812, F1-Score: 0.9594 
+21:37:57 : Epoch [10/50], Loss: 0.0046, Accuracy: 0.9718, Precision: 0.9747, Recall: 0.9686, Specificity: 0.9750, F1-Score: 0.9717 
+21:38:06 : Epoch [11/50], Loss: 0.0010, Accuracy: 0.9729, Precision: 0.9612, Recall: 0.9854, Specificity: 0.9604, F1-Score: 0.9731 
+21:38:14 : Epoch [12/50], Loss: 0.0362, Accuracy: 0.9614, Precision: 0.9509, Recall: 0.9728, Specificity: 0.9500, F1-Score: 0.9617 
+21:38:23 : Epoch [13/50], Loss: 0.0049, Accuracy: 0.9697, Precision: 0.9610, Recall: 0.9791, Specificity: 0.9604, F1-Score: 0.9699 
+21:38:31 : Epoch [14/50], Loss: 0.0006, Accuracy: 0.9749, Precision: 0.9652, Recall: 0.9854, Specificity: 0.9646, F1-Score: 0.9752 
+21:38:40 : Epoch [15/50], Loss: 0.0012, Accuracy: 0.9729, Precision: 0.9612, Recall: 0.9854, Specificity: 0.9604, F1-Score: 0.9731 
+21:38:48 : Epoch [16/50], Loss: 0.0270, Accuracy: 0.9603, Precision: 0.9661, Recall: 0.9540, Specificity: 0.9667, F1-Score: 0.9600 
+21:38:57 : Epoch [17/50], Loss: 0.0005, Accuracy: 0.9749, Precision: 0.9729, Recall: 0.9770, Specificity: 0.9729, F1-Score: 0.9749 
+21:39:05 : Epoch [18/50], Loss: 0.0053, Accuracy: 0.9666, Precision: 0.9685, Recall: 0.9644, Specificity: 0.9688, F1-Score: 0.9665 
+21:39:14 : Epoch [19/50], Loss: 0.0160, Accuracy: 0.9749, Precision: 0.9710, Recall: 0.9791, Specificity: 0.9708, F1-Score: 0.9750 
+21:39:22 : Epoch [20/50], Loss: 0.0008, Accuracy: 0.9697, Precision: 0.9667, Recall: 0.9728, Specificity: 0.9667, F1-Score: 0.9698 
+21:39:31 : Epoch [21/50], Loss: 0.0605, Accuracy: 0.9708, Precision: 0.9747, Recall: 0.9665, Specificity: 0.9750, F1-Score: 0.9706 
+21:39:39 : Epoch [22/50], Loss: 0.0067, Accuracy: 0.9676, Precision: 0.9725, Recall: 0.9623, Specificity: 0.9729, F1-Score: 0.9674 
+21:39:47 : Epoch [23/50], Loss: 0.0001, Accuracy: 0.9749, Precision: 0.9710, Recall: 0.9791, Specificity: 0.9708, F1-Score: 0.9750 
+21:39:56 : Epoch [24/50], Loss: 0.0025, Accuracy: 0.9489, Precision: 0.9387, Recall: 0.9603, Specificity: 0.9375, F1-Score: 0.9493 
+21:40:04 : Epoch [25/50], Loss: 0.0017, Accuracy: 0.9645, Precision: 0.9703, Recall: 0.9582, Specificity: 0.9708, F1-Score: 0.9642 
+21:40:13 : Epoch [26/50], Loss: 0.0002, Accuracy: 0.9739, Precision: 0.9557, Recall: 0.9937, Specificity: 0.9542, F1-Score: 0.9744 
+21:40:21 : Epoch [27/50], Loss: 0.0000, Accuracy: 0.9729, Precision: 0.9689, Recall: 0.9770, Specificity: 0.9688, F1-Score: 0.9729 
+21:40:30 : Epoch [28/50], Loss: 0.0002, Accuracy: 0.9739, Precision: 0.9709, Recall: 0.9770, Specificity: 0.9708, F1-Score: 0.9739 
+21:40:38 : Epoch [29/50], Loss: 0.0001, Accuracy: 0.9708, Precision: 0.9727, Recall: 0.9686, Specificity: 0.9729, F1-Score: 0.9706 
+21:40:47 : Epoch [30/50], Loss: 0.0000, Accuracy: 0.9687, Precision: 0.9686, Recall: 0.9686, Specificity: 0.9688, F1-Score: 0.9686 
+21:40:55 : Epoch [31/50], Loss: 0.0000, Accuracy: 0.9729, Precision: 0.9748, Recall: 0.9707, Specificity: 0.9750, F1-Score: 0.9727 
+21:41:04 : Epoch [32/50], Loss: 0.0000, Accuracy: 0.9708, Precision: 0.9727, Recall: 0.9686, Specificity: 0.9729, F1-Score: 0.9706 
+21:41:12 : Epoch [33/50], Loss: 0.0000, Accuracy: 0.9770, Precision: 0.9750, Recall: 0.9791, Specificity: 0.9750, F1-Score: 0.9770 
+21:41:21 : Epoch [34/50], Loss: 0.0000, Accuracy: 0.9645, Precision: 0.9723, Recall: 0.9561, Specificity: 0.9729, F1-Score: 0.9641 
+21:41:29 : Epoch [35/50], Loss: 0.0051, Accuracy: 0.9614, Precision: 0.9546, Recall: 0.9686, Specificity: 0.9542, F1-Score: 0.9616 
+21:41:38 : Epoch [36/50], Loss: 0.0012, Accuracy: 0.9635, Precision: 0.9493, Recall: 0.9791, Specificity: 0.9479, F1-Score: 0.9640 
+21:41:46 : Epoch [37/50], Loss: 0.0009, Accuracy: 0.9676, Precision: 0.9647, Recall: 0.9707, Specificity: 0.9646, F1-Score: 0.9677 
+21:41:55 : Epoch [38/50], Loss: 0.0000, Accuracy: 0.9760, Precision: 0.9652, Recall: 0.9874, Specificity: 0.9646, F1-Score: 0.9762 
+21:42:03 : Epoch [39/50], Loss: 0.0105, Accuracy: 0.9781, Precision: 0.9731, Recall: 0.9833, Specificity: 0.9729, F1-Score: 0.9781 
+21:42:12 : Epoch [40/50], Loss: 0.0296, Accuracy: 0.9551, Precision: 0.9677, Recall: 0.9414, Specificity: 0.9688, F1-Score: 0.9544 
+21:42:20 : Epoch [41/50], Loss: 0.0000, Accuracy: 0.9708, Precision: 0.9747, Recall: 0.9665, Specificity: 0.9750, F1-Score: 0.9706 
+21:42:28 : Epoch [42/50], Loss: 0.0000, Accuracy: 0.9760, Precision: 0.9749, Recall: 0.9770, Specificity: 0.9750, F1-Score: 0.9760 
+21:42:37 : Epoch [43/50], Loss: 0.0001, Accuracy: 0.9676, Precision: 0.9666, Recall: 0.9686, Specificity: 0.9667, F1-Score: 0.9676 
+21:42:45 : Epoch [44/50], Loss: 0.0014, Accuracy: 0.9645, Precision: 0.9764, Recall: 0.9519, Specificity: 0.9771, F1-Score: 0.9640 
+21:42:54 : Epoch [45/50], Loss: 0.0011, Accuracy: 0.9708, Precision: 0.9767, Recall: 0.9644, Specificity: 0.9771, F1-Score: 0.9705 
+21:43:02 : Epoch [46/50], Loss: 0.0001, Accuracy: 0.9739, Precision: 0.9632, Recall: 0.9854, Specificity: 0.9625, F1-Score: 0.9741 
+21:43:11 : Epoch [47/50], Loss: 0.0004, Accuracy: 0.9781, Precision: 0.9711, Recall: 0.9854, Specificity: 0.9708, F1-Score: 0.9782 
+21:43:19 : Epoch [48/50], Loss: 0.0000, Accuracy: 0.9749, Precision: 0.9710, Recall: 0.9791, Specificity: 0.9708, F1-Score: 0.9750 
+21:43:28 : Epoch [49/50], Loss: 0.0007, Accuracy: 0.9760, Precision: 0.9710, Recall: 0.9812, Specificity: 0.9708, F1-Score: 0.9761 
+21:43:36 : Epoch [50/50], Loss: 0.0003, Accuracy: 0.9729, Precision: 0.9689, Recall: 0.9770, Specificity: 0.9688, F1-Score: 0.9729 
+21:44:59 : Test Loss: 0.2831, Test Accuracy: 0.9648, Test Precision: 0.4649, Test Recall: 0.9911, Test Specificity: 0.9640, Test F1-Score: 0.6329 
+21:44:59 : Total Time taken: 523.6288341000036 Seconds 
+21:44:59 : ============================================================================= 
+21:44:59 : learinng rate of 0.0001 
+21:44:59 : Path identified is C:\Users\bt22aak\GPU_DS\Exp_6\Exp_6_1_Baseline\Balanced and C:\Users\bt22aak\GPU_DS\Exp_6\Exp_6_1_Baseline\Unbalanced 
+21:44:59 : Starting the processing of Exp_6_1_Baseline_b32e50L0.0001 
+21:45:17 : Running on GPU 
+21:45:17 : Model is Exp_6_1_Baseline_b32e50L0.0001 
+21:45:25 : Epoch [1/50], Loss: 0.1469, Accuracy: 0.8810, Precision: 0.8297, Recall: 0.9582, Specificity: 0.8042, F1-Score: 0.8893 
+21:45:34 : Epoch [2/50], Loss: 0.1017, Accuracy: 0.9019, Precision: 0.8491, Recall: 0.9770, Specificity: 0.8271, F1-Score: 0.9086 
+21:45:43 : Epoch [3/50], Loss: 0.0232, Accuracy: 0.9468, Precision: 0.9261, Recall: 0.9707, Specificity: 0.9229, F1-Score: 0.9479 
+21:45:51 : Epoch [4/50], Loss: 0.0337, Accuracy: 0.9624, Precision: 0.9529, Recall: 0.9728, Specificity: 0.9521, F1-Score: 0.9627 
+21:45:59 : Epoch [5/50], Loss: 0.0260, Accuracy: 0.9499, Precision: 0.9119, Recall: 0.9958, Specificity: 0.9042, F1-Score: 0.9520 
+21:46:08 : Epoch [6/50], Loss: 0.0108, Accuracy: 0.9572, Precision: 0.9802, Recall: 0.9331, Specificity: 0.9812, F1-Score: 0.9561 
+21:46:16 : Epoch [7/50], Loss: 0.0040, Accuracy: 0.9770, Precision: 0.9770, Recall: 0.9770, Specificity: 0.9771, F1-Score: 0.9770 
+21:46:25 : Epoch [8/50], Loss: 0.0057, Accuracy: 0.9676, Precision: 0.9515, Recall: 0.9854, Specificity: 0.9500, F1-Score: 0.9681 
+21:46:33 : Epoch [9/50], Loss: 0.0019, Accuracy: 0.9739, Precision: 0.9748, Recall: 0.9728, Specificity: 0.9750, F1-Score: 0.9738 
+21:46:41 : Epoch [10/50], Loss: 0.0514, Accuracy: 0.9478, Precision: 0.9798, Recall: 0.9142, Specificity: 0.9812, F1-Score: 0.9459 
+21:46:50 : Epoch [11/50], Loss: 0.0045, Accuracy: 0.9739, Precision: 0.9829, Recall: 0.9644, Specificity: 0.9833, F1-Score: 0.9736 
+21:46:58 : Epoch [12/50], Loss: 0.0036, Accuracy: 0.9624, Precision: 0.9643, Recall: 0.9603, Specificity: 0.9646, F1-Score: 0.9623 
+21:47:07 : Epoch [13/50], Loss: 0.0072, Accuracy: 0.9541, Precision: 0.9822, Recall: 0.9247, Specificity: 0.9833, F1-Score: 0.9526 
+21:47:15 : Epoch [14/50], Loss: 0.0005, Accuracy: 0.9729, Precision: 0.9748, Recall: 0.9707, Specificity: 0.9750, F1-Score: 0.9727 
+21:47:24 : Epoch [15/50], Loss: 0.0011, Accuracy: 0.9791, Precision: 0.9751, Recall: 0.9833, Specificity: 0.9750, F1-Score: 0.9792 
+21:47:32 : Epoch [16/50], Loss: 0.0014, Accuracy: 0.9781, Precision: 0.9731, Recall: 0.9833, Specificity: 0.9729, F1-Score: 0.9781 
+21:47:41 : Epoch [17/50], Loss: 0.0005, Accuracy: 0.9781, Precision: 0.9790, Recall: 0.9770, Specificity: 0.9792, F1-Score: 0.9780 
+21:47:49 : Epoch [18/50], Loss: 0.0009, Accuracy: 0.9666, Precision: 0.9496, Recall: 0.9854, Specificity: 0.9479, F1-Score: 0.9671 
+21:47:58 : Epoch [19/50], Loss: 0.0016, Accuracy: 0.9478, Precision: 0.9756, Recall: 0.9184, Specificity: 0.9771, F1-Score: 0.9461 
+21:48:06 : Epoch [20/50], Loss: 0.0003, Accuracy: 0.9697, Precision: 0.9828, Recall: 0.9561, Specificity: 0.9833, F1-Score: 0.9692 
+21:48:15 : Epoch [21/50], Loss: 0.0001, Accuracy: 0.9624, Precision: 0.9784, Recall: 0.9456, Specificity: 0.9792, F1-Score: 0.9617 
+21:48:23 : Epoch [22/50], Loss: 0.0002, Accuracy: 0.9718, Precision: 0.9727, Recall: 0.9707, Specificity: 0.9729, F1-Score: 0.9717 
+21:48:32 : Epoch [23/50], Loss: 0.0000, Accuracy: 0.9739, Precision: 0.9709, Recall: 0.9770, Specificity: 0.9708, F1-Score: 0.9739 
+21:48:40 : Epoch [24/50], Loss: 0.0000, Accuracy: 0.9770, Precision: 0.9810, Recall: 0.9728, Specificity: 0.9812, F1-Score: 0.9769 
+21:48:49 : Epoch [25/50], Loss: 0.0002, Accuracy: 0.9697, Precision: 0.9787, Recall: 0.9603, Specificity: 0.9792, F1-Score: 0.9694 
+21:48:57 : Epoch [26/50], Loss: 0.0001, Accuracy: 0.9697, Precision: 0.9807, Recall: 0.9582, Specificity: 0.9812, F1-Score: 0.9693 
+21:49:06 : Epoch [27/50], Loss: 0.0004, Accuracy: 0.9708, Precision: 0.9767, Recall: 0.9644, Specificity: 0.9771, F1-Score: 0.9705 
+21:49:14 : Epoch [28/50], Loss: 0.0010, Accuracy: 0.9656, Precision: 0.9724, Recall: 0.9582, Specificity: 0.9729, F1-Score: 0.9652 
+21:49:23 : Epoch [29/50], Loss: 0.0001, Accuracy: 0.9718, Precision: 0.9788, Recall: 0.9644, Specificity: 0.9792, F1-Score: 0.9715 
+21:49:31 : Epoch [30/50], Loss: 0.0002, Accuracy: 0.9739, Precision: 0.9670, Recall: 0.9812, Specificity: 0.9667, F1-Score: 0.9740 
+21:49:40 : Epoch [31/50], Loss: 0.0002, Accuracy: 0.9718, Precision: 0.9829, Recall: 0.9603, Specificity: 0.9833, F1-Score: 0.9714 
+21:49:48 : Epoch [32/50], Loss: 0.0001, Accuracy: 0.9687, Precision: 0.9786, Recall: 0.9582, Specificity: 0.9792, F1-Score: 0.9683 
+21:49:57 : Epoch [33/50], Loss: 0.0001, Accuracy: 0.9739, Precision: 0.9576, Recall: 0.9916, Specificity: 0.9563, F1-Score: 0.9743 
+21:50:05 : Epoch [34/50], Loss: 0.0000, Accuracy: 0.9739, Precision: 0.9613, Recall: 0.9874, Specificity: 0.9604, F1-Score: 0.9742 
+21:50:13 : Epoch [35/50], Loss: 0.0000, Accuracy: 0.9666, Precision: 0.9765, Recall: 0.9561, Specificity: 0.9771, F1-Score: 0.9662 
+21:50:22 : Epoch [36/50], Loss: 0.0000, Accuracy: 0.9729, Precision: 0.9708, Recall: 0.9749, Specificity: 0.9708, F1-Score: 0.9729 
+21:50:30 : Epoch [37/50], Loss: 0.0000, Accuracy: 0.9760, Precision: 0.9730, Recall: 0.9791, Specificity: 0.9729, F1-Score: 0.9760 
+21:50:39 : Epoch [38/50], Loss: 0.0001, Accuracy: 0.9739, Precision: 0.9651, Recall: 0.9833, Specificity: 0.9646, F1-Score: 0.9741 
+21:50:47 : Epoch [39/50], Loss: 0.0000, Accuracy: 0.9749, Precision: 0.9710, Recall: 0.9791, Specificity: 0.9708, F1-Score: 0.9750 
+21:50:56 : Epoch [40/50], Loss: 0.0000, Accuracy: 0.9697, Precision: 0.9746, Recall: 0.9644, Specificity: 0.9750, F1-Score: 0.9695 
+21:51:04 : Epoch [41/50], Loss: 0.0001, Accuracy: 0.9749, Precision: 0.9769, Recall: 0.9728, Specificity: 0.9771, F1-Score: 0.9748 
+21:51:13 : Epoch [42/50], Loss: 0.0000, Accuracy: 0.9770, Precision: 0.9790, Recall: 0.9749, Specificity: 0.9792, F1-Score: 0.9769 
+21:51:21 : Epoch [43/50], Loss: 0.0000, Accuracy: 0.9697, Precision: 0.9766, Recall: 0.9623, Specificity: 0.9771, F1-Score: 0.9694 
+21:51:30 : Epoch [44/50], Loss: 0.0000, Accuracy: 0.9770, Precision: 0.9730, Recall: 0.9812, Specificity: 0.9729, F1-Score: 0.9771 
+21:51:38 : Epoch [45/50], Loss: 0.0000, Accuracy: 0.9729, Precision: 0.9708, Recall: 0.9749, Specificity: 0.9708, F1-Score: 0.9729 
+21:51:47 : Epoch [46/50], Loss: 0.0004, Accuracy: 0.9729, Precision: 0.9708, Recall: 0.9749, Specificity: 0.9708, F1-Score: 0.9729 
+21:51:55 : Epoch [47/50], Loss: 0.0001, Accuracy: 0.9624, Precision: 0.9702, Recall: 0.9540, Specificity: 0.9708, F1-Score: 0.9620 
+21:52:04 : Epoch [48/50], Loss: 0.0000, Accuracy: 0.9729, Precision: 0.9788, Recall: 0.9665, Specificity: 0.9792, F1-Score: 0.9726 
+21:52:12 : Epoch [49/50], Loss: 0.0001, Accuracy: 0.9749, Precision: 0.9710, Recall: 0.9791, Specificity: 0.9708, F1-Score: 0.9750 
+21:52:20 : Epoch [50/50], Loss: 0.0000, Accuracy: 0.9770, Precision: 0.9711, Recall: 0.9833, Specificity: 0.9708, F1-Score: 0.9771 
+21:53:44 : Test Loss: 0.2204, Test Accuracy: 0.9663, Test Precision: 0.4755, Test Recall: 0.9958, Test Specificity: 0.9653, Test F1-Score: 0.6436 
+21:53:44 : Total Time taken: 524.7805854000035 Seconds 
+21:53:44 : ============================================================================= 
+21:53:44 : learinng rate of 1e-06 
+21:53:44 : Path identified is C:\Users\bt22aak\GPU_DS\Exp_6\Exp_6_1_Baseline\Balanced and C:\Users\bt22aak\GPU_DS\Exp_6\Exp_6_1_Baseline\Unbalanced 
+21:53:44 : Starting the processing of Exp_6_1_Baseline_b32e50L1e-06 
+21:54:01 : Running on GPU 
+21:54:01 : Model is Exp_6_1_Baseline_b32e50L1e-06 
+21:54:10 : Epoch [1/50], Loss: 0.6550, Accuracy: 0.7035, Precision: 0.7215, Recall: 0.6611, Specificity: 0.7458, F1-Score: 0.6900 
+21:54:18 : Epoch [2/50], Loss: 0.6278, Accuracy: 0.6952, Precision: 0.6340, Recall: 0.9205, Specificity: 0.4708, F1-Score: 0.7509 
+21:54:27 : Epoch [3/50], Loss: 0.6025, Accuracy: 0.8038, Precision: 0.7757, Recall: 0.8536, Specificity: 0.7542, F1-Score: 0.8127 
+21:54:35 : Epoch [4/50], Loss: 0.5711, Accuracy: 0.8184, Precision: 0.7405, Recall: 0.9791, Specificity: 0.6583, F1-Score: 0.8432 
+21:54:44 : Epoch [5/50], Loss: 0.5410, Accuracy: 0.8163, Precision: 0.7374, Recall: 0.9812, Specificity: 0.6521, F1-Score: 0.8420 
+21:54:52 : Epoch [6/50], Loss: 0.5094, Accuracy: 0.8309, Precision: 0.7573, Recall: 0.9728, Specificity: 0.6896, F1-Score: 0.8516 
+21:55:01 : Epoch [7/50], Loss: 0.4793, Accuracy: 0.8299, Precision: 0.7569, Recall: 0.9707, Specificity: 0.6896, F1-Score: 0.8506 
+21:55:09 : Epoch [8/50], Loss: 0.4522, Accuracy: 0.8382, Precision: 0.7742, Recall: 0.9540, Specificity: 0.7229, F1-Score: 0.8547 
+21:55:17 : Epoch [9/50], Loss: 0.4231, Accuracy: 0.8507, Precision: 0.8051, Recall: 0.9247, Specificity: 0.7771, F1-Score: 0.8608 
+21:55:26 : Epoch [10/50], Loss: 0.4072, Accuracy: 0.8664, Precision: 0.8889, Recall: 0.8368, Specificity: 0.8958, F1-Score: 0.8621 
+21:55:34 : Epoch [11/50], Loss: 0.3737, Accuracy: 0.8747, Precision: 0.8638, Recall: 0.8891, Specificity: 0.8604, F1-Score: 0.8763 
+21:55:43 : Epoch [12/50], Loss: 0.3671, Accuracy: 0.8747, Precision: 0.9032, Recall: 0.8389, Specificity: 0.9104, F1-Score: 0.8698 
+21:55:51 : Epoch [13/50], Loss: 0.3226, Accuracy: 0.8831, Precision: 0.8427, Recall: 0.9414, Specificity: 0.8250, F1-Score: 0.8893 
+21:56:00 : Epoch [14/50], Loss: 0.3002, Accuracy: 0.8779, Precision: 0.8288, Recall: 0.9519, Specificity: 0.8042, F1-Score: 0.8861 
+21:56:08 : Epoch [15/50], Loss: 0.2835, Accuracy: 0.8946, Precision: 0.8689, Recall: 0.9289, Specificity: 0.8604, F1-Score: 0.8979 
+21:56:17 : Epoch [16/50], Loss: 0.2792, Accuracy: 0.8935, Precision: 0.9087, Recall: 0.8745, Specificity: 0.9125, F1-Score: 0.8913 
+21:56:25 : Epoch [17/50], Loss: 0.2451, Accuracy: 0.8946, Precision: 0.8577, Recall: 0.9456, Specificity: 0.8438, F1-Score: 0.8995 
+21:56:34 : Epoch [18/50], Loss: 0.2292, Accuracy: 0.9008, Precision: 0.8620, Recall: 0.9540, Specificity: 0.8479, F1-Score: 0.9057 
+21:56:42 : Epoch [19/50], Loss: 0.2147, Accuracy: 0.9029, Precision: 0.8639, Recall: 0.9561, Specificity: 0.8500, F1-Score: 0.9076 
+21:56:51 : Epoch [20/50], Loss: 0.2036, Accuracy: 0.8946, Precision: 0.8421, Recall: 0.9707, Specificity: 0.8187, F1-Score: 0.9018 
+21:56:59 : Epoch [21/50], Loss: 0.2038, Accuracy: 0.9102, Precision: 0.9135, Recall: 0.9059, Specificity: 0.9146, F1-Score: 0.9097 
+21:57:08 : Epoch [22/50], Loss: 0.1935, Accuracy: 0.9071, Precision: 0.9130, Recall: 0.8996, Specificity: 0.9146, F1-Score: 0.9062 
+21:57:16 : Epoch [23/50], Loss: 0.1690, Accuracy: 0.9165, Precision: 0.8887, Recall: 0.9519, Specificity: 0.8812, F1-Score: 0.9192 
+21:57:24 : Epoch [24/50], Loss: 0.1666, Accuracy: 0.9165, Precision: 0.9129, Recall: 0.9205, Specificity: 0.9125, F1-Score: 0.9167 
+21:57:33 : Epoch [25/50], Loss: 0.1581, Accuracy: 0.9165, Precision: 0.9045, Recall: 0.9310, Specificity: 0.9021, F1-Score: 0.9175 
+21:57:41 : Epoch [26/50], Loss: 0.1513, Accuracy: 0.9186, Precision: 0.9049, Recall: 0.9351, Specificity: 0.9021, F1-Score: 0.9198 
+21:57:50 : Epoch [27/50], Loss: 0.1534, Accuracy: 0.9144, Precision: 0.9195, Recall: 0.9079, Specificity: 0.9208, F1-Score: 0.9137 
+21:57:58 : Epoch [28/50], Loss: 0.1352, Accuracy: 0.9238, Precision: 0.9042, Recall: 0.9477, Specificity: 0.9000, F1-Score: 0.9254 
+21:58:07 : Epoch [29/50], Loss: 0.1331, Accuracy: 0.9186, Precision: 0.9167, Recall: 0.9205, Specificity: 0.9167, F1-Score: 0.9186 
+21:58:15 : Epoch [30/50], Loss: 0.1211, Accuracy: 0.9248, Precision: 0.9060, Recall: 0.9477, Specificity: 0.9021, F1-Score: 0.9264 
+21:58:24 : Epoch [31/50], Loss: 0.1210, Accuracy: 0.9259, Precision: 0.9145, Recall: 0.9393, Specificity: 0.9125, F1-Score: 0.9267 
+21:58:32 : Epoch [32/50], Loss: 0.1172, Accuracy: 0.9228, Precision: 0.9208, Recall: 0.9247, Specificity: 0.9208, F1-Score: 0.9228 
+21:58:41 : Epoch [33/50], Loss: 0.1078, Accuracy: 0.9228, Precision: 0.8930, Recall: 0.9603, Specificity: 0.8854, F1-Score: 0.9254 
+21:58:49 : Epoch [34/50], Loss: 0.1172, Accuracy: 0.9154, Precision: 0.9287, Recall: 0.8996, Specificity: 0.9313, F1-Score: 0.9139 
+21:58:58 : Epoch [35/50], Loss: 0.0997, Accuracy: 0.9269, Precision: 0.9032, Recall: 0.9561, Specificity: 0.8979, F1-Score: 0.9289 
+21:59:06 : Epoch [36/50], Loss: 0.0968, Accuracy: 0.9311, Precision: 0.9187, Recall: 0.9456, Specificity: 0.9167, F1-Score: 0.9320 
+21:59:15 : Epoch [37/50], Loss: 0.0911, Accuracy: 0.9301, Precision: 0.9118, Recall: 0.9519, Specificity: 0.9083, F1-Score: 0.9314 
+21:59:23 : Epoch [38/50], Loss: 0.0899, Accuracy: 0.9332, Precision: 0.9173, Recall: 0.9519, Specificity: 0.9146, F1-Score: 0.9343 
+21:59:32 : Epoch [39/50], Loss: 0.0925, Accuracy: 0.9301, Precision: 0.9185, Recall: 0.9435, Specificity: 0.9167, F1-Score: 0.9309 
+21:59:40 : Epoch [40/50], Loss: 0.0854, Accuracy: 0.9322, Precision: 0.9240, Recall: 0.9414, Specificity: 0.9229, F1-Score: 0.9326 
+21:59:48 : Epoch [41/50], Loss: 0.0831, Accuracy: 0.9311, Precision: 0.9292, Recall: 0.9331, Specificity: 0.9292, F1-Score: 0.9311 
+21:59:57 : Epoch [42/50], Loss: 0.0762, Accuracy: 0.9322, Precision: 0.9155, Recall: 0.9519, Specificity: 0.9125, F1-Score: 0.9333 
+22:00:05 : Epoch [43/50], Loss: 0.0782, Accuracy: 0.9342, Precision: 0.9278, Recall: 0.9414, Specificity: 0.9271, F1-Score: 0.9346 
+22:00:14 : Epoch [44/50], Loss: 0.0737, Accuracy: 0.9332, Precision: 0.9207, Recall: 0.9477, Specificity: 0.9187, F1-Score: 0.9340 
+22:00:22 : Epoch [45/50], Loss: 0.0689, Accuracy: 0.9311, Precision: 0.9071, Recall: 0.9603, Specificity: 0.9021, F1-Score: 0.9329 
+22:00:31 : Epoch [46/50], Loss: 0.0668, Accuracy: 0.9342, Precision: 0.9192, Recall: 0.9519, Specificity: 0.9167, F1-Score: 0.9353 
+22:00:39 : Epoch [47/50], Loss: 0.0681, Accuracy: 0.9363, Precision: 0.9212, Recall: 0.9540, Specificity: 0.9187, F1-Score: 0.9373 
+22:00:48 : Epoch [48/50], Loss: 0.0616, Accuracy: 0.9363, Precision: 0.9145, Recall: 0.9623, Specificity: 0.9104, F1-Score: 0.9378 
+22:00:56 : Epoch [49/50], Loss: 0.0626, Accuracy: 0.9332, Precision: 0.8996, Recall: 0.9749, Specificity: 0.8917, F1-Score: 0.9357 
+22:01:05 : Epoch [50/50], Loss: 0.0682, Accuracy: 0.9374, Precision: 0.9372, Recall: 0.9372, Specificity: 0.9375, F1-Score: 0.9372 
+22:02:27 : Test Loss: 0.1870, Test Accuracy: 0.9297, Test Precision: 0.2969, Test Recall: 0.9494, Test Specificity: 0.9291, Test F1-Score: 0.4524 
+22:02:27 : Total Time taken: 522.9175584000186 Seconds 

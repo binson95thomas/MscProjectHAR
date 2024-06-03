@@ -2,12 +2,15 @@ import numpy as np
 import os
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
+import traceback
 
 # Folder where the numpy arrays are saved
-folder_path = 'C:\\Binson\\Cloud\\OneDrive - University of Hertfordshire\\ProjectWorkables\\GPU_DS\\balanced_Canny\\Subject1\\Activity1\\Trial1\\Subject1Activity1Trial1Camera1_2018-07-04T12_04_20.238369.npy'
+folder_path = 'E:\\Outputs\\Exp_6_4_OF_HighRes_128x96\\Unbalanced\\Subject1\\Activity1\\Trial1'
 
 def load_arrays(folder_path):
+    print(folder_path)
     for root, dirs, files in os.walk(folder_path):
+        print(f'files are{files}')
         for file in files:
             if file.endswith('.npy'):
                 yield os.path.join(root, file)
@@ -28,5 +31,14 @@ def visualize_optical_flow(array_path):
     plt.show()
 
 if __name__ == "__main__":
-    for array_path in load_arrays(folder_path):
-        visualize_optical_flow(array_path)
+    print('start')
+    try:
+        print('Vis start')
+        for array_path in load_arrays(folder_path):
+            visualize_optical_flow(array_path)
+        print('Vis complete')
+    except Exception as e:
+        print(f'Error {e}')
+        error_stack = traceback.format_exc()
+        print("=======================================================================")
+        print(f"Error stack:\n{error_stack}")

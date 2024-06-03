@@ -1,0 +1,432 @@
+23:28:39 : Running on GPU 
+23:28:39 : Model is TwoStream2_Exp_6_1_Baseline_b32e50L0.0001 
+23:28:39 : No saved model found. Training a new model. 
+23:28:44 : ****************************** 
+23:28:44 : Error occured running_mean should contain 128 elements not 64 
+23:28:44 : Traceback (most recent call last):
+  File "C:\Users\bt22aak\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_7_TwoStream_SayVersion.py", line 618, in <module>
+    model = train_model(dataloader_train_raw, dataloader_val_raw,dataloader_train_OF, dataloader_val_OF, num_epochs,learning_rate)
+  File "C:\Users\bt22aak\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_7_TwoStream_SayVersion.py", line 395, in train_model
+    outputs = model(batch_features1,batch_features2)
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\bt22aak\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_7_TwoStream_SayVersion.py", line 214, in forward
+    x1 = self.stream1(x1)
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\bt22aak\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_7_TwoStream_SayVersion.py", line 79, in forward
+    x = F.relu(self.bn1(self.conv1(x)))
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\torch\nn\modules\batchnorm.py", line 175, in forward
+    return F.batch_norm(
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\torch\nn\functional.py", line 2482, in batch_norm
+    return torch.batch_norm(
+RuntimeError: running_mean should contain 128 elements not 64
+ 
+23:28:44 : ****************************** 
+23:37:22 : Running on GPU 
+23:37:22 : Model is TwoStream2_Exp_6_1_Baseline_b32e50L0.0001 
+23:37:22 : No saved model found. Training a new model. 
+23:37:25 : ****************************** 
+23:37:25 : Error occured running_mean should contain 128 elements not 64 
+23:37:25 : Traceback (most recent call last):
+  File "C:\Users\bt22aak\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_7_TwoStream_SayVersion.py", line 618, in <module>
+    model = train_model(dataloader_train_raw, dataloader_val_raw,dataloader_train_OF, dataloader_val_OF, num_epochs,learning_rate)
+  File "C:\Users\bt22aak\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_7_TwoStream_SayVersion.py", line 395, in train_model
+    outputs = model(batch_features1,batch_features2)
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\bt22aak\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_7_TwoStream_SayVersion.py", line 214, in forward
+    x1 = self.stream1(x1)
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\bt22aak\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_7_TwoStream_SayVersion.py", line 79, in forward
+    x = F.relu(self.bn1(self.conv1(x)))
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\torch\nn\modules\batchnorm.py", line 175, in forward
+    return F.batch_norm(
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\torch\nn\functional.py", line 2482, in batch_norm
+    return torch.batch_norm(
+RuntimeError: running_mean should contain 128 elements not 64
+ 
+23:37:25 : ****************************** 
+23:43:39 : Running on GPU 
+23:43:39 : Model is TwoStream2_Exp_6_1_Baseline_b32e50L0.0001 
+23:43:39 : No saved model found. Training a new model. 
+23:43:42 : ****************************** 
+23:43:42 : Error occured mat1 and mat2 shapes cannot be multiplied (32x4 and 256x2) 
+23:43:42 : Traceback (most recent call last):
+  File "C:\Users\bt22aak\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_7_TwoStream_SayVersion.py", line 618, in <module>
+    model = train_model(dataloader_train_raw, dataloader_val_raw,dataloader_train_OF, dataloader_val_OF, num_epochs,learning_rate)
+  File "C:\Users\bt22aak\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_7_TwoStream_SayVersion.py", line 395, in train_model
+    outputs = model(batch_features1,batch_features2)
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\bt22aak\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_7_TwoStream_SayVersion.py", line 219, in forward
+    x = self.fc2(x)
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\torch\nn\modules\linear.py", line 116, in forward
+    return F.linear(input, self.weight, self.bias)
+RuntimeError: mat1 and mat2 shapes cannot be multiplied (32x4 and 256x2)
+ 
+23:43:42 : ****************************** 
+23:45:08 : Running on GPU 
+23:45:08 : Model is TwoStream2_Exp_6_1_Baseline_b32e50L0.0001 
+23:45:08 : No saved model found. Training a new model. 
+23:45:24 : ****************************** 
+23:45:24 : Error occured Sizes of tensors must match except in dimension 1. Expected size 32 but got size 26 for tensor number 1 in the list. 
+23:45:24 : Traceback (most recent call last):
+  File "C:\Users\bt22aak\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_7_TwoStream_SayVersion.py", line 618, in <module>
+    model = train_model(dataloader_train_raw, dataloader_val_raw,dataloader_train_OF, dataloader_val_OF, num_epochs,learning_rate)
+  File "C:\Users\bt22aak\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_7_TwoStream_SayVersion.py", line 395, in train_model
+    outputs = model(batch_features1,batch_features2)
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\bt22aak\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_7_TwoStream_SayVersion.py", line 217, in forward
+    x = torch.cat((x1, x2), dim=1)
+RuntimeError: Sizes of tensors must match except in dimension 1. Expected size 32 but got size 26 for tensor number 1 in the list.
+ 
+23:45:24 : ****************************** 
+23:51:02 : Running on GPU 
+23:51:02 : Model is TwoStream2_Exp_6_1_Baseline_b32e50L0.0001 
+23:51:03 : No saved model found. Training a new model. 
+23:51:21 : ****************************** 
+23:51:21 : Error occured Sizes of tensors must match except in dimension 1. Expected size 32 but got size 26 for tensor number 1 in the list. 
+23:51:21 : Traceback (most recent call last):
+  File "C:\Users\bt22aak\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_7_TwoStream_SayVersion.py", line 618, in <module>
+    model = train_model(dataloader_train_raw, dataloader_val_raw,dataloader_train_OF, dataloader_val_OF, num_epochs,learning_rate)
+  File "C:\Users\bt22aak\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_7_TwoStream_SayVersion.py", line 395, in train_model
+    outputs = model(batch_features1,batch_features2)
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\bt22aak\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_7_TwoStream_SayVersion.py", line 217, in forward
+    x = torch.cat((x1, x2), dim=1)
+RuntimeError: Sizes of tensors must match except in dimension 1. Expected size 32 but got size 26 for tensor number 1 in the list.
+ 
+23:51:21 : ****************************** 
+23:53:38 : Running on GPU 
+23:53:38 : Model is TwoStream2_Exp_6_1_Baseline_b32e50L0.0001 
+23:53:38 : No saved model found. Training a new model. 
+23:54:32 : Running on GPU 
+23:54:32 : Model is TwoStream2_Exp_6_1_Baseline_b32e50L0.0001 
+23:54:32 : No saved model found. Training a new model. 
+23:54:49 : ****************************** 
+23:54:49 : Error occured Sizes of tensors must match except in dimension 1. Expected size 32 but got size 26 for tensor number 1 in the list. 
+23:54:49 : Traceback (most recent call last):
+  File "C:\Users\bt22aak\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_7_TwoStream_SayVersion.py", line 579, in <module>
+    model = train_model(dataloader_train_raw, dataloader_val_raw,dataloader_train_OF, dataloader_val_OF, num_epochs,learning_rate)
+  File "C:\Users\bt22aak\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_7_TwoStream_SayVersion.py", line 356, in train_model
+    outputs = model(batch_features1,batch_features2)
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\bt22aak\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_7_TwoStream_SayVersion.py", line 178, in forward
+    x = torch.cat((x1, x2), dim=1)
+RuntimeError: Sizes of tensors must match except in dimension 1. Expected size 32 but got size 26 for tensor number 1 in the list.
+ 
+23:54:49 : ****************************** 
+23:59:29 : Running on GPU 
+23:59:29 : Model is TwoStream2_Exp_6_1_Baseline_b32e50L0.0001 
+23:59:29 : No saved model found. Training a new model. 
+23:59:45 : ****************************** 
+23:59:45 : Error occured Sizes of tensors must match except in dimension 1. Expected size 32 but got size 26 for tensor number 1 in the list. 
+23:59:45 : Traceback (most recent call last):
+  File "C:\Users\bt22aak\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_7_TwoStream_SayVersion.py", line 579, in <module>
+    model = train_model(dataloader_train_raw, dataloader_val_raw,dataloader_train_OF, dataloader_val_OF, num_epochs,learning_rate)
+  File "C:\Users\bt22aak\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_7_TwoStream_SayVersion.py", line 356, in train_model
+    outputs = model(batch_features1,batch_features2)
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\bt22aak\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_7_TwoStream_SayVersion.py", line 178, in forward
+    x = torch.cat((x1, x2), dim=1)
+RuntimeError: Sizes of tensors must match except in dimension 1. Expected size 32 but got size 26 for tensor number 1 in the list.
+ 
+23:59:45 : ****************************** 
+00:01:51 : Running on GPU 
+00:01:51 : Model is TwoStream2_Exp_6_1_Baseline_b32e50L0.0001 
+00:01:51 : No saved model found. Training a new model. 
+00:02:07 : ****************************** 
+00:02:07 : Error occured Sizes of tensors must match except in dimension 1. Expected size 32 but got size 26 for tensor number 1 in the list. 
+00:02:07 : Traceback (most recent call last):
+  File "C:\Users\bt22aak\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_7_TwoStream_SayVersion.py", line 580, in <module>
+    model = train_model(dataloader_train_raw, dataloader_val_raw,dataloader_train_OF, dataloader_val_OF, num_epochs,learning_rate)
+  File "C:\Users\bt22aak\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_7_TwoStream_SayVersion.py", line 357, in train_model
+    outputs = model(batch_features1,batch_features2)
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\bt22aak\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_7_TwoStream_SayVersion.py", line 179, in forward
+    x = torch.cat((x1, x2), dim=1)
+RuntimeError: Sizes of tensors must match except in dimension 1. Expected size 32 but got size 26 for tensor number 1 in the list.
+ 
+00:02:07 : ****************************** 
+00:44:13 : Running on GPU 
+00:44:13 : Model is TwoStream2_Exp_6_1_Baseline_b32e50L0.0001 
+00:44:13 : No saved model found. Training a new model. 
+00:44:28 : ****************************** 
+00:44:28 : Error occured Sizes of tensors must match except in dimension 1. Expected size 32 but got size 26 for tensor number 1 in the list. 
+00:44:28 : Traceback (most recent call last):
+  File "C:\Users\bt22aak\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_7_TwoStream_UHPC.py", line 546, in <module>
+    model = train_model(dataloader_train_raw, dataloader_val_raw,dataloader_train_OF, dataloader_val_OF, num_epochs,learning_rate)
+  File "C:\Users\bt22aak\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_7_TwoStream_UHPC.py", line 323, in train_model
+    outputs = model(batch_features1,batch_features2)
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\bt22aak\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_7_TwoStream_UHPC.py", line 145, in forward
+    x = torch.cat((x1, x2), dim=1)
+RuntimeError: Sizes of tensors must match except in dimension 1. Expected size 32 but got size 26 for tensor number 1 in the list.
+ 
+00:44:28 : ****************************** 
+00:52:28 : Running on GPU 
+00:52:28 : Model is TwoStream2_Exp_6_1_Baseline_b32e50L0.0001 
+00:52:28 : No saved model found. Training a new model. 
+00:52:50 : Epoch [1/50], Loss: 0.5473, Accuracy: 0.8486, Precision: 0.8271, Recall: 0.8808, Specificity: 0.8167, F1-Score: 0.8531 
+00:53:08 : Epoch [2/50], Loss: 0.4449, Accuracy: 0.8998, Precision: 0.8550, Recall: 0.9623, Specificity: 0.8375, F1-Score: 0.9055 
+00:53:25 : Epoch [3/50], Loss: 0.3568, Accuracy: 0.9290, Precision: 0.9167, Recall: 0.9435, Specificity: 0.9146, F1-Score: 0.9299 
+00:53:42 : Epoch [4/50], Loss: 0.3443, Accuracy: 0.9259, Precision: 0.9512, Recall: 0.8975, Specificity: 0.9542, F1-Score: 0.9236 
+00:53:59 : Epoch [5/50], Loss: 0.3995, Accuracy: 0.9457, Precision: 0.9176, Recall: 0.9791, Specificity: 0.9125, F1-Score: 0.9474 
+00:54:18 : Epoch [6/50], Loss: 0.4168, Accuracy: 0.9426, Precision: 0.9222, Recall: 0.9665, Specificity: 0.9187, F1-Score: 0.9438 
+00:54:37 : Epoch [7/50], Loss: 0.3828, Accuracy: 0.9457, Precision: 0.9226, Recall: 0.9728, Specificity: 0.9187, F1-Score: 0.9470 
+00:54:56 : Epoch [8/50], Loss: 0.4637, Accuracy: 0.9290, Precision: 0.9437, Recall: 0.9121, Specificity: 0.9458, F1-Score: 0.9277 
+00:55:15 : Epoch [9/50], Loss: 0.3878, Accuracy: 0.9363, Precision: 0.9446, Recall: 0.9268, Specificity: 0.9458, F1-Score: 0.9356 
+00:55:34 : Epoch [10/50], Loss: 0.3295, Accuracy: 0.9509, Precision: 0.9267, Recall: 0.9791, Specificity: 0.9229, F1-Score: 0.9522 
+00:55:54 : Epoch [11/50], Loss: 0.3917, Accuracy: 0.9499, Precision: 0.9388, Recall: 0.9623, Specificity: 0.9375, F1-Score: 0.9504 
+00:56:13 : Epoch [12/50], Loss: 0.4259, Accuracy: 0.9478, Precision: 0.9553, Recall: 0.9393, Specificity: 0.9563, F1-Score: 0.9473 
+00:56:32 : Epoch [13/50], Loss: 0.3578, Accuracy: 0.9541, Precision: 0.9222, Recall: 0.9916, Specificity: 0.9167, F1-Score: 0.9556 
+00:56:51 : Epoch [14/50], Loss: 0.3638, Accuracy: 0.9509, Precision: 0.9575, Recall: 0.9435, Specificity: 0.9583, F1-Score: 0.9505 
+00:57:11 : Epoch [15/50], Loss: 0.3133, Accuracy: 0.9509, Precision: 0.9336, Recall: 0.9707, Specificity: 0.9313, F1-Score: 0.9518 
+00:57:30 : Epoch [16/50], Loss: 0.3151, Accuracy: 0.9562, Precision: 0.9343, Recall: 0.9812, Specificity: 0.9313, F1-Score: 0.9571 
+01:03:28 : Running on GPU 
+01:03:28 : Model is TwoStream2_Exp_6_1_Baseline_b32e50L0.0001 
+01:03:28 : No saved model found. Training a new model. 
+01:03:47 : Epoch [1/50], Loss: 0.5774, Accuracy: 0.9151, Precision: 0.9760, Recall: 0.8512, Specificity: 0.9791, F1-Score: 0.9093 
+01:06:02 : Running on GPU 
+01:06:02 : Model is TwoStream2_Exp_6_1_Baseline_b32e50L0.0001 
+01:06:02 : No saved model found. Training a new model. 
+01:06:21 : Epoch [1/50], Loss: 0.5774, Accuracy: 0.9151, Precision: 0.9760, Recall: 0.8512, Specificity: 0.9791, F1-Score: 0.9093 
+01:06:38 : Epoch [2/50], Loss: 0.4200, Accuracy: 0.6841, Precision: 0.6128, Recall: 1.0000, Specificity: 0.3681, F1-Score: 0.7599 
+01:06:53 : Epoch [3/50], Loss: 0.4010, Accuracy: 0.8277, Precision: 0.9922, Recall: 0.6606, Specificity: 0.9948, F1-Score: 0.7931 
+01:07:09 : Epoch [4/50], Loss: 0.3714, Accuracy: 0.9517, Precision: 0.9806, Recall: 0.9217, Specificity: 0.9817, F1-Score: 0.9502 
+01:07:24 : Epoch [5/50], Loss: 0.3306, Accuracy: 0.7298, Precision: 0.9944, Recall: 0.4621, Specificity: 0.9974, F1-Score: 0.6310 
+01:07:41 : Epoch [6/50], Loss: 0.3613, Accuracy: 0.9465, Precision: 0.9803, Recall: 0.9112, Specificity: 0.9817, F1-Score: 0.9445 
+01:07:58 : Epoch [7/50], Loss: 0.3175, Accuracy: 0.9595, Precision: 0.9835, Recall: 0.9347, Specificity: 0.9843, F1-Score: 0.9585 
+01:08:15 : Epoch [8/50], Loss: 0.3161, Accuracy: 0.9308, Precision: 0.8802, Recall: 0.9974, Specificity: 0.8642, F1-Score: 0.9351 
+01:08:32 : Epoch [9/50], Loss: 0.3242, Accuracy: 0.5104, Precision: 1.0000, Recall: 0.0209, Specificity: 1.0000, F1-Score: 0.0409 
+01:08:48 : Epoch [10/50], Loss: 0.3138, Accuracy: 0.9595, Precision: 0.9335, Recall: 0.9896, Specificity: 0.9295, F1-Score: 0.9607 
+01:09:05 : Epoch [11/50], Loss: 0.3459, Accuracy: 0.7219, Precision: 0.6426, Recall: 1.0000, Specificity: 0.4439, F1-Score: 0.7824 
+01:09:22 : Epoch [12/50], Loss: 0.3138, Accuracy: 0.9491, Precision: 0.9914, Recall: 0.9060, Specificity: 0.9922, F1-Score: 0.9468 
+01:09:39 : Epoch [13/50], Loss: 0.3233, Accuracy: 0.9269, Precision: 0.8811, Recall: 0.9869, Specificity: 0.8668, F1-Score: 0.9310 
+01:09:56 : Epoch [14/50], Loss: 0.3139, Accuracy: 0.9413, Precision: 0.9884, Recall: 0.8930, Specificity: 0.9896, F1-Score: 0.9383 
+01:10:13 : Epoch [15/50], Loss: 0.3165, Accuracy: 0.9739, Precision: 0.9549, Recall: 0.9948, Specificity: 0.9530, F1-Score: 0.9744 
+01:10:28 : Epoch [16/50], Loss: 0.3140, Accuracy: 0.9608, Precision: 0.9809, Recall: 0.9399, Specificity: 0.9817, F1-Score: 0.9600 
+01:10:43 : Epoch [17/50], Loss: 0.3514, Accuracy: 0.9086, Precision: 0.9815, Recall: 0.8329, Specificity: 0.9843, F1-Score: 0.9011 
+01:10:58 : Epoch [18/50], Loss: 0.3169, Accuracy: 0.9661, Precision: 0.9735, Recall: 0.9582, Specificity: 0.9739, F1-Score: 0.9658 
+01:11:14 : Epoch [19/50], Loss: 0.3519, Accuracy: 0.9595, Precision: 0.9272, Recall: 0.9974, Specificity: 0.9217, F1-Score: 0.9610 
+01:11:29 : Epoch [20/50], Loss: 0.3135, Accuracy: 0.9713, Precision: 0.9570, Recall: 0.9869, Specificity: 0.9556, F1-Score: 0.9717 
+01:11:44 : Epoch [21/50], Loss: 0.3134, Accuracy: 0.9752, Precision: 0.9740, Recall: 0.9765, Specificity: 0.9739, F1-Score: 0.9752 
+01:11:59 : Epoch [22/50], Loss: 0.3135, Accuracy: 0.9008, Precision: 0.8344, Recall: 1.0000, Specificity: 0.8016, F1-Score: 0.9097 
+01:12:14 : Epoch [23/50], Loss: 0.3761, Accuracy: 0.6488, Precision: 0.5874, Recall: 1.0000, Specificity: 0.2977, F1-Score: 0.7401 
+01:12:30 : Epoch [24/50], Loss: 0.3134, Accuracy: 0.8616, Precision: 0.7867, Recall: 0.9922, Specificity: 0.7311, F1-Score: 0.8776 
+01:12:45 : Epoch [25/50], Loss: 0.3225, Accuracy: 0.9648, Precision: 0.9660, Recall: 0.9634, Specificity: 0.9661, F1-Score: 0.9647 
+01:13:00 : Epoch [26/50], Loss: 0.3199, Accuracy: 0.7050, Precision: 0.9816, Recall: 0.4178, Specificity: 0.9922, F1-Score: 0.5861 
+01:13:16 : Epoch [27/50], Loss: 0.3572, Accuracy: 0.9765, Precision: 0.9692, Recall: 0.9843, Specificity: 0.9687, F1-Score: 0.9767 
+01:13:31 : Epoch [28/50], Loss: 0.3306, Accuracy: 0.5483, Precision: 1.0000, Recall: 0.0966, Specificity: 1.0000, F1-Score: 0.1762 
+01:13:46 : Epoch [29/50], Loss: 0.3511, Accuracy: 0.9634, Precision: 0.9837, Recall: 0.9426, Specificity: 0.9843, F1-Score: 0.9627 
+01:14:01 : Epoch [30/50], Loss: 0.3216, Accuracy: 0.9700, Precision: 0.9688, Recall: 0.9713, Specificity: 0.9687, F1-Score: 0.9700 
+01:14:17 : Epoch [31/50], Loss: 0.3135, Accuracy: 0.9582, Precision: 0.9333, Recall: 0.9869, Specificity: 0.9295, F1-Score: 0.9594 
+01:14:32 : Epoch [32/50], Loss: 0.3134, Accuracy: 0.9204, Precision: 0.9879, Recall: 0.8512, Specificity: 0.9896, F1-Score: 0.9144 
+01:14:46 : Epoch [33/50], Loss: 0.3133, Accuracy: 0.8616, Precision: 0.9964, Recall: 0.7258, Specificity: 0.9974, F1-Score: 0.8399 
+01:15:01 : Epoch [34/50], Loss: 0.3137, Accuracy: 0.9608, Precision: 0.9836, Recall: 0.9373, Specificity: 0.9843, F1-Score: 0.9599 
+01:15:16 : Epoch [35/50], Loss: 0.3133, Accuracy: 0.9595, Precision: 0.9467, Recall: 0.9739, Specificity: 0.9452, F1-Score: 0.9601 
+01:15:31 : Epoch [36/50], Loss: 0.3135, Accuracy: 0.9386, Precision: 0.8962, Recall: 0.9922, Specificity: 0.8851, F1-Score: 0.9418 
+01:15:46 : Epoch [37/50], Loss: 0.3134, Accuracy: 0.9569, Precision: 0.9332, Recall: 0.9843, Specificity: 0.9295, F1-Score: 0.9581 
+01:16:00 : Epoch [38/50], Loss: 0.3134, Accuracy: 0.9713, Precision: 0.9788, Recall: 0.9634, Specificity: 0.9791, F1-Score: 0.9711 
+01:16:15 : Epoch [39/50], Loss: 0.3134, Accuracy: 0.9713, Precision: 0.9664, Recall: 0.9765, Specificity: 0.9661, F1-Score: 0.9714 
+01:16:30 : Epoch [40/50], Loss: 0.3133, Accuracy: 0.9569, Precision: 0.9310, Recall: 0.9869, Specificity: 0.9269, F1-Score: 0.9582 
+01:16:45 : Epoch [41/50], Loss: 0.3195, Accuracy: 0.9765, Precision: 0.9716, Recall: 0.9817, Specificity: 0.9713, F1-Score: 0.9766 
+01:17:00 : Epoch [42/50], Loss: 0.3376, Accuracy: 0.8525, Precision: 0.9891, Recall: 0.7128, Specificity: 0.9922, F1-Score: 0.8285 
+01:17:15 : Epoch [43/50], Loss: 0.3134, Accuracy: 0.9661, Precision: 0.9429, Recall: 0.9922, Specificity: 0.9399, F1-Score: 0.9669 
+01:17:29 : Epoch [44/50], Loss: 0.3133, Accuracy: 0.9713, Precision: 0.9616, Recall: 0.9817, Specificity: 0.9608, F1-Score: 0.9716 
+01:17:44 : Epoch [45/50], Loss: 0.3133, Accuracy: 0.7585, Precision: 0.6743, Recall: 1.0000, Specificity: 0.5170, F1-Score: 0.8055 
+01:17:59 : Epoch [46/50], Loss: 0.3133, Accuracy: 0.9151, Precision: 0.9789, Recall: 0.8486, Specificity: 0.9817, F1-Score: 0.9091 
+01:18:16 : Epoch [47/50], Loss: 0.3133, Accuracy: 0.9452, Precision: 0.9858, Recall: 0.9034, Specificity: 0.9869, F1-Score: 0.9428 
+01:18:33 : Epoch [48/50], Loss: 0.3133, Accuracy: 0.9269, Precision: 0.8724, Recall: 1.0000, Specificity: 0.8538, F1-Score: 0.9319 
+01:18:50 : Epoch [49/50], Loss: 0.3134, Accuracy: 0.6710, Precision: 1.0000, Recall: 0.3420, Specificity: 1.0000, F1-Score: 0.5097 
+01:19:07 : Epoch [50/50], Loss: 0.3133, Accuracy: 0.9687, Precision: 0.9761, Recall: 0.9608, Specificity: 0.9765, F1-Score: 0.9684 
+01:19:08 : ****************************** 
+01:19:08 : Error occured not enough values to unpack (expected 4, got 0) 
+01:19:08 : Traceback (most recent call last):
+  File "C:\Users\bt22aak\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_7_TwoStream_SayVersion.py", line 584, in <module>
+    test_loss, test_accuracy, test_precision, test_recall, test_specificity, test_f1, true_labels, predictions = evaluate_model(model, dataloader_test_Raw,dataloader_test_OF, criterion, device)
+  File "C:\Users\bt22aak\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_7_TwoStream_SayVersion.py", line 446, in evaluate_model
+    accuracy, precision, recall, specificity, f1 = compute_metrics(all_labels, all_preds)
+  File "C:\Users\bt22aak\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_7_TwoStream_SayVersion.py", line 236, in compute_metrics
+    tn, fp, fn, tp = confusion_matrix(true_labels, predictions).ravel()
+ValueError: not enough values to unpack (expected 4, got 0)
+ 
+01:19:08 : ****************************** 
+01:43:17 : Running on GPU 
+01:43:17 : Model is TwoStream2_Exp_6_1_Baseline_b32e50L0.0001 
+01:43:17 : Loaded Pre-saved model. 
+01:43:22 : ****************************** 
+01:43:22 : Error occured Expected 4D (unbatched) or 5D (batched) input to conv3d, but got input of size: [32, 1, 17, 38, 51, 2] 
+01:43:22 : Traceback (most recent call last):
+  File "C:\Users\bt22aak\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_7_TwoStream_SayVersion.py", line 584, in <module>
+    test_loss, test_accuracy, test_precision, test_recall, test_specificity, test_f1, true_labels, predictions = evaluate_model(model, dataloader_test_Raw,dataloader_test_OF, criterion, device)
+  File "C:\Users\bt22aak\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_7_TwoStream_SayVersion.py", line 438, in evaluate_model
+    outputs = model(batch_features1, batch_features2)
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\bt22aak\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_7_TwoStream_SayVersion.py", line 174, in forward
+    x2 = self.stream2(x2)
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\bt22aak\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_7_TwoStream_SayVersion.py", line 144, in forward
+    x = F.relu(self.bn1(self.conv1(x)))
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\torch\nn\modules\conv.py", line 610, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "C:\Users\bt22aak\AppData\Roaming\Python\Python310\site-packages\torch\nn\modules\conv.py", line 605, in _conv_forward
+    return F.conv3d(
+RuntimeError: Expected 4D (unbatched) or 5D (batched) input to conv3d, but got input of size: [32, 1, 17, 38, 51, 2]
+ 
+01:43:22 : ****************************** 
+01:49:22 : Running on GPU 
+01:49:22 : Model is TwoStream2_Exp_6_1_Baseline_b32e50L0.0001 
+01:49:22 : Loaded Pre-saved model. 
+01:52:42 : Test Loss: 0.1648, Test Accuracy: 0.9832, Test Precision: 0.2717, Test Recall: 0.9557, Test Specificity: 0.9834, Test F1-Score: 0.4231 
+01:52:42 : Total Time taken: 278.71985880000284 Seconds 
+13:35:11 : ****************************** 
+13:35:11 : Error occured With n_samples=0, test_size=0.25 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters. 
+13:35:11 : Traceback (most recent call last):
+  File "C:\Binson\Cloud\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_7_TwoStream_Say.py", line 587, in <module>
+    train_idx_raw, val_idx_raw = train_test_split(range(len(train_val_dataset_raw)), test_size=0.25, random_state=42, stratify=train_val_dataset_raw.labels)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Binson\Apps\Lib\site-packages\sklearn\utils\_param_validation.py", line 211, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Binson\Apps\Lib\site-packages\sklearn\model_selection\_split.py", line 2617, in train_test_split
+    n_train, n_test = _validate_shuffle_split(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Binson\Apps\Lib\site-packages\sklearn\model_selection\_split.py", line 2273, in _validate_shuffle_split
+    raise ValueError(
+ValueError: With n_samples=0, test_size=0.25 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+ 
+13:35:11 : ****************************** 
+13:37:40 : ****************************** 
+13:37:40 : Error occured With n_samples=0, test_size=0.25 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters. 
+13:37:40 : Traceback (most recent call last):
+  File "C:\Binson\Cloud\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_7_TwoStream_Say.py", line 587, in <module>
+    train_idx_raw, val_idx_raw = train_test_split(range(len(train_val_dataset_raw)), test_size=0.25, random_state=42, stratify=train_val_dataset_raw.labels)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Binson\Apps\Lib\site-packages\sklearn\utils\_param_validation.py", line 211, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Binson\Apps\Lib\site-packages\sklearn\model_selection\_split.py", line 2617, in train_test_split
+    n_train, n_test = _validate_shuffle_split(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Binson\Apps\Lib\site-packages\sklearn\model_selection\_split.py", line 2273, in _validate_shuffle_split
+    raise ValueError(
+ValueError: With n_samples=0, test_size=0.25 and train_size=None, the resulting train set will be empty. Adjust any of the aforementioned parameters.
+ 
+13:37:40 : ****************************** 
+13:50:27 : Running on CPU Only 
+13:50:27 : Model is TwoStream_Exp_6_1_Baseline_b32e50L0.0001 
+13:50:27 : ****************************** 
+13:50:27 : Error occured cannot assign module before Module.__init__() call 
+13:50:27 : Traceback (most recent call last):
+  File "C:\Binson\Cloud\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_7_TwoStream_Say.py", line 614, in <module>
+    model = TwoStreamConv().to(device)
+            ^^^^^^^^^^^^^^^
+  File "C:\Binson\Cloud\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_7_TwoStream_Say.py", line 212, in __init__
+    self.stream1 = research_spatial()
+                   ^^^^^^^^^^^^^^^^^^
+  File "C:\Binson\Cloud\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_7_TwoStream_Say.py", line 36, in __init__
+    self.conv1 = nn.Conv3d(1, 96, (7, 7, 7), stride=2, padding=0)
+    ^^^^^^^^^^
+  File "C:\Binson\Apps\Lib\site-packages\torch\nn\modules\module.py", line 1723, in __setattr__
+    raise AttributeError(
+AttributeError: cannot assign module before Module.__init__() call
+ 
+13:50:27 : ****************************** 
+16:20:01 : Running on CPU Only 
+16:20:01 : Model is TwoStream_Exp_6_1_Baseline_b32e50L0.0001 
+16:20:04 : No saved model found. Training a new model. 
+16:20:17 : ****************************** 
+16:20:17 : Error occured Calculated padded input size per channel: (3 x 8 x 11). Kernel size: (5 x 5 x 5). Kernel size can't be greater than actual input size 
+16:20:17 : Traceback (most recent call last):
+  File "C:\Binson\Cloud\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_7_TwoStream_Say.py", line 629, in <module>
+    model = train_model(dataloader_train_raw, dataloader_val_raw,dataloader_train_OF, dataloader_val_OF, num_epochs,learning_rate)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Binson\Cloud\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_7_TwoStream_Say.py", line 406, in train_model
+    outputs = model(batch_features1,batch_features2)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Binson\Apps\Lib\site-packages\torch\nn\modules\module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Binson\Apps\Lib\site-packages\torch\nn\modules\module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Binson\Cloud\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_7_TwoStream_Say.py", line 222, in forward
+    x1 = self.stream1(x1)
+         ^^^^^^^^^^^^^^^^
+  File "C:\Binson\Apps\Lib\site-packages\torch\nn\modules\module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Binson\Apps\Lib\site-packages\torch\nn\modules\module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Binson\Cloud\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_7_TwoStream_Say.py", line 61, in forward
+    x = F.relu(self.bn2(self.conv2(x)))
+                        ^^^^^^^^^^^^^
+  File "C:\Binson\Apps\Lib\site-packages\torch\nn\modules\module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Binson\Apps\Lib\site-packages\torch\nn\modules\module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Binson\Apps\Lib\site-packages\torch\nn\modules\conv.py", line 610, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Binson\Apps\Lib\site-packages\torch\nn\modules\conv.py", line 605, in _conv_forward
+    return F.conv3d(
+           ^^^^^^^^^
+RuntimeError: Calculated padded input size per channel: (3 x 8 x 11). Kernel size: (5 x 5 x 5). Kernel size can't be greater than actual input size
+ 
+16:20:17 : ****************************** 

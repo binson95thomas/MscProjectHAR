@@ -243,6 +243,8 @@ def logging_output(message, file_path='./def_log.txt'):
 if __name__ == "__main__": 
     try:
             
+        # features_path = 'C:\\Users\\bt22aak\\GPU_DS\\Exp10_1_Contour_OF\\Balanced'
+        # test_path = 'C:\\Users\\bt22aak\\GPU_DS\\Exp10_1_Contour_OF\\unBalanced'
         features_path = 'C:\\Users\\bt22aak\\GPU_DS\\Exp10_1_Contour_OF\\Balanced'
         test_path = 'C:\\Users\\bt22aak\\GPU_DS\\Exp10_1_Contour_OF\\unBalanced'
         batch_size=32

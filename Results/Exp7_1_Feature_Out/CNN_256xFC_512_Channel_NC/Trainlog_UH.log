@@ -1,0 +1,361 @@
+00:10:00 : Running on GPU 
+00:10:00 : Model is CNN_256xFC_512_Channel_b32e50L0.0001 
+00:10:01 : No saved model found. Training a new model. 
+00:10:01 : Error occured name 'summary' is not defined 
+00:10:01 : Traceback (most recent call last):
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 575, in <module>
+    model = train_model(dataloader_train_raw, dataloader_val_raw,dataloader_train_OF, dataloader_val_OF, num_epochs,learning_rate)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 322, in train_model
+    summary(model)
+    ^^^^^^^
+NameError: name 'summary' is not defined
+ 
+00:10:01 : ****************************** 
+00:14:09 : Running on GPU 
+00:14:09 : Model is CNN_256xFC_512_Channel_b32e50L0.0001 
+00:14:09 : No saved model found. Training a new model. 
+00:14:10 : Error occured summary() missing 1 required positional argument: 'input_size' 
+00:14:10 : Traceback (most recent call last):
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 577, in <module>
+    model = train_model(dataloader_train_raw, dataloader_val_raw,dataloader_train_OF, dataloader_val_OF, num_epochs,learning_rate)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 324, in train_model
+    summary(model)
+TypeError: summary() missing 1 required positional argument: 'input_size'
+ 
+00:14:10 : ****************************** 
+00:23:17 : Running on GPU 
+00:23:17 : Model is CNN_256xFC_512_Channel_b32e50L0.0001 
+00:23:17 : Error occured TwoStreamConv.forward() missing 1 required positional argument: 'x2' 
+00:23:17 : Traceback (most recent call last):
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 565, in <module>
+    summary(model,(1,1,51,38))
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torchsummary\torchsummary.py", line 72, in summary
+    model(*x)
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: TwoStreamConv.forward() missing 1 required positional argument: 'x2'
+ 
+00:23:17 : ****************************** 
+00:25:56 : Running on GPU 
+00:25:56 : Model is CNN_256xFC_512_Channel_b32e50L0.0001 
+00:25:57 : Error occured Given input size: (128x1x51x38). Calculated output size: (128x0x25x19). Output size is too small 
+00:25:57 : Traceback (most recent call last):
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 565, in <module>
+    summary(model, [(1, 1, 51, 38), (1, 2, 51, 38)])
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torchsummary\torchsummary.py", line 72, in summary
+    model(*x)
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 143, in forward
+    logits1 = self.stream1(x1)
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1561, in _call_impl
+    result = forward_call(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 64, in forward
+    x = F.max_pool3d(x, 2)
+        ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\_jit_internal.py", line 499, in fn
+    return if_false(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\functional.py", line 882, in _max_pool3d
+    return torch.max_pool3d(input, kernel_size, stride, padding, dilation, ceil_mode)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Given input size: (128x1x51x38). Calculated output size: (128x0x25x19). Output size is too small
+ 
+00:25:57 : ****************************** 
+00:28:39 : Running on GPU 
+00:28:39 : Model is CNN_256xFC_512_Channel_b32e50L0.0001 
+00:28:40 : Error occured Given input size: (128x1x51x38). Calculated output size: (128x0x25x19). Output size is too small 
+00:28:40 : Traceback (most recent call last):
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 566, in <module>
+    summary(model, [(1, 1, 51, 38), (1, 2, 51, 38)])
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torchsummary\torchsummary.py", line 72, in summary
+    model(*x)
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 144, in forward
+    logits1 = self.stream1(x1)
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1561, in _call_impl
+    result = forward_call(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 65, in forward
+    x = F.max_pool3d(x, 2)
+        ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\_jit_internal.py", line 499, in fn
+    return if_false(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\functional.py", line 882, in _max_pool3d
+    return torch.max_pool3d(input, kernel_size, stride, padding, dilation, ceil_mode)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Given input size: (128x1x51x38). Calculated output size: (128x0x25x19). Output size is too small
+ 
+00:28:40 : ****************************** 
+00:33:06 : Running on GPU 
+00:33:06 : Model is CNN_256xFC_512_Channel_b32e50L0.0001 
+00:33:07 : Error occured Given input size: (128x1x51x38). Calculated output size: (128x0x25x19). Output size is too small 
+00:33:07 : Traceback (most recent call last):
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 567, in <module>
+    summary(model, [(1, 1, 51, 38), (1, 2, 51, 38)])
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torchsummary\torchsummary.py", line 72, in summary
+    model(*x)
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 145, in forward
+    logits1 = self.stream1(x1)
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1561, in _call_impl
+    result = forward_call(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 65, in forward
+    x = F.max_pool3d(x, 2)
+        ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\_jit_internal.py", line 499, in fn
+    return if_false(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\functional.py", line 882, in _max_pool3d
+    return torch.max_pool3d(input, kernel_size, stride, padding, dilation, ceil_mode)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Given input size: (128x1x51x38). Calculated output size: (128x0x25x19). Output size is too small
+ 
+00:33:07 : ****************************** 
+00:35:04 : Running on GPU 
+00:35:04 : Model is CNN_256xFC_512_Channel_b32e50L0.0001 
+00:35:05 : Error occured Expected 4D (unbatched) or 5D (batched) input to conv3d, but got input of size: [2, 2, 1, 1, 51, 38] 
+00:35:05 : Traceback (most recent call last):
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 567, in <module>
+    summary(model, [(2,1, 1, 51, 38), (1, 1, 2, 51, 38)])
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torchsummary\torchsummary.py", line 72, in summary
+    model(*x)
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 145, in forward
+    logits1 = self.stream1(x1)
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1561, in _call_impl
+    result = forward_call(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 64, in forward
+    x = F.relu(self.bn1(self.conv1(x)))
+                        ^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1561, in _call_impl
+    result = forward_call(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\conv.py", line 610, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\conv.py", line 605, in _conv_forward
+    return F.conv3d(
+           ^^^^^^^^^
+RuntimeError: Expected 4D (unbatched) or 5D (batched) input to conv3d, but got input of size: [2, 2, 1, 1, 51, 38]
+ 
+00:35:05 : ****************************** 
+00:36:19 : Running on GPU 
+00:36:19 : Model is CNN_256xFC_512_Channel_b32e50L0.0001 
+00:36:19 : Error occured Expected 4D (unbatched) or 5D (batched) input to conv3d, but got input of size: [2, 2, 1, 1, 51, 38] 
+00:36:19 : Traceback (most recent call last):
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 567, in <module>
+    # summary(model, [(2, 1, 51, 38), ( 1, 2, 51, 38)])
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torchsummary\torchsummary.py", line 72, in summary
+    model(*x)
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 145, in forward
+    logits1 = self.stream1(x1)
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1561, in _call_impl
+    result = forward_call(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 64, in forward
+    x = F.relu(self.bn1(self.conv1(x)))
+                        ^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1561, in _call_impl
+    result = forward_call(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\conv.py", line 610, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\conv.py", line 605, in _conv_forward
+    return F.conv3d(
+           ^^^^^^^^^
+RuntimeError: Expected 4D (unbatched) or 5D (batched) input to conv3d, but got input of size: [2, 2, 1, 1, 51, 38]
+ 
+00:36:19 : ****************************** 
+00:37:29 : Running on GPU 
+00:37:29 : Model is CNN_256xFC_512_Channel_b32e50L0.0001 
+00:37:30 : No saved model found. Training a new model. 
+00:37:31 : Error occured summary() missing 1 required positional argument: 'input_size' 
+00:37:31 : Traceback (most recent call last):
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 580, in <module>
+    model = train_model(dataloader_train_raw, dataloader_val_raw,dataloader_train_OF, dataloader_val_OF, num_epochs,learning_rate)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 326, in train_model
+    summary(model)
+TypeError: summary() missing 1 required positional argument: 'input_size'
+ 
+00:37:31 : ****************************** 
+00:38:41 : Running on GPU 
+00:38:41 : Model is CNN_256xFC_512_Channel_b32e50L0.0001 
+00:38:41 : No saved model found. Training a new model. 
+00:41:19 : Running on GPU 
+00:41:19 : Model is CNN_256xFC_512_Channel_b32e50L0.0001 
+00:41:19 : Error occured Expected 4D (unbatched) or 5D (batched) input to conv3d, but got input of size: [2, 32, 1, 17, 38, 51] 
+00:41:19 : Traceback (most recent call last):
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 567, in <module>
+    summary(model, [(32, 1, 17, 38, 51), (32, 2, 17, 38, 51)])
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torchsummary\torchsummary.py", line 72, in summary
+    model(*x)
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 145, in forward
+    logits1 = self.stream1(x1)
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1561, in _call_impl
+    result = forward_call(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 64, in forward
+    x = F.relu(self.bn1(self.conv1(x)))
+                        ^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1561, in _call_impl
+    result = forward_call(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\conv.py", line 610, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\conv.py", line 605, in _conv_forward
+    return F.conv3d(
+           ^^^^^^^^^
+RuntimeError: Expected 4D (unbatched) or 5D (batched) input to conv3d, but got input of size: [2, 32, 1, 17, 38, 51]
+ 
+00:41:19 : ****************************** 
+00:43:41 : Running on GPU 
+00:43:41 : Model is CNN_256xFC_512_Channel_b32e50L0.0001 
+00:43:42 : No saved model found. Training a new model. 
+00:45:01 : Epoch [1/50], Loss: 0.5369, Accuracy: 0.9073, Precision: 0.9149, Recall: 0.8982, Specificity: 0.9164, F1-Score: 0.9065 
+00:46:09 : Epoch [2/50], Loss: 0.3946, Accuracy: 0.9569, Precision: 0.9808, Recall: 0.9321, Specificity: 0.9817, F1-Score: 0.9558 
+00:47:20 : Epoch [3/50], Loss: 0.3259, Accuracy: 0.8982, Precision: 0.8381, Recall: 0.9869, Specificity: 0.8094, F1-Score: 0.9065 
+00:48:35 : Epoch [4/50], Loss: 0.3296, Accuracy: 0.9517, Precision: 0.9179, Recall: 0.9922, Specificity: 0.9112, F1-Score: 0.9536 
+00:49:56 : Epoch [5/50], Loss: 0.3428, Accuracy: 0.5614, Precision: 0.5327, Recall: 1.0000, Specificity: 0.1227, F1-Score: 0.6951 
+00:51:13 : Epoch [6/50], Loss: 0.3268, Accuracy: 0.8512, Precision: 1.0000, Recall: 0.7023, Specificity: 1.0000, F1-Score: 0.8252 
+00:52:33 : Epoch [7/50], Loss: 0.3509, Accuracy: 0.9700, Precision: 0.9545, Recall: 0.9869, Specificity: 0.9530, F1-Score: 0.9705 
+00:53:53 : Epoch [8/50], Loss: 0.3980, Accuracy: 0.5966, Precision: 0.5535, Recall: 1.0000, Specificity: 0.1932, F1-Score: 0.7126 
+00:55:07 : Epoch [9/50], Loss: 0.3267, Accuracy: 0.8734, Precision: 0.8017, Recall: 0.9922, Specificity: 0.7546, F1-Score: 0.8868 
+00:56:18 : Epoch [10/50], Loss: 0.3199, Accuracy: 0.5131, Precision: 1.0000, Recall: 0.0261, Specificity: 1.0000, F1-Score: 0.0509 
+00:57:30 : Epoch [11/50], Loss: 0.3159, Accuracy: 0.9674, Precision: 0.9864, Recall: 0.9478, Specificity: 0.9869, F1-Score: 0.9667 
+00:58:41 : Epoch [12/50], Loss: 0.3523, Accuracy: 0.7063, Precision: 1.0000, Recall: 0.4125, Specificity: 1.0000, F1-Score: 0.5841 
+01:00:02 : Epoch [13/50], Loss: 0.3167, Accuracy: 0.9700, Precision: 0.9663, Recall: 0.9739, Specificity: 0.9661, F1-Score: 0.9701 
+01:02:01 : Running on GPU 
+01:02:01 : Model is CNN_256xFC_512_Channel_b32e50L0.0001 
+01:02:01 : No saved model found. Training a new model. 
+01:05:14 : Epoch [1/50], Loss: 0.4918, Accuracy: 0.7715, Precision: 1.0000, Recall: 0.5431, Specificity: 1.0000, F1-Score: 0.7039 
+01:07:35 : Epoch [2/50], Loss: 0.3784, Accuracy: 0.9230, Precision: 0.8803, Recall: 0.9791, Specificity: 0.8668, F1-Score: 0.9271 
+01:09:48 : Epoch [3/50], Loss: 0.3300, Accuracy: 0.6945, Precision: 1.0000, Recall: 0.3890, Specificity: 1.0000, F1-Score: 0.5602 
+01:12:00 : Epoch [4/50], Loss: 0.3231, Accuracy: 0.5248, Precision: 1.0000, Recall: 0.0496, Specificity: 1.0000, F1-Score: 0.0945 
+01:14:14 : Epoch [5/50], Loss: 0.3483, Accuracy: 0.5809, Precision: 1.0000, Recall: 0.1619, Specificity: 1.0000, F1-Score: 0.2787 
+01:16:26 : Epoch [6/50], Loss: 0.3798, Accuracy: 0.9086, Precision: 0.9845, Recall: 0.8303, Specificity: 0.9869, F1-Score: 0.9008 
+01:18:46 : Epoch [7/50], Loss: 0.3981, Accuracy: 0.5000, Precision: 0.5000, Recall: 1.0000, Specificity: 0.0000, F1-Score: 0.6667 
+01:20:57 : Epoch [8/50], Loss: 0.3170, Accuracy: 0.5026, Precision: 0.5013, Recall: 1.0000, Specificity: 0.0052, F1-Score: 0.6678 
+01:23:08 : Epoch [9/50], Loss: 0.3186, Accuracy: 0.6123, Precision: 1.0000, Recall: 0.2245, Specificity: 1.0000, F1-Score: 0.3667 
+01:25:22 : Epoch [10/50], Loss: 0.3139, Accuracy: 0.9556, Precision: 0.9205, Recall: 0.9974, Specificity: 0.9138, F1-Score: 0.9574 
+01:49:53 : Epoch [11/50], Loss: 0.3162, Accuracy: 0.8799, Precision: 0.9866, Recall: 0.7702, Specificity: 0.9896, F1-Score: 0.8651 
+01:52:14 : Epoch [12/50], Loss: 0.3134, Accuracy: 0.8251, Precision: 0.7408, Recall: 1.0000, Specificity: 0.6501, F1-Score: 0.8511 
+01:54:26 : Epoch [13/50], Loss: 0.3137, Accuracy: 0.7089, Precision: 0.9819, Recall: 0.4256, Specificity: 0.9922, F1-Score: 0.5938 
+01:56:37 : Epoch [14/50], Loss: 0.3496, Accuracy: 0.9217, Precision: 0.9909, Recall: 0.8512, Specificity: 0.9922, F1-Score: 0.9157 
+01:58:50 : Epoch [15/50], Loss: 0.3154, Accuracy: 0.9634, Precision: 0.9449, Recall: 0.9843, Specificity: 0.9426, F1-Score: 0.9642 
+02:01:02 : Epoch [16/50], Loss: 0.3135, Accuracy: 0.9700, Precision: 0.9569, Recall: 0.9843, Specificity: 0.9556, F1-Score: 0.9704 
+02:03:21 : Epoch [17/50], Loss: 0.3519, Accuracy: 0.9530, Precision: 0.9887, Recall: 0.9164, Specificity: 0.9896, F1-Score: 0.9512 
+02:05:32 : Epoch [18/50], Loss: 0.3134, Accuracy: 0.9530, Precision: 0.9201, Recall: 0.9922, Specificity: 0.9138, F1-Score: 0.9548 
+02:07:43 : Epoch [19/50], Loss: 0.3573, Accuracy: 0.9021, Precision: 0.8392, Recall: 0.9948, Specificity: 0.8094, F1-Score: 0.9104 
+02:09:56 : Epoch [20/50], Loss: 0.3134, Accuracy: 0.9687, Precision: 0.9838, Recall: 0.9530, Specificity: 0.9843, F1-Score: 0.9682 
+02:12:07 : Epoch [21/50], Loss: 0.3516, Accuracy: 0.9739, Precision: 0.9618, Recall: 0.9869, Specificity: 0.9608, F1-Score: 0.9742 
+02:14:26 : Epoch [22/50], Loss: 0.3931, Accuracy: 0.9517, Precision: 0.9887, Recall: 0.9138, Specificity: 0.9896, F1-Score: 0.9498 
+02:16:38 : Epoch [23/50], Loss: 0.3163, Accuracy: 0.9399, Precision: 0.8928, Recall: 1.0000, Specificity: 0.8799, F1-Score: 0.9433 
+02:18:48 : Epoch [24/50], Loss: 0.3137, Accuracy: 0.9595, Precision: 0.9293, Recall: 0.9948, Specificity: 0.9243, F1-Score: 0.9609 
+02:21:01 : Epoch [25/50], Loss: 0.3225, Accuracy: 0.9478, Precision: 0.9777, Recall: 0.9164, Specificity: 0.9791, F1-Score: 0.9461 
+02:23:12 : Epoch [26/50], Loss: 0.3135, Accuracy: 0.6266, Precision: 0.5725, Recall: 1.0000, Specificity: 0.2533, F1-Score: 0.7281 
+02:25:31 : Epoch [27/50], Loss: 0.3145, Accuracy: 0.9739, Precision: 0.9690, Recall: 0.9791, Specificity: 0.9687, F1-Score: 0.9740 
+02:27:42 : Epoch [28/50], Loss: 0.3812, Accuracy: 0.8851, Precision: 0.8132, Recall: 1.0000, Specificity: 0.7702, F1-Score: 0.8970 
+02:29:53 : Epoch [29/50], Loss: 0.3133, Accuracy: 0.9204, Precision: 0.9909, Recall: 0.8486, Specificity: 0.9922, F1-Score: 0.9142 
+02:32:06 : Epoch [30/50], Loss: 0.3143, Accuracy: 0.9726, Precision: 0.9641, Recall: 0.9817, Specificity: 0.9634, F1-Score: 0.9728 
+02:34:18 : Epoch [31/50], Loss: 0.3135, Accuracy: 0.9739, Precision: 0.9789, Recall: 0.9687, Specificity: 0.9791, F1-Score: 0.9738 
+02:36:37 : Epoch [32/50], Loss: 0.3138, Accuracy: 0.5496, Precision: 1.0000, Recall: 0.0992, Specificity: 1.0000, F1-Score: 0.1805 
+02:38:48 : Epoch [33/50], Loss: 0.3135, Accuracy: 0.9739, Precision: 0.9739, Recall: 0.9739, Specificity: 0.9739, F1-Score: 0.9739 
+02:40:59 : Epoch [34/50], Loss: 0.3536, Accuracy: 0.7937, Precision: 1.0000, Recall: 0.5875, Specificity: 1.0000, F1-Score: 0.7401 
+02:43:12 : Epoch [35/50], Loss: 0.3147, Accuracy: 0.8786, Precision: 0.9866, Recall: 0.7676, Specificity: 0.9896, F1-Score: 0.8634 
+02:45:24 : Epoch [36/50], Loss: 0.3164, Accuracy: 0.9687, Precision: 0.9544, Recall: 0.9843, Specificity: 0.9530, F1-Score: 0.9692 
+02:47:43 : Epoch [37/50], Loss: 0.3135, Accuracy: 0.9661, Precision: 0.9811, Recall: 0.9504, Specificity: 0.9817, F1-Score: 0.9655 
+02:49:55 : Epoch [38/50], Loss: 0.3139, Accuracy: 0.9465, Precision: 0.9886, Recall: 0.9034, Specificity: 0.9896, F1-Score: 0.9441 
+02:52:06 : Epoch [39/50], Loss: 0.3133, Accuracy: 0.9765, Precision: 0.9867, Recall: 0.9661, Specificity: 0.9869, F1-Score: 0.9763 
+02:54:19 : Epoch [40/50], Loss: 0.3135, Accuracy: 0.9765, Precision: 0.9765, Recall: 0.9765, Specificity: 0.9765, F1-Score: 0.9765 
+02:56:30 : Epoch [41/50], Loss: 0.3133, Accuracy: 0.9687, Precision: 0.9544, Recall: 0.9843, Specificity: 0.9530, F1-Score: 0.9692 
+02:58:50 : Epoch [42/50], Loss: 0.3134, Accuracy: 0.9726, Precision: 0.9763, Recall: 0.9687, Specificity: 0.9765, F1-Score: 0.9725 
+03:01:01 : Epoch [43/50], Loss: 0.3135, Accuracy: 0.9739, Precision: 0.9572, Recall: 0.9922, Specificity: 0.9556, F1-Score: 0.9744 
+03:03:12 : Epoch [44/50], Loss: 0.3153, Accuracy: 0.9713, Precision: 0.9547, Recall: 0.9896, Specificity: 0.9530, F1-Score: 0.9718 
+03:05:25 : Epoch [45/50], Loss: 0.3151, Accuracy: 0.9739, Precision: 0.9690, Recall: 0.9791, Specificity: 0.9687, F1-Score: 0.9740 
+03:07:36 : Epoch [46/50], Loss: 0.3133, Accuracy: 0.9752, Precision: 0.9840, Recall: 0.9661, Specificity: 0.9843, F1-Score: 0.9750 
+03:09:55 : Epoch [47/50], Loss: 0.3133, Accuracy: 0.9608, Precision: 0.9315, Recall: 0.9948, Specificity: 0.9269, F1-Score: 0.9621 
+03:12:06 : Epoch [48/50], Loss: 0.3136, Accuracy: 0.9399, Precision: 0.8946, Recall: 0.9974, Specificity: 0.8825, F1-Score: 0.9432 
+03:14:17 : Epoch [49/50], Loss: 0.3224, Accuracy: 0.9386, Precision: 0.8907, Recall: 1.0000, Specificity: 0.8773, F1-Score: 0.9422 
+03:16:30 : Epoch [50/50], Loss: 0.3225, Accuracy: 0.7963, Precision: 1.0000, Recall: 0.5927, Specificity: 1.0000, F1-Score: 0.7443 
+03:23:02 : Test Loss: 0.1586, Test Accuracy: 0.9960, Test Precision: 0.7176, Test Recall: 0.6354, Test Specificity: 0.9984, Test F1-Score: 0.6740 
+03:23:02 : Total Time taken: 8523.435194600002 Seconds 
+03:23:02 : process completed 

@@ -1,0 +1,660 @@
+12:36:13 : Running on GPU 
+12:36:13 : Model is Exp7_1_Feature_Out_b32e50L0.0001 
+12:36:14 : No saved model found. Training a new model. 
+12:37:40 : Error occured CUDA error: out of memory
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1.
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+ 
+12:37:40 : Traceback (most recent call last):
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 554, in <module>
+    model = train_model(dataloader_train_raw, dataloader_val_raw,dataloader_train_OF, dataloader_val_OF, num_epochs,learning_rate)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 322, in train_model
+    outputs = model(batch_features1,batch_features2)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 135, in forward
+    logits2 = self.stream2(x2)
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 112, in forward
+    x = F.relu(self.bn3(self.conv3(x)))
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\batchnorm.py", line 175, in forward
+    return F.batch_norm(
+           ^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\functional.py", line 2482, in batch_norm
+    return torch.batch_norm(
+           ^^^^^^^^^^^^^^^^^
+RuntimeError: CUDA error: out of memory
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1.
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+ 
+12:37:40 : ****************************** 
+14:12:04 : Running on GPU 
+14:12:04 : Model is Exp7_1_Feature_Out_b32e50L0.0001 
+14:12:04 : No saved model found. Training a new model. 
+14:13:15 : Error occured CUDA out of memory. Tried to allocate 1.01 GiB. GPU 0 has a total capacity of 4.00 GiB of which 0 bytes is free. Of the allocated memory 8.61 GiB is allocated by PyTorch, and 1.30 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables) 
+14:13:15 : Traceback (most recent call last):
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 554, in <module>
+    model = train_model(dataloader_train_raw, dataloader_val_raw,dataloader_train_OF, dataloader_val_OF, num_epochs,learning_rate)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 322, in train_model
+    outputs = model(batch_features1,batch_features2)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 135, in forward
+    logits2 = self.stream2(x2)
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 112, in forward
+    x = F.relu(self.bn3(self.conv3(x)))
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\batchnorm.py", line 175, in forward
+    return F.batch_norm(
+           ^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\functional.py", line 2482, in batch_norm
+    return torch.batch_norm(
+           ^^^^^^^^^^^^^^^^^
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 1.01 GiB. GPU 0 has a total capacity of 4.00 GiB of which 0 bytes is free. Of the allocated memory 8.61 GiB is allocated by PyTorch, and 1.30 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+ 
+14:13:15 : ****************************** 
+14:16:50 : Running on GPU 
+14:16:50 : Model is Exp7_1_Feature_Out_b32e50L0.0001 
+14:16:50 : No saved model found. Training a new model. 
+14:18:18 : Error occured CUDA error: out of memory
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1.
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+ 
+14:18:18 : Traceback (most recent call last):
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 554, in <module>
+    model = train_model(dataloader_train_raw, dataloader_val_raw,dataloader_train_OF, dataloader_val_OF, num_epochs,learning_rate)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 322, in train_model
+    outputs = model(batch_features1,batch_features2)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 135, in forward
+    logits2 = self.stream2(x2)
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 112, in forward
+    x = F.relu(self.bn3(self.conv3(x)))
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\batchnorm.py", line 175, in forward
+    return F.batch_norm(
+           ^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\functional.py", line 2482, in batch_norm
+    return torch.batch_norm(
+           ^^^^^^^^^^^^^^^^^
+RuntimeError: CUDA error: out of memory
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1.
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+ 
+14:18:18 : ****************************** 
+14:21:07 : Running on GPU 
+14:21:07 : Model is Exp7_1_Feature_Out_b32e50L0.0001 
+14:21:07 : No saved model found. Training a new model. 
+14:22:13 : Error occured CUDA error: out of memory
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1.
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+ 
+14:22:13 : Traceback (most recent call last):
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 554, in <module>
+    model = train_model(dataloader_train_raw, dataloader_val_raw,dataloader_train_OF, dataloader_val_OF, num_epochs,learning_rate)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 322, in train_model
+    outputs = model(batch_features1,batch_features2)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 135, in forward
+    logits2 = self.stream2(x2)
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 112, in forward
+    x = F.relu(self.bn3(self.conv3(x)))
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\batchnorm.py", line 175, in forward
+    return F.batch_norm(
+           ^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\functional.py", line 2482, in batch_norm
+    return torch.batch_norm(
+           ^^^^^^^^^^^^^^^^^
+RuntimeError: CUDA error: out of memory
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1.
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+ 
+14:22:13 : ****************************** 
+14:30:59 : Running on GPU 
+14:30:59 : Model is Exp7_1_Feature_Out_b32e50L0.0001 
+14:31:00 : No saved model found. Training a new model. 
+14:32:05 : Error occured CUDA error: out of memory
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1.
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+ 
+14:32:05 : Traceback (most recent call last):
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 567, in <module>
+    model = train_model(dataloader_train_raw, dataloader_val_raw,dataloader_train_OF, dataloader_val_OF, num_epochs,learning_rate)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 335, in train_model
+    outputs = model(batch_features1,batch_features2)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 142, in forward
+    logits2 = self.stream2(x2)
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 112, in forward
+    x = F.relu(self.bn3(self.conv3(x)))
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\batchnorm.py", line 175, in forward
+    return F.batch_norm(
+           ^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\functional.py", line 2482, in batch_norm
+    return torch.batch_norm(
+           ^^^^^^^^^^^^^^^^^
+RuntimeError: CUDA error: out of memory
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1.
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+ 
+14:32:05 : ****************************** 
+14:35:01 : Running on GPU 
+14:35:01 : Model is Exp7_1_Feature_Out_b32e50L0.0001 
+14:35:02 : No saved model found. Training a new model. 
+14:36:04 : Error occured CUDA error: out of memory
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1.
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+ 
+14:36:04 : Traceback (most recent call last):
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 567, in <module>
+    model = train_model(dataloader_train_raw, dataloader_val_raw,dataloader_train_OF, dataloader_val_OF, num_epochs,learning_rate)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 335, in train_model
+    outputs = model(batch_features1,batch_features2)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 142, in forward
+    logits2 = self.stream2(x2)
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 112, in forward
+    x = F.relu(self.bn3(self.conv3(x)))
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\batchnorm.py", line 175, in forward
+    return F.batch_norm(
+           ^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\functional.py", line 2482, in batch_norm
+    return torch.batch_norm(
+           ^^^^^^^^^^^^^^^^^
+RuntimeError: CUDA error: out of memory
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1.
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+ 
+14:36:04 : ****************************** 
+14:45:37 : Running on GPU 
+14:45:37 : Model is Exp7_1_Feature_Out_b16e50L0.0001 
+14:45:37 : No saved model found. Training a new model. 
+14:46:43 : Error occured CUDA error: out of memory
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1.
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+ 
+14:46:43 : Traceback (most recent call last):
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 567, in <module>
+    model = train_model(dataloader_train_raw, dataloader_val_raw,dataloader_train_OF, dataloader_val_OF, num_epochs,learning_rate)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 335, in train_model
+    outputs = model(batch_features1,batch_features2)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 142, in forward
+    logits2 = self.stream2(x2)
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 112, in forward
+    x = F.relu(self.bn3(self.conv3(x)))
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\batchnorm.py", line 175, in forward
+    return F.batch_norm(
+           ^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\functional.py", line 2482, in batch_norm
+    return torch.batch_norm(
+           ^^^^^^^^^^^^^^^^^
+RuntimeError: CUDA error: out of memory
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1.
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+ 
+14:46:43 : ****************************** 
+14:48:53 : Running on GPU 
+14:48:53 : Model is Exp7_1_Feature_Out_b8e50L0.0001 
+14:48:53 : No saved model found. Training a new model. 
+14:50:04 : Error occured CUDA out of memory. Tried to allocate 1.01 GiB. GPU 0 has a total capacity of 4.00 GiB of which 0 bytes is free. Of the allocated memory 8.61 GiB is allocated by PyTorch, and 1.31 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables) 
+14:50:04 : Traceback (most recent call last):
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 567, in <module>
+    model = train_model(dataloader_train_raw, dataloader_val_raw,dataloader_train_OF, dataloader_val_OF, num_epochs,learning_rate)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 335, in train_model
+    outputs = model(batch_features1,batch_features2)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 142, in forward
+    logits2 = self.stream2(x2)
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 112, in forward
+    x = F.relu(self.bn3(self.conv3(x)))
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\batchnorm.py", line 175, in forward
+    return F.batch_norm(
+           ^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\functional.py", line 2482, in batch_norm
+    return torch.batch_norm(
+           ^^^^^^^^^^^^^^^^^
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 1.01 GiB. GPU 0 has a total capacity of 4.00 GiB of which 0 bytes is free. Of the allocated memory 8.61 GiB is allocated by PyTorch, and 1.31 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+ 
+14:50:04 : ****************************** 
+15:00:35 : Running on GPU 
+15:00:35 : Model is Exp7_1_Feature_Out_b4e50L0.0001 
+15:00:35 : No saved model found. Training a new model. 
+15:01:50 : Error occured CUDA error: out of memory
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1.
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+ 
+15:01:50 : Traceback (most recent call last):
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 567, in <module>
+    model = train_model(dataloader_train_raw, dataloader_val_raw,dataloader_train_OF, dataloader_val_OF, num_epochs,learning_rate)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 335, in train_model
+    outputs = model(batch_features1,batch_features2)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 142, in forward
+    logits2 = self.stream2(x2)
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 112, in forward
+    x = F.relu(self.bn3(self.conv3(x)))
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\batchnorm.py", line 175, in forward
+    return F.batch_norm(
+           ^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\functional.py", line 2482, in batch_norm
+    return torch.batch_norm(
+           ^^^^^^^^^^^^^^^^^
+RuntimeError: CUDA error: out of memory
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1.
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+ 
+15:01:50 : ****************************** 
+15:07:57 : Running on GPU 
+15:07:57 : Model is Exp7_1_Feature_Out_b32e50L0.0001 
+15:07:58 : No saved model found. Training a new model. 
+15:08:00 : Error occured mat1 and mat2 shapes cannot be multiplied (32x512 and 256x128) 
+15:08:00 : Traceback (most recent call last):
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 567, in <module>
+    model = train_model(dataloader_train_raw, dataloader_val_raw,dataloader_train_OF, dataloader_val_OF, num_epochs,learning_rate)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 335, in train_model
+    outputs = model(batch_features1,batch_features2)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 148, in forward
+    x = F.relu(self.fc1(x))
+               ^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\linear.py", line 116, in forward
+    return F.linear(input, self.weight, self.bias)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: mat1 and mat2 shapes cannot be multiplied (32x512 and 256x128)
+ 
+15:08:00 : ****************************** 
+15:14:01 : Running on GPU 
+15:14:01 : Model is Exp7_1_Feature_Out_b32e50L0.0001 
+15:14:01 : No saved model found. Training a new model. 
+15:14:03 : Error occured mat1 and mat2 shapes cannot be multiplied (32x512 and 256x128) 
+15:14:03 : Traceback (most recent call last):
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 569, in <module>
+    model = train_model(dataloader_train_raw, dataloader_val_raw,dataloader_train_OF, dataloader_val_OF, num_epochs,learning_rate)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 337, in train_model
+    outputs = model(batch_features1,batch_features2)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 150, in forward
+    x = F.relu(self.fc1(x))
+               ^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\linear.py", line 116, in forward
+    return F.linear(input, self.weight, self.bias)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: mat1 and mat2 shapes cannot be multiplied (32x512 and 256x128)
+ 
+15:14:03 : ****************************** 
+15:17:00 : Running on GPU 
+15:17:00 : Model is Exp7_1_Feature_Out_b32e50L0.0001 
+15:17:00 : No saved model found. Training a new model. 
+15:17:02 : Error occured mat1 and mat2 shapes cannot be multiplied (32x512 and 256x128) 
+15:17:02 : Traceback (most recent call last):
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 569, in <module>
+    model = train_model(dataloader_train_raw, dataloader_val_raw,dataloader_train_OF, dataloader_val_OF, num_epochs,learning_rate)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 337, in train_model
+    outputs = model(batch_features1,batch_features2)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 150, in forward
+    x = F.relu(self.fc1(x))
+               ^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\linear.py", line 116, in forward
+    return F.linear(input, self.weight, self.bias)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: mat1 and mat2 shapes cannot be multiplied (32x512 and 256x128)
+ 
+15:17:02 : ****************************** 
+15:21:16 : Running on GPU 
+15:21:16 : Model is Exp7_1_Feature_Out_b32e50L0.0001 
+15:21:17 : No saved model found. Training a new model. 
+15:21:18 : Error occured mat1 and mat2 shapes cannot be multiplied (32x512 and 256x128) 
+15:21:18 : Traceback (most recent call last):
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 569, in <module>
+    model = train_model(dataloader_train_raw, dataloader_val_raw,dataloader_train_OF, dataloader_val_OF, num_epochs,learning_rate)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 337, in train_model
+    outputs = model(batch_features1,batch_features2)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 150, in forward
+    x = F.relu(self.fc1(x))
+               ^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\linear.py", line 116, in forward
+    return F.linear(input, self.weight, self.bias)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: mat1 and mat2 shapes cannot be multiplied (32x512 and 256x128)
+ 
+15:21:18 : ****************************** 
+15:24:29 : Running on GPU 
+15:24:29 : Model is Exp7_1_Feature_Out_b32e50L0.0001 
+15:24:29 : No saved model found. Training a new model. 
+15:24:31 : Error occured running_mean should contain 256 elements not 128 
+15:24:31 : Traceback (most recent call last):
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 569, in <module>
+    model = train_model(dataloader_train_raw, dataloader_val_raw,dataloader_train_OF, dataloader_val_OF, num_epochs,learning_rate)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 337, in train_model
+    outputs = model(batch_features1,batch_features2)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 141, in forward
+    logits1 = self.stream1(x1)
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 67, in forward
+    x = F.relu(self.bn4(self.conv4(x)))
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\batchnorm.py", line 175, in forward
+    return F.batch_norm(
+           ^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\functional.py", line 2482, in batch_norm
+    return torch.batch_norm(
+           ^^^^^^^^^^^^^^^^^
+RuntimeError: running_mean should contain 256 elements not 128
+ 
+15:24:31 : ****************************** 
+15:33:13 : Running on GPU 
+15:33:13 : Model is Exp7_1_Feature_Out_b32e50L0.0001_C_FC 
+15:33:14 : No saved model found. Training a new model. 
+15:33:15 : Error occured mat1 and mat2 shapes cannot be multiplied (32x2 and 4x2) 
+15:33:15 : Traceback (most recent call last):
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 569, in <module>
+    model = train_model(dataloader_train_raw, dataloader_val_raw,dataloader_train_OF, dataloader_val_OF, num_epochs,learning_rate)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 337, in train_model
+    outputs = model(batch_features1,batch_features2)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Cloud_drives\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp7_1_Feature_Out.py", line 156, in forward
+    fusion_logits = self.fc_fusion(x)
+                    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\binso\anaconda3\Lib\site-packages\torch\nn\modules\linear.py", line 116, in forward
+    return F.linear(input, self.weight, self.bias)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: mat1 and mat2 shapes cannot be multiplied (32x2 and 4x2)
+ 
+15:33:15 : ****************************** 
+15:37:50 : Running on GPU 
+15:37:50 : Model is Exp7_1_Feature_Out_b32e50L0.0001_C_FC 
+15:37:50 : No saved model found. Training a new model. 
+15:40:37 : Epoch [1/50], Loss: 0.4953, Accuracy: 0.9034, Precision: 0.8411, Recall: 0.9948, Specificity: 0.8120, F1-Score: 0.9115 

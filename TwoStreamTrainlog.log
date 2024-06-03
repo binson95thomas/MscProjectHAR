@@ -1,0 +1,83 @@
+13:07:58 : Running on CPU Only 
+13:07:58 : Model is TwoStream2_Exp_6_1_Baseline_b32e50L0.0001 
+13:08:01 : size is torch.Size([32, 2]) 
+13:08:01 : ****************************** 
+13:08:01 : Error occured Expected input batch_size (32) to match target batch_size (64). 
+13:08:01 : Traceback (most recent call last):
+  File "C:\Binson\Cloud\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_7_TwoStream.py", line 487, in <module>
+    model = train_model(dataloader_train1, dataloader_val1,dataloader_train2, dataloader_val2,num_epochs,learning_rate)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Binson\Cloud\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_7_TwoStream.py", line 315, in train_model
+    loss = criterion(outputs, torch.cat((batch_labels1, batch_labels2), dim=0))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Binson\Apps\Lib\site-packages\torch\nn\modules\module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Binson\Apps\Lib\site-packages\torch\nn\modules\module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Binson\Apps\Lib\site-packages\torch\nn\modules\loss.py", line 1179, in forward
+    return F.cross_entropy(input, target, weight=self.weight,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Binson\Apps\Lib\site-packages\torch\nn\functional.py", line 3053, in cross_entropy
+    return torch._C._nn.cross_entropy_loss(input, target, weight, _Reduction.get_enum(reduction), ignore_index, label_smoothing)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Expected input batch_size (32) to match target batch_size (64).
+ 
+13:08:01 : ****************************** 
+13:09:19 : Running on CPU Only 
+13:09:19 : Model is TwoStream2_Exp_6_1_Baseline_b32e50L0.0001 
+13:09:21 : size is torch.Size([32, 2]) 
+13:09:21 : ****************************** 
+13:09:21 : Error occured CrossEntropyLoss.forward() got an unexpected keyword argument 'dim' 
+13:09:21 : Traceback (most recent call last):
+  File "C:\Binson\Cloud\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_7_TwoStream.py", line 488, in <module>
+    model = train_model(dataloader_train1, dataloader_val1,dataloader_train2, dataloader_val2,num_epochs,learning_rate)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Binson\Cloud\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_7_TwoStream.py", line 316, in train_model
+    loss = criterion(outputs, batch_labels1, dim=0)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Binson\Apps\Lib\site-packages\torch\nn\modules\module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Binson\Apps\Lib\site-packages\torch\nn\modules\module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: CrossEntropyLoss.forward() got an unexpected keyword argument 'dim'
+ 
+13:09:21 : ****************************** 
+13:09:51 : Running on CPU Only 
+13:09:51 : Model is TwoStream2_Exp_6_1_Baseline_b32e50L0.0001 
+13:09:52 : size is torch.Size([32, 2]) 
+13:09:56 : size is torch.Size([32, 2]) 
+13:10:00 : size is torch.Size([32, 2]) 
+13:10:04 : size is torch.Size([32, 2]) 
+13:10:08 : size is torch.Size([32, 2]) 
+13:27:01 : Running on CPU Only 
+13:27:01 : Model is TwoStream2_Exp_6_1_Baseline_b32e50L0.0001 
+13:33:03 : ****************************** 
+13:33:03 : Error occured not enough values to unpack (expected 4, got 2) 
+13:33:03 : Traceback (most recent call last):
+  File "C:\Binson\Cloud\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_7_TwoStream.py", line 488, in <module>
+    model = train_model(dataloader_train1, dataloader_val1,dataloader_train2, dataloader_val2,num_epochs,learning_rate)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Binson\Cloud\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_7_TwoStream.py", line 332, in train_model
+    for batch_features1,batch_features2, batch_labels1,batch_labels2  in zip(dataloader_val1, dataloader_val2):
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: not enough values to unpack (expected 4, got 2)
+ 
+13:33:03 : ****************************** 
+13:55:39 : Running on CPU Only 
+13:55:39 : Model is TwoStream2_Exp_6_1_Baseline_b32e50L0.0001 
+14:03:50 : ****************************** 
+14:03:50 : Error occured cannot access local variable 'total' where it is not associated with a value 
+14:03:50 : Traceback (most recent call last):
+  File "C:\Binson\Cloud\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_7_TwoStream.py", line 488, in <module>
+    model = train_model(dataloader_train1, dataloader_val1,dataloader_train2, dataloader_val2,num_epochs,learning_rate)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Binson\Cloud\OneDrive - University of Hertfordshire\ProjectWorkables\MscProjectRepo\smt_repo\Exp_7_TwoStream.py", line 341, in train_model
+    total += batch_labels1.size(0) + batch_labels2.size(0)
+    ^^^^^
+UnboundLocalError: cannot access local variable 'total' where it is not associated with a value
+ 
+14:03:50 : ****************************** 
