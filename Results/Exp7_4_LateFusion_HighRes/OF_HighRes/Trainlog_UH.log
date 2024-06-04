@@ -93,3 +93,15 @@ RuntimeError: cuDNN error: CUDNN_STATUS_MAPPING_ERROR
 15:12:22 : Model Summary Complete 
 15:12:22 : Saved Model Path is ./Results/Exp7_4_LateFusion_HighRes/OF_HighRes/OF_HighRes_b32e50L0.0001.pth 
 15:12:22 : No saved model found. Training a new model. 
+18:05:44 : Sample raw path is  C:/Users/bt22aak/GPU_DS/Exp_6_3_Baseline_128x96_80_split/balanced 
+18:05:44 : Sample of path is  C:/Users/bt22aak/GPU_DS/Exp_6_4_OF_HighRes_128x96/balanced 
+18:08:10 : Running on GPU 
+18:08:10 : Model is OF_HighRes_b32e50L0.0001 
+18:08:10 : Preparing Model Summary 
+18:08:11 : Model Summary Complete 
+18:08:11 : Saved Model Path is ./Results/Exp7_4_LateFusion_HighRes/OF_HighRes/OF_HighRes_b32e50L0.0001.pth 
+18:08:11 : No saved model found. Training a new model. 
+18:18:11 : Epoch [1/50], Loss: 0.6654, Accuracy: 0.7794, Precision: 0.6938, Recall: 1.0000, Specificity: 0.5587, F1-Score: 0.8193 
+18:28:02 : Epoch [2/50], Loss: 0.5226, Accuracy: 0.6201, Precision: 0.5682, Recall: 1.0000, Specificity: 0.2402, F1-Score: 0.7247 
+18:37:39 : Epoch [3/50], Loss: 0.3823, Accuracy: 0.8655, Precision: 0.7881, Recall: 1.0000, Specificity: 0.7311, F1-Score: 0.8815 
+18:47:20 : Epoch [4/50], Loss: 0.4142, Accuracy: 0.9269, Precision: 0.8724, Recall: 1.0000, Specificity: 0.8538, F1-Score: 0.9319 
